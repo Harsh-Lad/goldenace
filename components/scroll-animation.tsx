@@ -1,7 +1,7 @@
 "use client"
 import React, { useRef, useEffect, useState } from 'react';
 import { Canvas, useFrame, useLoader } from '@react-three/fiber';
-import { FBXLoader } from 'three/examples/jsm/loaders/FBXLoader';
+import { FBXLoader } from 'three/examples/jsm/loaders/FBXLoader.js';
 import { Group, Mesh, MeshStandardMaterial, DirectionalLight } from 'three';
 
 interface FBXModelProps {
@@ -12,6 +12,7 @@ function FBXModel({ scrollProgress }: FBXModelProps) {
   const fbx = useLoader(FBXLoader, '/logos.fbx'); // Load the FBX model
   const modelRef = useRef<Group>(null);
   const lightRef = useRef<DirectionalLight>(null);
+
 
   // Apply a standard material to the model
   useEffect(() => {
@@ -88,7 +89,6 @@ export default function ScrollAnimation() {
         <directionalLight castShadow position={[-1, -1, -1.5]} intensity={50} color={'#dbb549'} /> {/* Second directional light from behind */}
         <FBXModel scrollProgress={scrollProgress} />
       </Canvas>
-      
     </div>
   );
 }

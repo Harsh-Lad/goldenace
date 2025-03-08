@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 "use client";
 
 import { cn } from "@/lib/utils";
@@ -31,6 +32,7 @@ export function ShowReel({ className }: ShowReelProps) {
 
     return () => {
       if (containerRef.current) {
+        //ts-ignore
         observer.unobserve(containerRef.current);
       }
     };

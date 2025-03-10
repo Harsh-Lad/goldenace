@@ -1,0 +1,7 @@
+<svg width="800" height="600" viewBox="0 0 800 600" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="800" height="600" fill="#F8F8F8"/>
+  <rect x="250" y="200" width="300" height="200" rx="8" fill="#FFBF00" fill-opacity="0.2"/>
+  <path d="M400 250C413.807 250 425 261.193 425 275C425 288.807 413.807 300 400 300C386.193 300 375 288.807 375 275C375 261.193 386.193 250 400 250ZM400 310C426.51 310 450 321.49 450 335V350H350V335C350 321.49 373.49 310 400 310Z" fill="#FFBF00" fill-opacity="0.6"/>
+  <text x="400" y="380" font-family="Arial" font-size="16" text-anchor="middle" fill="#666666">Image not found</text>
+</svg>
+

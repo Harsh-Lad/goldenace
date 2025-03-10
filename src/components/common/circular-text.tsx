@@ -1,5 +1,7 @@
-import React, { useEffect, useState } from "react";
+"use client";
+import { useIsMobile } from "@/hooks/use-mobile";
 import { motion, useAnimation } from "framer-motion";
+import React, { useEffect, useState } from "react";
 
 interface CircularTextProps {
   text: string;
@@ -36,6 +38,7 @@ const CircularText: React.FC<CircularTextProps> = ({
   onHover = "speedUp",
   className = "",
 }) => {
+  const isMobile = useIsMobile();
   const letters = Array.from(text);
   const controls = useAnimation();
   const [currentRotation, setCurrentRotation] = useState(0);
@@ -95,10 +98,13 @@ const CircularText: React.FC<CircularTextProps> = ({
     });
   };
 
+  const size = isMobile ? 100 : 200; // Adjust size for mobile
+
   return (
     <motion.div
       initial={{ rotate: 0 }}
-      className={`mx-auto rounded-full w-[200px] h-[200px] text-white font-black text-center cursor-pointer origin-center ${className}`}
+      className={`mx-auto rounded-full text-white font-black text-center cursor-pointer origin-center ${className}`}
+      style={{ width: size, height: size }}
       animate={controls}
       onUpdate={(latest) => setCurrentRotation(Number(latest.rotate))}
       onMouseEnter={handleHoverStart}
@@ -114,7 +120,7 @@ const CircularText: React.FC<CircularTextProps> = ({
         return (
           <span
             key={i}
-            className="absolute inline-block inset-0 text-2xl transition-all duration-500 ease-[cubic-bezier(0,0,0,1)]"
+            className="absolute inline-block inset-0  text-base mdLtext-2xl transition-all duration-500 ease-[cubic-bezier(0,0,0,1)]"
             style={{ transform, WebkitTransform: transform }}
           >
             {letter}

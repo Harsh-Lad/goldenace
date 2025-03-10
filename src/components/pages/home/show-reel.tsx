@@ -1,7 +1,7 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 "use client";
 
-import CircularText from "@/components/circular-text";
+import CircularText from "@/components/common/circular-text";
 import { cn } from "@/lib/utils";
 import { AnimatePresence, motion } from "framer-motion";
 import { Pause, Play, Volume2, VolumeX } from "lucide-react";

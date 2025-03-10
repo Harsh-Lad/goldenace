@@ -7,25 +7,104 @@ import { AnimatePresence, motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 
 const NavigationMenu = () => {
   const [isOpen, setIsOpen] = useState(false);
   const pathname = usePathname();
-
   const isMobile = useIsMobile();
+  const linkRefs = useRef<(HTMLAnchorElement | null)[]>([]);
+  const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
+  const menuRef = useRef<HTMLDivElement>(null);
 
-  const toggleMenu = () => {
+  const toggleMenu = useCallback(() => {
     setIsOpen(!isOpen);
-  };
+  }, [isOpen]);
 
-  // Close menu when route changes
+  // Handle keyboard navigation
   useEffect(() => {
-    setIsOpen(false);
-  }, [pathname]);
+    const handleKeyDown = (event: KeyboardEvent) => {
+      const key = event.key;
+      if (/^[1-6]$/.test(key)) {
+        const index = parseInt(key) - 1;
+        if (index < MENU_ITEMS.length) {
+          setSelectedIndex(index);
+          linkRefs.current[index]?.focus();
+        }
+      } else if (key === "ArrowUp") {
+        setSelectedIndex((prev) => {
+          const newIndex =
+            prev === null || prev === 0 ? MENU_ITEMS.length - 1 : prev - 1;
+          linkRefs.current[newIndex]?.focus();
+          return newIndex;
+        });
+      } else if (key === "ArrowDown") {
+        setSelectedIndex((prev) => {
+          const newIndex =
+            prev === null || prev === MENU_ITEMS.length - 1 ? 0 : prev + 1;
+          linkRefs.current[newIndex]?.focus();
+          return newIndex;
+        });
+      } else if (key === "Enter" && selectedIndex !== null) {
+        linkRefs.current[selectedIndex]?.click();
+        toggleMenu();
+      }
+    };
+
+    window.addEventListener("keydown", handleKeyDown);
+
+    return () => {
+      window.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [selectedIndex, toggleMenu]);
+
+  // Close menu when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (menuRef.current && !menuRef.current.contains(event.target as Node)) {
+        toggleMenu();
+      }
+    };
+
+    document.body.addEventListener("mousedown", handleClickOutside);
+
+    return () => {
+      document.body.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [toggleMenu]);
+
+  useEffect(() => {
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (
+        (navigator.platform.includes("Mac") ? event.metaKey : event.ctrlKey) &&
+        event.key === "m" &&
+        !isOpen
+      ) {
+        toggleMenu();
+      }
+
+      if (event.key === "Escape" && isOpen) {
+        toggleMenu();
+      }
+    };
+
+    window.addEventListener("keydown", handleKeyDown);
+
+    return () => {
+      window.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [isOpen, toggleMenu]);
+
+  useEffect(() => {
+    if (isOpen) {
+      // set selected index to the current page based on pathname
+      const index = MENU_ITEMS.findIndex((item) => item.href === pathname);
+      setSelectedIndex(index);
+    }
+  }, [isOpen, pathname]);
 
   return (
-    <nav className="fixed bottom-0 right-0 z-50 w-full">
+    <nav className="fixed bottom-0 right-0 z-50 w-full" ref={menuRef}>
       <div className="flex justify-end items-center p-8 gap-4">
         {/* Menu Toggle Button */}
         <button
@@ -112,10 +191,10 @@ const NavigationMenu = () => {
               }}
             >
               {/* Menu Items */}
-              <ul className="flex flex-col space-y-6 mt-16">
+              <ul className="flex flex-col space-y-6 mt-18">
                 {MENU_ITEMS.map((item, index) => (
                   <motion.li
-                    key={item.number}
+                    key={item.href}
                     variants={{
                       closed: {
                         x: 20,
@@ -131,13 +210,18 @@ const NavigationMenu = () => {
                       },
                     }}
                   >
-                    {index === 9 ? (
+                    {index === MENU_ITEMS.length - 1 ? (
                       <Link
                         href="/contact"
                         className="group bg-black px-4 py-2 rounded-3xl font-bold text-2xl flex items-center group transition-all duration-500 w-fit translate-y-[200%] lg:translate-y-[350%]"
                       >
                         Contact
-                        <span className="w-0 group-hover:w-6 h-6 grid place-items-center bg-white rounded-full transition-all duration-500 overflow-hidden ml-2">
+                        <span
+                          className={cn(
+                            "w-0 group-hover:w-6 h-6 grid place-items-center bg-white rounded-full transition-all duration-500 overflow-hidden ml-2",
+                            selectedIndex === index && "w-6"
+                          )}
+                        >
                           <ArrowRight
                             className="text-[#FFBF00] -rotate-45"
                             size={20}
@@ -147,7 +231,13 @@ const NavigationMenu = () => {
                     ) : (
                       <Link
                         href={item.href}
-                        className="text-2xl font-bold text-white hover:text-black flex items-center group transition-all duration-500"
+                        className={cn(
+                          "text-2xl font-bold text-white hover:text-black flex items-center group transition-all duration-500 focus:outline-none",
+                          selectedIndex === index && "text-black"
+                        )}
+                        ref={(el) => {
+                          if (el) linkRefs.current[index] = el;
+                        }}
                       >
                         {item.title}
                       </Link>

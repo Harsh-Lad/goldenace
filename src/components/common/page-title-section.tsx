@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 
-export default function PageHeader({
+function PageTitleSection({
   title,
   description,
 }: {
@@ -38,3 +38,5 @@ export default function PageHeader({
     </div>
   );
 }
+
+export default PageTitleSection;

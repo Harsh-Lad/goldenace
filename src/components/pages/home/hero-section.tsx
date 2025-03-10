@@ -26,12 +26,9 @@ const HomePageHeroSection = () => {
 
       {/* Social Links */}
       <div className="flex items-center gap-2 md:gap-4 absolute bottom-10 left-10 z-10 text-white">
-        {SOCIAL_LINKS.map(({ icon: Icon, href, size }) => (
+        {SOCIAL_LINKS.map(({ icon: Icon, href }) => (
           <Link key={href} href={href}>
-            <Icon
-              size={size}
-              className="hover:scale-125 hover:text-[#FFC000] transition-all"
-            />
+            <Icon className="hover:scale-125 hover:text-[#FFC000] transition-all" />
           </Link>
         ))}
       </div>

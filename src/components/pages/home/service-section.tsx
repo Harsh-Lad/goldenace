@@ -61,7 +61,7 @@ function Services() {
     });
 
     return () => unsubscribe();
-  }, [wheelRotation, COMPANY_SERVICES.length]);
+  }, [wheelRotation]);
 
   // Intersection Observer setup
   useEffect(() => {

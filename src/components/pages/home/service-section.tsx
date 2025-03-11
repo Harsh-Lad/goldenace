@@ -1,32 +1,33 @@
+/* eslint-disable react-hooks/rules-of-hooks */
 "use client";
 
-import { useEffect, useRef, useState } from "react";
-import Image from "next/image";
-import { motion, useScroll, useTransform } from "framer-motion";
+import SectionHeader from "@/components/common/section-header";
 import { COMPANY_SERVICES } from "@/lib/constants";
-
-interface ServiceCard {
-  id: number;
-  title: string;
-  description: string;
-  image: string;
-  color: string;
-}
+import { motion, useScroll, useTransform } from "framer-motion";
+import Image from "next/image";
+import { useEffect, useRef, useState } from "react";
 
 export default function ServicesSection() {
   const containerRef = useRef<HTMLDivElement>(null);
   const sectionRef = useRef<HTMLElement>(null);
-  const [isInView, setIsInView] = useState(false);
   const [activeIndex, setActiveIndex] = useState(0);
   const [containerSize, setContainerSize] = useState({ width: 0, height: 0 });
-  const [isFixed, setIsFixed] = useState(false);
+  const [isInView, setIsInView] = useState(false);
+  const cardRefs = useRef<Array<HTMLDivElement | null>>([]);
 
-  // Update container size on window resize
+  // Configuration
+  const SECTION_HEIGHT = "80vh";
+  const PARALLAX_HEIGHT = "300vh";
+  // const CARD_SCALE_ACTIVE = 1.1;
+  // const CARD_SCALE_INACTIVE = 0.9;
+  // const CARD_OPACITY_ACTIVE = 1;
+  // const CARD_OPACITY_INACTIVE = 0.6;
+
+  // Update container size on resize
   useEffect(() => {
     const updateSize = () => {
       if (containerRef.current) {
         const rect = containerRef.current.getBoundingClientRect();
-        // Use the smaller dimension to ensure it fits on all screens
         const size = Math.min(rect.width * 0.65, window.innerHeight * 0.55);
         setContainerSize({
           width: size,
@@ -35,83 +36,131 @@ export default function ServicesSection() {
       }
     };
 
-    // Initial size calculation
     updateSize();
-
-    // Add resize listener
     window.addEventListener("resize", updateSize);
-
-    // Cleanup
     return () => window.removeEventListener("resize", updateSize);
   }, []);
 
-  // Scroll based animations for the entire section
+  // Scroll-based animations
   const { scrollYProgress } = useScroll({
     target: sectionRef,
-    offset: ["start start", "end end"],
+    offset: ["start end", "end start"],
   });
 
-  // Transform scroll progress to rotation value
-  const wheelRotation = useTransform(scrollYProgress, [0, 1], [0, 180 + 180 / COMPANY_SERVICES.length]);
+  // Transform values based on scroll
+  const stackToCircleProgress = useTransform(
+    scrollYProgress,
+    [0, 0.15], // Stack to circle during first 15% of scroll
+    [0, 1]
+  );
 
-  // Calculate if section should be fixed based on scroll progress
-  useEffect(() => {
-    const unsubscribe = scrollYProgress.onChange((value) => {
-      // Fix the section when scrolling through the cards (between 0.1 and 0.9 progress)
-      setIsFixed(value > 0.1 && value < 0.9);
+  const rotationProgress = useTransform(
+    scrollYProgress,
+    [0.15, 0.9], // Rotate during 15-90% of scroll
+    [0, 1]
+  );
 
-      // Calculate active index based on scroll progress
-      const normalizedProgress = Math.min(Math.max(value, 0.1), 0.9);
-      const normalizedValue = (normalizedProgress - 0.1) / 0.8; // Normalize to 0-1 range
-      const newIndex = Math.floor(normalizedValue * COMPANY_SERVICES.length);
-      if (newIndex >= 0 && newIndex < COMPANY_SERVICES.length) {
-        setActiveIndex(newIndex);
-      }
-    });
+  const wheelRotation = useTransform(
+    rotationProgress,
+    [0, 1],
+    [0, -360] // Full rotation (negative for counterclockwise)
+  );
 
-    return () => unsubscribe();
-  }, [scrollYProgress, COMPANY_SERVICES.length]);
-
-  // Intersection Observer setup
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        setIsInView(entry.isIntersecting);
-      },
-      { threshold: 0.1 }
-    );
-
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
-    }
-
-    return () => observer.disconnect();
-  }, []);
-
-  // Calculate wheel radius and card size
+  // Calculate dimensions
   const radius = Math.min(containerSize.width, containerSize.height) * 0.75;
   const cardWidth = Math.min(containerSize.width, containerSize.height) * 0.48;
   const cardHeight = cardWidth * 1.8;
 
+  // Precompute transforms for each card
+  const cardTransforms = COMPANY_SERVICES.map((_, index) => {
+    const angle = (360 / COMPANY_SERVICES.length) * index;
+    const radian = (angle * Math.PI) / 180;
+
+    // Calculate final circular position
+    const circleX = Math.cos(radian) * radius;
+    const circleY = Math.sin(radian) * radius;
+
+    // Calculate stacked position (with slight offset for each card)
+    const stackedOffsetX = (index - COMPANY_SERVICES.length / 2) * 5;
+    const stackedOffsetY = -index * 8;
+
+    // Interpolate between stacked and circular positions
+    const x = useTransform(
+      stackToCircleProgress,
+      [0, 1],
+      [stackedOffsetX, circleX - cardWidth / 2]
+    );
+
+    const y = useTransform(
+      stackToCircleProgress,
+      [0, 1],
+      [stackedOffsetY, circleY - cardHeight / 2]
+    );
+
+    return { x, y, angle };
+  });
+
+  // Update active card based on rotation
+  useEffect(() => {
+    const unsubscribe = rotationProgress.onChange((value) => {
+      if (value > 0) {
+        const cardAngle = 360 / COMPANY_SERVICES.length;
+        const normalizedRotation = (value * -360) % 360;
+        const newIndex =
+          Math.round(normalizedRotation / cardAngle) % COMPANY_SERVICES.length;
+
+        if (newIndex >= 0 && newIndex < COMPANY_SERVICES.length) {
+          setActiveIndex(
+            Math.abs(COMPANY_SERVICES.length - newIndex) %
+              COMPANY_SERVICES.length
+          );
+        }
+      }
+    });
+
+    return () => unsubscribe();
+  }, [rotationProgress]);
+
+  // Check if section is in view
+  useEffect(() => {
+    const checkIfInView = () => {
+      if (sectionRef.current) {
+        const rect = sectionRef.current.getBoundingClientRect();
+        const isVisible =
+          rect.top <= window.innerHeight * 0.5 &&
+          rect.bottom >= window.innerHeight * 0.5;
+        setIsInView(isVisible);
+      }
+    };
+
+    window.addEventListener("scroll", checkIfInView);
+    checkIfInView(); // Initial check
+
+    return () => window.removeEventListener("scroll", checkIfInView);
+  }, []);
+
   return (
     <section
       ref={sectionRef}
-      className="relative h-[120vh] pt-44 backdrop-blur-[10px] bg-[rgba(255,255,255,0.05)] rounded-[10px] border border-[rgba(255,255,255,0.3)] z-10" // Make section taller to allow for scrolling space
+      className="relative backdrop-blur-[10px] bg-[rgba(255,255,255,0.05)] rounded-[10px] border border-[rgba(255,255,255,0.3)] z-10 mx-6 overflow-hidden"
+      style={{
+        height: SECTION_HEIGHT,
+      }}
     >
-      <div
-        ref={containerRef}
-        className={`overflow-hidden flex flex-col items-center justify-center py-16 px-4 h-[50rem] ${
-          isFixed ? "fixed top-0 left-0 right-0 z-50" : "relative"
-        }`}
-      >
-        <div className="mb-12">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">Blogs</h2>
-          <p className="text-gray-400 text-lg">Goldenace Ventures LLP</p>
-        </div>
-        <div className="max-w-7xl w-full relative z-10 mt-[50rem]">
+      <div className="max-w-7xl mx-auto">
+        <SectionHeader title="Services" description="Goldenace Ventures LLP" />
+
+        <div
+          ref={containerRef}
+          className="relative flex flex-col items-center justify-center py-16 px-4"
+          style={{
+            height: isInView ? "100%" : "auto",
+            zIndex: 10,
+          }}
+        >
           {/* Radial Cards Container */}
           <div
-            className="relative mx-auto"
+            className="relative mx-auto scale-90 translate-y-1/2"
             style={{
               width: containerSize.width,
               height: containerSize.height,
@@ -123,46 +172,44 @@ export default function ServicesSection() {
               style={{ rotate: wheelRotation }}
               transition={{
                 type: "spring",
-                stiffness: 100,
-                damping: 30,
+                stiffness: 30,
+                damping: 40,
               }}
             >
               {COMPANY_SERVICES.map((service, index) => {
-                // Calculate position on the wheel
-                const angle = (360 / COMPANY_SERVICES.length) * index;
-                const radian = (angle * Math.PI) / 180;
-
-                // Calculate position
-                const x = Math.cos(radian) * radius;
-                const y = Math.sin(radian) * radius;
-
-                // Determine if this is the active card
+                const { x, y, angle } = cardTransforms[index];
                 const isActive = index === activeIndex;
 
                 return (
                   <motion.div
                     key={service.id}
+                    ref={(el) => {
+                      cardRefs.current[index] = el;
+                    }}
                     className="absolute rounded-2xl overflow-hidden shadow-lg"
                     style={{
                       width: cardWidth,
                       height: cardHeight,
                       top: "50%",
                       left: "50%",
-                      x: x - cardWidth / 2,
-                      y: y - cardHeight / 2,
-                      // Rotate to be perpendicular to center
-                      rotate: angle + 90,
-                      scale: isActive ? 1.1 : 0.9,
-                      opacity: isActive ? 1 : 0.7,
-                      zIndex: isActive ? 10 : 5,
-                      transition: "scale 0.3s ease, opacity 0.3s ease",
+                      x,
+                      y,
+                      rotate: useTransform(
+                        stackToCircleProgress,
+                        [0, 1],
+                        [0, angle + 90]
+                      ),
+                      zIndex: isActive ? 100 : COMPANY_SERVICES.length - index,
+                      transformOrigin: "center center",
                     }}
                   >
                     <div
                       className="relative w-full h-full"
                       style={{
                         backgroundColor: service.color,
-                        filter: isActive ? "brightness(1.1)" : "brightness(0.8)",
+                        filter: isActive
+                          ? "brightness(1.2)"
+                          : "brightness(0.9)",
                       }}
                     >
                       <Image
@@ -170,15 +217,27 @@ export default function ServicesSection() {
                         alt={service.title}
                         fill
                         className="object-cover mix-blend-overlay opacity-60"
+                        sizes="(max-width: 768px) 100vw, 50vw"
                       />
-                      <div className="absolute inset-0 p-6 flex flex-col justify-end">
+                      <motion.div
+                        className="absolute inset-0 p-6 flex flex-col justify-end"
+                        style={{
+                          // Keep text readable by countering card rotation when in circle mode
+                          rotate: useTransform(
+                            stackToCircleProgress,
+                            [0, 1],
+                            [0, -angle - 90]
+                          ),
+                          transformOrigin: "center center",
+                        }}
+                      >
                         <h3 className="text-xl font-bold text-white">
                           {service.title}
                         </h3>
                         <p className="text-sm text-white/80 mt-2 line-clamp-4">
                           {service.description}
                         </p>
-                      </div>
+                      </motion.div>
                     </div>
                   </motion.div>
                 );
@@ -188,9 +247,24 @@ export default function ServicesSection() {
         </div>
       </div>
 
-      {/* Spacer div to ensure proper scrolling behavior */}
-      {/* <div style={{ height: "100vh" }} className="invisible" /> */}
+      {/* Scroll indicator */}
+      <motion.div
+        className="absolute right-8 top-1/2 -translate-y-1/2 w-0.5 h-32 bg-white/10 rounded-full overflow-hidden"
+        style={{ scaleY: scrollYProgress }}
+      >
+        <div className="w-full h-full bg-white/50 origin-top" />
+      </motion.div>
+
+      {/* Invisible spacer to create parallax effect */}
+      <div
+        style={{
+          position: "absolute",
+          top: "100%",
+          height: PARALLAX_HEIGHT,
+          width: "100%",
+          pointerEvents: "none",
+        }}
+      />
     </section>
   );
 }
-

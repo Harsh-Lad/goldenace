@@ -183,6 +183,244 @@ export const COMPANY_PROJECTS = [
   },
 ];
 
+export const COMPANY_BLOGS = [
+  {
+    title: "The Future of Renewable Energy",
+    excerpt:
+      "Exploring the latest trends and innovations in renewable energy sources.",
+    image: "/placeholder.svg",
+    category: "Energy",
+    date: "2024-01-20",
+    author: "John Doe",
+    readTime: "5 min",
+  },
+  {
+    title: "Infrastructure Development in Urban Areas",
+    excerpt:
+      "Discussing the challenges and opportunities in building sustainable infrastructure in cities.",
+    image: "/placeholder.svg",
+    category: "Infrastructure",
+    date: "2024-02-15",
+    author: "Jane Smith",
+    readTime: "7 min",
+  },
+  {
+    title: "AI and IoT: Transforming Industries",
+    excerpt:
+      "How artificial intelligence and the Internet of Things are revolutionizing various sectors.",
+    image: "/placeholder.svg",
+    category: "Technology",
+    date: "2024-03-10",
+    author: "David Lee",
+    readTime: "6 min",
+  },
+  {
+    title: "Sustainable Business Practices",
+    excerpt: "Adopting eco-friendly strategies for long-term business success.",
+    image: "/placeholder.svg",
+    category: "Business",
+    date: "2024-04-05",
+    author: "Emily White",
+    readTime: "8 min",
+  },
+  {
+    title: "Solar Energy Innovations",
+    excerpt: "New technologies and advancements in solar power generation.",
+    image: "/placeholder.svg",
+    category: "Energy",
+    date: "2024-05-01",
+    author: "Robert Green",
+    readTime: "5 min",
+  },
+  {
+    title: "Smart City Development",
+    excerpt:
+      "Creating efficient and sustainable urban environments with technology.",
+    image: "/placeholder.svg",
+    category: "Infrastructure",
+    date: "2024-05-26",
+    author: "Linda Brown",
+    readTime: "7 min",
+  },
+];
+export type BlogPost = (typeof COMPANY_BLOGS)[number];
 
+export const SERVICES_DATA = [
+  {
+    id: "energy",
+    title: "Renewable, Green & Thermal Energy",
+    icon: "solar",
+    description:
+      "Comprehensive solutions across the renewable and thermal energy spectrum.",
+    items: [
+      {
+        title: "Solar Projects",
+        description:
+          "Full-cycle solutions from development, EPC, and financing. Expertise in large-scale solar tenders.",
+      },
+      {
+        title: "Thermal Energy Solutions",
+        description:
+          "Enhancing thermal plant efficiency through innovative technologies and operational improvements.",
+      },
+      {
+        title: "Project Support Finance",
+        description:
+          "REC & IREDA-approved financial solutions for solar EPC projects, enabling sustainable development.",
+      },
+    ],
+  },
+  {
+    id: "infrastructure",
+    title: "Infrastructure Development",
+    icon: "building",
+    description:
+      "Building the foundations for sustainable growth and development.",
+    items: [
+      {
+        title: "Roads & Highways",
+        description:
+          "Execution of large-scale infrastructure projects with a focus on quality and sustainability.",
+      },
+      {
+        title: "LT & HT Panels",
+        description:
+          "Electrical solutions for industrial and commercial sectors, ensuring reliability and efficiency.",
+      },
+      {
+        title: "Urban & Industrial Development",
+        description:
+          "Smart city projects, industrial parks, and comprehensive infrastructure development solutions.",
+      },
+    ],
+  },
+  {
+    id: "tech",
+    title: "Smart Tech & Innovation",
+    icon: "chip",
+    description:
+      "Leveraging cutting-edge technology to drive efficiency and innovation.",
+    items: [
+      {
+        title: "IoT & AI Integration",
+        description:
+          "Enhancing efficiency in energy and infrastructure through smart, connected solutions.",
+      },
+      {
+        title: "Advanced Monitoring Systems",
+        description:
+          "Real-time performance tracking and analytics for optimized operations.",
+      },
+      {
+        title: "Industrial Automation",
+        description:
+          "AI-driven operational efficiency improvements for manufacturing and industrial processes.",
+      },
+    ],
+  },
+  {
+    id: "advisory",
+    title: "Business Consultancy & Advisory",
+    icon: "briefcase",
+    description:
+      "Strategic guidance to help businesses thrive in a competitive landscape.",
+    items: [
+      {
+        title: "Market Strategy & Growth Consulting",
+        description:
+          "Helping businesses scale through targeted market strategies and growth initiatives.",
+      },
+      {
+        title: "Investment & Financial Structuring",
+        description:
+          "Mergers, acquisitions, and funding solutions tailored to business objectives.",
+      },
+      {
+        title: "Sales & Marketing Advisory",
+        description:
+          "High-impact branding & sales strategies to drive business growth and market presence.",
+      },
+    ],
+  },
+  {
+    id: "investments",
+    title: "Start-up Incubation & Investments",
+    icon: "trending-up",
+    description:
+      "Nurturing innovation and supporting the next generation of industry leaders.",
+    items: [
+      {
+        title: "Incubation & Mentorship",
+        description:
+          "Early-stage support for startups in energy, infrastructure, and technology sectors.",
+      },
+      {
+        title: "Investment Partnerships",
+        description:
+          "Providing capital and strategic growth assistance to promising ventures.",
+      },
+      {
+        title: "Gener8tor India Category 2 AIF Fund",
+        description:
+          "General Partner investments in high-potential startups and growth-stage companies.",
+      },
+    ],
+  },
+];
 
-
+export const COMPANY_PROJECTS_EXTENDED = [
+  {
+    title: "MahaGenco Bhusawal Thermal Plant POC",
+    category: "Energy",
+    status: "Ongoing",
+    image: "/placeholder.svg?height=600&width=800",
+    description:
+      "Proof of concept implementation for efficiency improvements at the MahaGenco Bhusawal Thermal Power Plant.",
+    tags: ["Thermal Energy", "Efficiency", "POC"],
+  },
+  {
+    title: "Highway Development Project",
+    category: "Infrastructure",
+    status: "Completed",
+    image: "/placeholder.svg?height=600&width=800",
+    description:
+      "Large-scale highway development project improving connectivity and transportation infrastructure.",
+    tags: ["Roads", "Infrastructure", "Development"],
+  },
+  {
+    title: "Solar PV Manufacturing Scale-up",
+    category: "Energy",
+    status: "In Progress",
+    image: "/placeholder.svg?height=600&width=800",
+    description:
+      "Scaling up Solar PV Manufacturing capacity to 1300 MW, enhancing renewable energy production capabilities.",
+    tags: ["Solar", "Manufacturing", "Scale-up"],
+  },
+  {
+    title: "Smart City Infrastructure",
+    category: "Infrastructure",
+    status: "Planning",
+    image: "/placeholder.svg?height=600&width=800",
+    description:
+      "Comprehensive smart city infrastructure development with IoT integration and sustainable design principles.",
+    tags: ["Smart City", "IoT", "Sustainability"],
+  },
+  {
+    title: "Industrial Automation System",
+    category: "Technology",
+    status: "Completed",
+    image: "/placeholder.svg?height=600&width=800",
+    description:
+      "AI-driven industrial automation system implementation for manufacturing process optimization.",
+    tags: ["Automation", "AI", "Manufacturing"],
+  },
+  {
+    title: "Renewable Energy Financing",
+    category: "Advisory",
+    status: "Ongoing",
+    image: "/placeholder.svg?height=600&width=800",
+    description:
+      "Structured financing solutions for large-scale renewable energy projects, enabling sustainable development.",
+    tags: ["Finance", "Renewable", "Advisory"],
+  },
+];

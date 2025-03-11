@@ -10,12 +10,12 @@ function PageTitleSection({
   description: string;
 }) {
   return (
-    <div className="text-center max-w-3xl mx-auto py-16 md:py-24">
+    <header className="text-center max-w-3xl mx-auto py-16 md:py-24">
       <motion.h1
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, ease: "easeOut" }}
-        className="text-5xl md:text-6xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-[#FFBF00] to-[#FFBF00]/70"
+        className="text-5xl md:text-6xl font-extrabold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-[#FFBF00] to-[#FFBF00]/70"
       >
         {title}
       </motion.h1>
@@ -24,7 +24,7 @@ function PageTitleSection({
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, ease: "easeOut", delay: 0.2 }}
-        className="text-xl text-muted-foreground max-w-2xl mx-auto"
+        className="text-xl font-bold text-muted-foreground max-w-2xl mx-auto"
       >
         {description}
       </motion.p>
@@ -35,7 +35,7 @@ function PageTitleSection({
         transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1], delay: 0.4 }}
         className="w-24 h-1 bg-[#FFBF00] mx-auto mt-8"
       />
-    </div>
+    </header>
   );
 }
 

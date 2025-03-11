@@ -7,18 +7,14 @@ import Link from "next/link";
 function Footer() {
   return (
     <footer className="relative py-16 px-4 md:px-8 overflow-hidden">
-      {/* Background GIF element */}
-      <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+      <Link href={"/"} className="flex justify-center mb-6">
         <Image
-          src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/website.gif-0Y2yWjcNu0obbslZsdwDTXGAvGOA4L.jpeg"
-          alt=""
-          width={500}
-          height={500}
-          className="opacity-20"
-          aria-hidden="true"
-          priority
+          src={"/assets/images/black-and-white-logo.png"}
+          alt="Logo"
+          width={80}
+          height={80}
         />
-      </div>
+      </Link>
 
       {/* Rest of the footer content remains the same... */}
       <div className="relative z-10">

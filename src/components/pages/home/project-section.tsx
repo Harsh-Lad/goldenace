@@ -1,5 +1,6 @@
 "use client";
 
+import SectionHeader from "@/components/common/section-header";
 import { COMPANY_PROJECTS } from "@/lib/constants";
 import { AnimatePresence, motion } from "framer-motion";
 import { ChevronRight } from "lucide-react";
@@ -60,11 +61,7 @@ function Projects() {
   return (
     <section className="py-16 px-4 md:px-8 min-h-screen">
       <div className="max-w-7xl mx-auto">
-        {/* Header */}
-        <div className="mb-12">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">Projects</h2>
-          <p className="text-gray-400 text-lg">Goldenace Ventures LLP</p>
-        </div>
+        <SectionHeader title="Projects" description="Goldenace Ventures LLP" />
 
         {/* Project Content */}
         <div className="grid md:grid-cols-2 gap-8 items-center">

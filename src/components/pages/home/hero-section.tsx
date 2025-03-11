@@ -3,9 +3,9 @@ import Link from "next/link";
 
 const HomePageHeroSection = () => {
   return (
-    <section className="relative h-[90svh] overflow-hidden">
+    <section className="relative h-[84svh] overflow-hidden">
       {/* Hero Text - Top Left */}
-      <div className="absolute top-28 left-10 lg:left-36 z-10 text-white">
+      <div className="absolute top-10 left-10 lg:left-36 z-10 text-white">
         <h1 className="text-4xl md:text-6xl font-bold mb-2">
           <span className="text-[#FFC000]">Innovative</span> Solutions
         </h1>

@@ -4,10 +4,10 @@ import { useIsMobile } from "@/hooks/use-mobile";
 import { MENU_ITEMS } from "@/lib/constants";
 import { cn } from "@/lib/utils";
 import { AnimatePresence, motion } from "framer-motion";
-import { ArrowRight } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useCallback, useEffect, useRef, useState } from "react";
+import CustomButton from "./custom-button";
 
 const NavigationMenu = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -20,6 +20,11 @@ const NavigationMenu = () => {
   const toggleMenu = useCallback(() => {
     setIsOpen(!isOpen);
   }, [isOpen]);
+
+  const closeMenu = () => {
+    setIsOpen(false);
+    setSelectedIndex(null);
+  };
 
   // Handle keyboard navigation
   useEffect(() => {
@@ -47,7 +52,7 @@ const NavigationMenu = () => {
         });
       } else if (key === "Enter" && selectedIndex !== null) {
         linkRefs.current[selectedIndex]?.click();
-        toggleMenu();
+        closeMenu();
       }
     };
 
@@ -56,13 +61,13 @@ const NavigationMenu = () => {
     return () => {
       window.removeEventListener("keydown", handleKeyDown);
     };
-  }, [selectedIndex, toggleMenu]);
+  }, [selectedIndex]);
 
   // Close menu when clicking outside
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       if (menuRef.current && !menuRef.current.contains(event.target as Node)) {
-        toggleMenu();
+        closeMenu();
       }
     };
 
@@ -71,7 +76,7 @@ const NavigationMenu = () => {
     return () => {
       document.body.removeEventListener("mousedown", handleClickOutside);
     };
-  }, [toggleMenu]);
+  }, []);
 
   useEffect(() => {
     const handleKeyDown = (event: KeyboardEvent) => {
@@ -211,23 +216,16 @@ const NavigationMenu = () => {
                     }}
                   >
                     {index === MENU_ITEMS.length - 1 ? (
-                      <Link
+                      <CustomButton
                         href="/contact"
-                        className="group bg-black px-4 py-2 rounded-3xl font-bold text-2xl flex items-center group transition-all duration-500 w-fit translate-y-[200%] lg:translate-y-[350%]"
+                        variant="secondary"
+                        buttonTransition="transition-all duration-500 translate-y-[200%] lg:translate-y-[350%]"
+                        arrowTransition="w-0 group-hover:w-6 h-6 transition-all duration-500 overflow-hidden"
+                        arrowClassName="bg-white rounded-full"
+                        className="font-bold text-2xl"
                       >
                         Contact
-                        <span
-                          className={cn(
-                            "w-0 group-hover:w-6 h-6 grid place-items-center bg-white rounded-full transition-all duration-500 overflow-hidden ml-2",
-                            selectedIndex === index && "w-6"
-                          )}
-                        >
-                          <ArrowRight
-                            className="text-[#FFBF00] -rotate-45"
-                            size={20}
-                          />
-                        </span>
-                      </Link>
+                      </CustomButton>
                     ) : (
                       <Link
                         href={item.href}

@@ -81,18 +81,7 @@ function AboutPage() {
                     Our Vision
                   </h2>
                   <p className="text-lg text-muted-foreground mb-4 leading-relaxed">
-                    Golden Ace Ventures LLP is committed to pioneering
-                    sustainable solutions across energy, infrastructure, and
-                    technology sectors. We envision a future where innovation
-                    drives sustainable growth and creates lasting value for our
-                    partners and communities.
-                  </p>
-                  <p className="text-lg text-muted-foreground leading-relaxed">
-                    With a focus on excellence and forward-thinking strategies,
-                    we&apos;re building a portfolio of ventures that address the
-                    most pressing challenges of our time while capitalizing on
-                    emerging opportunities.
-                  </p>
+                  To be the premier strategic consulting firm that drives transformation in renewable energy, infrastructure, smart technology  and high-growth sectors globally.                  </p>
                 </div>
                 <div className="relative h-[500px] rounded-2xl overflow-hidden shadow-xl">
                   <Image
@@ -154,17 +143,7 @@ function AboutPage() {
                     Our Mission
                   </h2>
                   <p className="text-lg text-muted-foreground mb-4 leading-relaxed">
-                    We strive to deliver exceptional value through innovative
-                    solutions that address complex challenges in energy,
-                    infrastructure, and technology. Our mission is to create
-                    sustainable impact while generating strong returns for our
-                    stakeholders.
-                  </p>
-                  <p className="text-lg text-muted-foreground leading-relaxed">
-                    By leveraging cutting-edge technologies and industry
-                    expertise, we aim to transform industries and contribute to
-                    a more sustainable and efficient future.
-                  </p>
+                  Empowering businesses with smart capital, strategic insights, and operational excellence, ensuring sustainable and profitable growth across industries.                  </p>
                 </div>
               </div>
             </TabsContent>

@@ -8,11 +8,11 @@ import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 
 const scrollingText = `
-Golden Ace Ventures is at the forefront of sustainable innovation, driving change across multiple sectors. Our commitment to renewable energy, infrastructure development, and technological advancement shapes a better future for generations to come. We believe in creating lasting impact through strategic investments and partnerships.
+Golden Ace Ventures LLP is a forward-thinking business consulting firm specializing in finance, infrastructure, smart technology, and investments. With a strong global presence, it develops high-potential projects with long-term sustainability.
 
-Our portfolio spans renewable energy projects, smart infrastructure solutions, and cutting-edge technology implementations. Each initiative is carefully selected and developed with sustainability at its core. Through our work, we're helping to build a more sustainable and technologically advanced world.
+We have a global presence, mainly operating out of India, Kenya, the UK, and Dubai.
 
-We combine innovation with responsibility, ensuring that our projects not only deliver strong returns but also contribute positively to society and the environment. Our team of experts brings together diverse perspectives and deep industry knowledge to tackle complex challenges and create meaningful solutions.
+We provide expertise in strategic capital, asset maximization, and business acceleration.
 `;
 
 const carouselImages = [

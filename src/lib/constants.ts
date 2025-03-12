@@ -34,8 +34,8 @@ export const SOCIAL_LINKS = [
 
 export const TEAM_MEMBERS = [
   {
-    name: "Anil Kumar Mittal",
-    position: "Chairman",
+    name: "Meenakshi Rao",
+    position: "Executive Director",
     // Changed from actual file paths to placeholder SVGs to prevent 404 errors
     image: "/placeholder.svg?height=700&width=500",
     bio: "Visionary leader with extensive experience in energy and infrastructure sectors.",
@@ -256,17 +256,17 @@ export const SERVICES_DATA = [
       {
         title: "Solar Projects",
         description:
-          "Full-cycle solutions from development, EPC, and financing. Expertise in large-scale solar tenders.",
+          "Solar EPC Project Support Financing – REC & IREDA-approved funding solutions for solar EPC projects. EPC Projects – Full-cycle execution from feasibility to implementation. Solar PV Module Manufacturing and Supplies – Manufacturing, sourcing, and supplying high-efficiency solar PV modules.",
       },
       {
         title: "Thermal Energy Solutions",
         description:
-          "Enhancing thermal plant efficiency through innovative technologies and operational improvements.",
+          "Online Cleaning Technology Pvt. Ltd. – Innovative thermal plant optimization solutions to enhance operational efficiency and reduce emissions.",
       },
       {
-        title: "Project Support Finance",
+        title: "Battery Energy Storage Systems (BESS)",
         description:
-          "REC & IREDA-approved financial solutions for solar EPC projects, enabling sustainable development.",
+          "Battery Energy Storage Solutions – Advanced BESS solutions for energy efficiency, grid stability, and renewable energy integration.",
       },
     ],
   },
@@ -280,17 +280,17 @@ export const SERVICES_DATA = [
       {
         title: "Roads & Highways",
         description:
-          "Execution of large-scale infrastructure projects with a focus on quality and sustainability.",
+          "Construction and execution of large-scale road projects through consultancy, planning, and project management.",
       },
       {
-        title: "LT & HT Panels",
+        title: "Electrical & Industrial Solutions",
         description:
-          "Electrical solutions for industrial and commercial sectors, ensuring reliability and efficiency.",
+          "Manufacturing and Supply of LT & HT Electrical Panels – Custom-built solutions for industrial and commercial applications.",
       },
       {
         title: "Urban & Industrial Development",
         description:
-          "Smart city projects, industrial parks, and comprehensive infrastructure development solutions.",
+          "Smart city projects, industrial parks, and large-scale infrastructure developments to support urban expansion and economic growth.",
       },
     ],
   },
@@ -304,17 +304,17 @@ export const SERVICES_DATA = [
       {
         title: "IoT & AI Integration",
         description:
-          "Enhancing efficiency in energy and infrastructure through smart, connected solutions.",
+          "Technology-driven solutions to enhance operational efficiency.",
       },
       {
         title: "Advanced Monitoring Systems",
         description:
-          "Real-time performance tracking and analytics for optimized operations.",
+          "Real-time performance tracking and optimization.",
       },
       {
         title: "Industrial Automation",
         description:
-          "AI-driven operational efficiency improvements for manufacturing and industrial processes.",
+          "Leveraging AI and automation for enhanced productivity and process efficiency.",
       },
     ],
   },
@@ -328,17 +328,17 @@ export const SERVICES_DATA = [
       {
         title: "Market Strategy & Growth Consulting",
         description:
-          "Helping businesses scale through targeted market strategies and growth initiatives.",
+          "Helping businesses scale, position, and expand into new markets.",
       },
       {
         title: "Investment & Financial Structuring",
         description:
-          "Mergers, acquisitions, and funding solutions tailored to business objectives.",
+          "Facilitating funding, M&A, and investor relations for startups and large enterprises.",
       },
       {
         title: "Sales & Marketing Advisory",
         description:
-          "High-impact branding & sales strategies to drive business growth and market presence.",
+          "High-impact sales strategies and brand positioning to maximize business outreach.",
       },
     ],
   },
@@ -352,17 +352,17 @@ export const SERVICES_DATA = [
       {
         title: "Incubation & Mentorship",
         description:
-          "Early-stage support for startups in energy, infrastructure, and technology sectors.",
+          "Supporting early-stage startups in energy, infrastructure, and technology.",
       },
       {
         title: "Investment Partnerships",
         description:
-          "Providing capital and strategic growth assistance to promising ventures.",
+          "Providing capital and strategic growth assistance to promising businesses.",
       },
       {
         title: "Gener8tor India Category 2 AIF Fund",
         description:
-          "General Partner investments in high-potential startups and growth-stage companies.",
+          "General Partner investment in the fund, supporting startups and high-growth ventures.",
       },
     ],
   },

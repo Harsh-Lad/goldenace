@@ -10,18 +10,12 @@ import { useEffect, useRef, useState } from "react";
 export default function ServicesSection() {
   const containerRef = useRef<HTMLDivElement>(null);
   const sectionRef = useRef<HTMLElement>(null);
-  const [activeIndex, setActiveIndex] = useState(0);
   const [containerSize, setContainerSize] = useState({ width: 0, height: 0 });
-  const [isInView, setIsInView] = useState(false);
   const cardRefs = useRef<Array<HTMLDivElement | null>>([]);
 
   // Configuration
   const SECTION_HEIGHT = "80vh";
   const PARALLAX_HEIGHT = "300vh";
-  // const CARD_SCALE_ACTIVE = 1.1;
-  // const CARD_SCALE_INACTIVE = 0.9;
-  // const CARD_OPACITY_ACTIVE = 1;
-  // const CARD_OPACITY_INACTIVE = 0.6;
 
   // Update container size on resize
   useEffect(() => {
@@ -57,7 +51,7 @@ export default function ServicesSection() {
   const rotationProgress = useTransform(
     scrollYProgress,
     [0.15, 0.9], // Rotate during 15-90% of scroll
-    [0, 1]
+    [0, 0.25] // Slower rotation by 0.25x
   );
 
   const wheelRotation = useTransform(
@@ -100,45 +94,6 @@ export default function ServicesSection() {
     return { x, y, angle };
   });
 
-  // Update active card based on rotation
-  useEffect(() => {
-    const unsubscribe = rotationProgress.onChange((value) => {
-      if (value > 0) {
-        const cardAngle = 360 / COMPANY_SERVICES.length;
-        const normalizedRotation = (value * -360) % 360;
-        const newIndex =
-          Math.round(normalizedRotation / cardAngle) % COMPANY_SERVICES.length;
-
-        if (newIndex >= 0 && newIndex < COMPANY_SERVICES.length) {
-          setActiveIndex(
-            Math.abs(COMPANY_SERVICES.length - newIndex) %
-              COMPANY_SERVICES.length
-          );
-        }
-      }
-    });
-
-    return () => unsubscribe();
-  }, [rotationProgress]);
-
-  // Check if section is in view
-  useEffect(() => {
-    const checkIfInView = () => {
-      if (sectionRef.current) {
-        const rect = sectionRef.current.getBoundingClientRect();
-        const isVisible =
-          rect.top <= window.innerHeight * 0.5 &&
-          rect.bottom >= window.innerHeight * 0.5;
-        setIsInView(isVisible);
-      }
-    };
-
-    window.addEventListener("scroll", checkIfInView);
-    checkIfInView(); // Initial check
-
-    return () => window.removeEventListener("scroll", checkIfInView);
-  }, []);
-
   return (
     <section
       ref={sectionRef}
@@ -154,13 +109,13 @@ export default function ServicesSection() {
           ref={containerRef}
           className="relative flex flex-col items-center justify-center py-16 px-4"
           style={{
-            height: isInView ? "100%" : "auto",
+            height: "100%",
             zIndex: 10,
           }}
         >
           {/* Radial Cards Container */}
           <div
-            className="relative mx-auto scale-90 translate-y-1/2"
+            className="relative mx-auto scale-90 translate-y-1/2 h-[300vh]"
             style={{
               width: containerSize.width,
               height: containerSize.height,
@@ -178,7 +133,6 @@ export default function ServicesSection() {
             >
               {COMPANY_SERVICES.map((service, index) => {
                 const { x, y, angle } = cardTransforms[index];
-                const isActive = index === activeIndex;
 
                 return (
                   <motion.div
@@ -199,7 +153,7 @@ export default function ServicesSection() {
                         [0, 1],
                         [0, angle + 90]
                       ),
-                      zIndex: isActive ? 100 : COMPANY_SERVICES.length - index,
+                      zIndex: COMPANY_SERVICES.length - index,
                       transformOrigin: "center center",
                     }}
                   >
@@ -207,9 +161,7 @@ export default function ServicesSection() {
                       className="relative w-full h-full"
                       style={{
                         backgroundColor: service.color,
-                        filter: isActive
-                          ? "brightness(1.2)"
-                          : "brightness(0.9)",
+                        filter: "brightness(0.9)",
                       }}
                     >
                       <Image

@@ -89,6 +89,9 @@ dependencies:
   '@react-three/fiber':
     specifier: ^9.1.0
     version: 9.1.0(@types/react@19.0.10)(react-dom@19.0.0)(react@19.0.0)(three@0.174.0)
+  '@tailwindcss/oxide-linux-x64-gnu':
+    specifier: ^4.0.13
+    version: 4.0.13
   class-variance-authority:
     specifier: ^0.7.1
     version: 0.7.1
@@ -2209,6 +2212,13 @@ packages:
     requiresBuild: true
     dev: true
     optional: true
+
+  /@tailwindcss/oxide-linux-x64-gnu@4.0.13:
+    resolution: {integrity: sha512-sQRH09faifF9w9WS6TKDWr1oLi4hoPx0EIWXZHQK/jcjarDpXGQ2DbF0KnALJCwWBxOIP/1nrmU01fZwwMzY3g==}
+    engines: {node: '>= 10'}
+    cpu: [x64]
+    os: [linux]
+    dev: false
 
   /@tailwindcss/oxide-linux-x64-musl@4.0.12:
     resolution: {integrity: sha512-uylhWq6OWQ8krV8Jk+v0H/3AZKJW6xYMgNMyNnUbbYXWi7hIVdxRKNUB5UvrlC3RxtgsK5EAV2i1CWTRsNcAnA==}

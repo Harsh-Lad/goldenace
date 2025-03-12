@@ -1,21 +1,22 @@
+"use client";
+
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { SOCIAL_LINKS } from "@/lib/constants";
-import Image from "next/image";
+import { cn } from "@/lib/utils";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 function Footer() {
+  const pathname = usePathname();
   return (
-    <footer className="relative py-16 px-4 md:px-8 overflow-hidden">
-      <Link href={"/"} className="flex justify-center mb-6">
-        <Image
-          src={"/assets/images/black-and-white-logo.png"}
-          alt="Logo"
-          width={80}
-          height={80}
-        />
-      </Link>
-
+    <footer
+      className={cn(
+        "relative py-16 px-4 md:px-8 overflow-hidden",
+        pathname === "/" &&
+          "backdrop-blur-[10px] bg-[rgba(255,255,255,0.05)] border-t rounded-t-xl border-[rgba(255,255,255,0.3)"
+      )}
+    >
       {/* Rest of the footer content remains the same... */}
       <div className="relative z-10">
         {/* Newsletter Section */}

@@ -17,19 +17,17 @@ const Home: NextPage = () => {
       {/* Main Content */}
       <HomePageHeroSection />
       <ShowReel />
-      <AboutSection />
-
-      {/* Services */}
-      {/* <Services /> */}
-
-      {/* Project Cards Section */}
-      <Projects />
-
-      {/* Blog Carousel */}
-      <Blogs />
-
-      {/* News and Events Section */}
-      <NewsAndEvents />
+      <section className="backdrop-blur-[10px] bg-[rgba(255,255,255,0.05)]">
+        <AboutSection />
+        {/* Services */}
+        {/* <Services /> */}
+        {/* Project Cards Section */}
+        <Projects />
+        {/* Blog Carousel */}
+        <Blogs />
+        {/* News and Events Section */}
+        <NewsAndEvents />
+      </section>
     </section>
   );
 };

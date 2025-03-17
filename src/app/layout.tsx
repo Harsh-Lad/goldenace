@@ -1,6 +1,5 @@
 import NavigationMenuFooter from "@/components/common/navigation-menu";
 import Footer from "@/components/common/page-footer";
-import Header from "@/components/common/page-header";
 import Providers from "@/components/providers";
 import type { Metadata } from "next";
 import { Geist, Azeret_Mono as Geist_Mono } from "next/font/google";
@@ -35,8 +34,6 @@ export default function RootLayout({
       >
         <Providers>
           <NextTopLoader showSpinner={false} color="#FFBF00" />
-
-          <Header />
           {children}
           <NavigationMenuFooter />
           <Footer />

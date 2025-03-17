@@ -65,7 +65,7 @@ function FBXModel({ scrollProgress }: FBXModelProps) {
         ref={lightRef}
         castShadow
         position={[1, 1, 1]}
-        intensity={50}
+        intensity={40}
         color={"#ffd700"}
       />
     </>
@@ -104,31 +104,31 @@ export default function ScrollAnimation() {
         <directionalLight
           castShadow
           position={[0, -0.5, -1]}
-          intensity={30}
+          intensity={13}
           color={"#dbb549"}
         />
         <directionalLight
           castShadow
           position={[-1, 1, -1.5]}
-          intensity={30}
+          intensity={13}
           color={"#dbb549"}
         />
         <directionalLight
           castShadow
           position={[1, -1, -1.5]}
-          intensity={30}
+          intensity={13}
           color={"#dbb549"}
         />
         <directionalLight
           castShadow
           position={[0.5, 0.5, 2]}
-          intensity={30}
+          intensity={13}
           color={"#dbb549"}
         />
         <directionalLight
           castShadow
           position={[-1, -1, -1.5]}
-          intensity={50}
+          intensity={15}
           color={"#dbb549"}
         />{" "}
         {/* Second directional light from behind */}

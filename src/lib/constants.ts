@@ -424,3 +424,85 @@ export const COMPANY_PROJECTS_EXTENDED = [
     tags: ["Finance", "Renewable", "Advisory"],
   },
 ];
+
+
+
+export interface Section {
+  number: string;
+  category: string;
+  title: string;
+  mockupImage: string;
+  isVideo: boolean;
+}
+
+export const homePageScrollSections: Section[] = [
+  {
+    number: "01",
+    category: "COLLABORATE",
+    title: "Bridge brands and creators seamlessly.",
+    mockupImage: "/images/mockups/Collaborate.png",
+    isVideo: false,
+  },
+  {
+    number: "02",
+    category: "CREATE",
+    title: "Deliver impactful, trendsetting content.",
+    mockupImage: "/images/mockups/Create.png",
+    isVideo: false,
+  },
+  {
+    number: "03",
+    category: "AMPLIFY",
+    title: "Transform partnerships into measurable success.",
+    mockupImage: "/images/mockups/Amplify.png",
+    isVideo: false,
+  },
+];
+
+export const creatorPageScrollSections: Section[] = [
+  {
+    number: "01",
+    category: "JOIN",
+    title: "Download Our App",
+    mockupImage: "/images/mockups/creators/1.svg",
+    isVideo: false,
+  },
+  {
+    number: "02",
+    category: "CREATE",
+    title: "Enjoy Barter Deals",
+    mockupImage: "/images/mockups/creators/2.webm",
+    isVideo: true,
+  },
+  {
+    number: "03",
+    category: "THRIVE WITH US",
+    title: "Enjoy The Experience",
+    mockupImage: "/images/mockups/creators/3.svg",
+    isVideo: false,
+  },
+];
+
+export const brandPageScrollSections: Section[] = [
+  {
+    number: "01",
+    category: "JOIN",
+    title: "Download Our App",
+    mockupImage: "/images/mockups/brands/1.svg",
+    isVideo: false,
+  },
+  {
+    number: "02",
+    category: "PROMOTE",
+    title: "Advertise better",
+    mockupImage: "/images/mockups/brands/2.svg",
+    isVideo: false,
+  },
+  {
+    number: "03",
+    category: "PARTNER",
+    title: "Leverage Creators",
+    mockupImage: "/images/mockups/brands/3.svg",
+    isVideo: false,
+  },
+];

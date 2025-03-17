@@ -1,17 +1,13 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 "use client";
 
-import CircularText from "@/components/common/circular-text";
 import { cn } from "@/lib/utils";
 import { AnimatePresence, motion } from "framer-motion";
 import { Pause, Play, Volume2, VolumeX } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 
-interface ShowReelProps {
-  className?: string;
-}
 
-export function ShowReel({ className }: ShowReelProps) {
+export function ShowReel() {
   const [isPlaying, setIsPlaying] = useState(false);
   const [isMuted, setIsMuted] = useState(true);
   const [isVisible, setIsVisible] = useState(false);
@@ -63,42 +59,12 @@ export function ShowReel({ className }: ShowReelProps) {
     }
   };
 
-  const handleShowReel = () => {
-    if (videoRef.current) {
-      videoRef.current.play();
-      videoRef.current.scrollIntoView({
-        behavior: "smooth",
-        block: "center",
-        inline: "center",
-      });
-      setIsPlaying(true);
-    }
-  };
 
   return (
-    <section className="relative m-6">
-      <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-transparent to-black/50 z-0"></div>
       <section
-        className="px-4 sm:px-6 md:px-9 2xl:px-12 py-10 sm:py-20 relative"
+        className="relative w-screen h-screen flex items-center justify-center"
         ref={containerRef}
       >
-        <motion.button
-          type="button"
-          onClick={handleShowReel}
-          className={cn(
-            "absolute top-0 rounded-full flex items-center justify-center z-10 bg-black translate-x-8 sm:translate-x-12",
-            "before:absolute before:w-full before:h-full before:rounded-full before:border before:border-black",
-            !isPlaying && "before:animate-ping before:opacity-75",
-            "transition-transform hover:scale-110",
-            className
-          )}
-        >
-          <CircularText
-            text="Golden*Ace*Ventures"
-            onHover="slowDown"
-            spinDuration={20}
-          />
-        </motion.button>
         <AnimatePresence>
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
@@ -110,13 +76,13 @@ export function ShowReel({ className }: ShowReelProps) {
               stiffness: 300,
               damping: 25,
             }}
-            className="flex items-center justify-center bg-black/90 rounded-xl overflow-hidden shadow-lg"
+            className="flex items-center h-screen justify-center bg-black/90 rounded-xl overflow-hidden shadow-lg"
           >
             <div className="relative w-full">
               <video
                 ref={videoRef}
                 className={cn(
-                  "w-full object-cover transition-all duration-300 ease-in-out max-h-[90vh] aspect-video"
+                  "w-screen object-cover transition-all duration-300 ease-in-out max-h-[85svh] "
                 )}
                 src="/assets/videos/video.mp4"
                 loop
@@ -157,6 +123,5 @@ export function ShowReel({ className }: ShowReelProps) {
           </motion.div>
         </AnimatePresence>
       </section>
-    </section>
   );
 }

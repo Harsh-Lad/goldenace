@@ -88,7 +88,7 @@ export default function AboutSection() {
   return (
     <section className="py-16 px-4">
       <div className="max-w-7xl mx-auto">
-        <SectionHeader title="About" description="Goldenace Ventures LLP" />
+        <SectionHeader title="" description="" />
 
         <motion.h2
           initial={{ opacity: 0, y: 30 }}

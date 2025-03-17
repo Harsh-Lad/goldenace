@@ -1,257 +1,106 @@
-"use client";
+"use client"
 
-import { useIsMobile } from "@/hooks/use-mobile";
-import { MENU_ITEMS } from "@/lib/constants";
-import { cn } from "@/lib/utils";
-import { AnimatePresence, motion } from "framer-motion";
-import Link from "next/link";
-import { usePathname } from "next/navigation";
-import { useCallback, useEffect, useRef, useState } from "react";
-import CustomButton from "./custom-button";
+import { useState } from "react"
+import Link from "next/link"
+import { Button } from "@/components/ui/button"
+import Image from "next/image"
+import Logo from "../../../public/assets/images/logo.png"
 
-const NavigationMenu = () => {
-  const [isOpen, setIsOpen] = useState(false);
-  const pathname = usePathname();
-  const isMobile = useIsMobile();
-  const linkRefs = useRef<(HTMLAnchorElement | null)[]>([]);
-  const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
-  const menuRef = useRef<HTMLDivElement>(null);
-
-  const toggleMenu = useCallback(() => {
-    setIsOpen(!isOpen);
-  }, [isOpen]);
-
-  const closeMenu = () => {
-    setIsOpen(false);
-    setSelectedIndex(null);
-  };
-
-  // Handle keyboard navigation
-  useEffect(() => {
-    const handleKeyDown = (event: KeyboardEvent) => {
-      const key = event.key;
-      if (/^[1-6]$/.test(key)) {
-        const index = parseInt(key) - 1;
-        if (index < MENU_ITEMS.length) {
-          setSelectedIndex(index);
-          linkRefs.current[index]?.focus();
-        }
-      } else if (key === "ArrowUp") {
-        setSelectedIndex((prev) => {
-          const newIndex =
-            prev === null || prev === 0 ? MENU_ITEMS.length - 1 : prev - 1;
-          linkRefs.current[newIndex]?.focus();
-          return newIndex;
-        });
-      } else if (key === "ArrowDown") {
-        setSelectedIndex((prev) => {
-          const newIndex =
-            prev === null || prev === MENU_ITEMS.length - 1 ? 0 : prev + 1;
-          linkRefs.current[newIndex]?.focus();
-          return newIndex;
-        });
-      } else if (key === "Enter" && selectedIndex !== null) {
-        linkRefs.current[selectedIndex]?.click();
-        closeMenu();
-      }
-    };
-
-    window.addEventListener("keydown", handleKeyDown);
-
-    return () => {
-      window.removeEventListener("keydown", handleKeyDown);
-    };
-  }, [selectedIndex]);
-
-  // Close menu when clicking outside
-  useEffect(() => {
-    const handleClickOutside = (event: MouseEvent) => {
-      if (menuRef.current && !menuRef.current.contains(event.target as Node)) {
-        closeMenu();
-      }
-    };
-
-    document.body.addEventListener("mousedown", handleClickOutside);
-
-    return () => {
-      document.body.removeEventListener("mousedown", handleClickOutside);
-    };
-  }, []);
-
-  useEffect(() => {
-    const handleKeyDown = (event: KeyboardEvent) => {
-      if (
-        (navigator.platform.includes("Mac") ? event.metaKey : event.ctrlKey) &&
-        event.key === "m" &&
-        !isOpen
-      ) {
-        toggleMenu();
-      }
-
-      if (event.key === "Escape" && isOpen) {
-        toggleMenu();
-      }
-    };
-
-    window.addEventListener("keydown", handleKeyDown);
-
-    return () => {
-      window.removeEventListener("keydown", handleKeyDown);
-    };
-  }, [isOpen, toggleMenu]);
-
-  useEffect(() => {
-    if (isOpen) {
-      // set selected index to the current page based on pathname
-      const index = MENU_ITEMS.findIndex((item) => item.href === pathname);
-      setSelectedIndex(index);
-    }
-  }, [isOpen, pathname]);
+const Navbar = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false)
 
   return (
-    <nav className="fixed bottom-0 right-0 z-50 w-full" ref={menuRef}>
-      <div className="flex justify-end items-center p-8 gap-4">
-        {/* Menu Toggle Button */}
-        <button
-          onClick={toggleMenu}
-          className="z-50 flex flex-col items-end gap-2 cursor-pointer bg-[#FFBF00] rounded-lg p-4"
-          aria-label={isOpen ? "Close menu" : "Open menu"}
+    <nav className="bg-black/40 backdrop-blur-3xl fixed w-full top-0 z-50 border-b-2 border-b-[#c3932f]">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-4">
+        <div className="flex justify-between items-center h-20">
+          <div className="flex-shrink-0 flex items-center">
+            <Link href="/" className="flex items-center space-x-1">
+              <div className="">
+                <Image src={Logo} alt="" className="h-10 w-auto"/>
+              </div>
+            </Link>
+          </div>
+
+          <div className="hidden md:flex md:items-center md:space-x-8">
+            <Link href="#" className="text-gray-400 hover:text-[#c3932f] transition-colors">
+              Home
+            </Link>
+            <Link href="#" className="text-gray-400 hover:text-[#c3932f] transition-colors">
+              About
+            </Link>
+            <Link href="#" className="text-gray-400 hover:text-[#c3932f] transition-colors">
+              Services
+            </Link>
+            <Link href="#" className="text-gray-400 hover:text-[#c3932f] transition-colors">
+              Ventures
+            </Link>
+            <Link href="#" className="text-gray-400 hover:text-[#c3932f] transition-colors">
+              Projects
+            </Link>
+            <Link href="#" className="text-gray-400 hover:text-[#c3932f] transition-colors">
+              Blog
+            </Link>
+            <Link href="#" className="text-gray-400 hover:text-[#c3932f] transition-colors">
+              Media
+            </Link>
+            <Link href="#" className="text-gray-400 hover:text-[#c3932f] transition-colors">
+              Resources
+            </Link>
+            <Link href="#" className="text-gray-400 hover:text-[#c3932f] transition-colors">
+              Careers
+            </Link>
+          </div>
+
+          <div className="md:hidden">
+            <button className="relative w-10 h-10 focus:outline-none" onClick={() => setIsMenuOpen(!isMenuOpen)}>
+              <div className="absolute w-6 transform left-1/2 -translate-x-1/2">
+                <span
+                  className={`absolute h-0.5 w-6 bg-gray-800 transform transition duration-300 ease-in-out ${
+                    isMenuOpen ? "rotate-45 translate-y-0" : "-translate-y-2"
+                  }`}
+                />
+                <span
+                  className={`absolute h-0.5 bg-gray-800 transform transition-all duration-300 ease-in-out ${
+                    isMenuOpen ? "w-0 opacity-0" : "w-6 opacity-100"
+                  }`}
+                />
+                <span
+                  className={`absolute h-0.5 w-6 bg-gray-800 transform transition duration-300 ease-in-out ${
+                    isMenuOpen ? "-rotate-45 translate-y-0" : "translate-y-2"
+                  }`}
+                />
+              </div>
+            </button>
+          </div>
+        </div>
+
+        <div
+          className={`md:hidden overflow-hidden transition-all duration-300 ease-in-out ${
+            isMenuOpen ? "max-h-64 opacity-100" : "max-h-0 opacity-0"
+          }`}
         >
-          <motion.span className="block h-1.5 rounded-full bg-white w-8" />
-          <motion.span
-            className="block h-1.5 rounded-full bg-white w-16"
-            animate={{
-              width: 16,
-              x: isOpen ? -16 : 0,
-            }}
-            transition={{ duration: 0.3 }}
-          />
-        </button>
+          <div className="flex flex-col space-y-4 pb-6">
+            <Link href="#" className="text-gray-400 hover:text-[#c3932f] transition-colors">
+              Home
+            </Link>
+            <Link href="#" className="text-gray-400 hover:text-[#c3932f] transition-colors">
+              About
+            </Link>
+            <Link href="#" className="text-gray-400 hover:text-[#c3932f] transition-colors">
+              Blog
+            </Link>
+            <Link href="#" className="text-gray-400 hover:text-[#c3932f] transition-colors">
+              Pages
+            </Link>
+            <Button className="bg-[#c3932f] hover:bg-[#b38429] text-white rounded-full transition-all duration-300 transform hover:scale-105">
+              Pitch your startup →
+            </Button>
+          </div>
+        </div>
       </div>
-
-      {/* Navigation Panel with Two-Phased Animation */}
-      <AnimatePresence>
-        {isOpen && (
-          <motion.div
-            initial="closed"
-            animate="open"
-            exit="closed"
-            variants={{
-              open: {
-                transition: {
-                  staggerChildren: 0.1,
-                },
-              },
-              closed: {
-                transition: {
-                  staggerChildren: 0.05,
-                  staggerDirection: -1,
-                },
-              },
-            }}
-            className="fixed bottom-0 right-0 h-full pointer-events-none"
-          >
-            {/* Background expansion - first vertical then horizontal */}
-            <motion.div
-              className="absolute bottom-0 right-0 bg-[#FFBF00] max-h-[90svh] origin-bottom-right pointer-events-auto mx-3 my-3 rounded-3xl"
-              variants={{
-                closed: {
-                  height: 0,
-                  width: 0,
-                  opacity: 0,
-                  transition: {
-                    width: { duration: 0.3, ease: "easeIn" },
-                    height: { duration: 0.3, ease: "easeIn", delay: 0.2 },
-                    opacity: { duration: 0.2, delay: 0.4 },
-                  },
-                },
-                open: {
-                  height: "100vh",
-                  width: isMobile ? "300px" : "400px",
-                  opacity: 1,
-                  transition: {
-                    height: { duration: 0.5, ease: "easeOut" },
-                    width: { duration: 0.4, ease: "easeOut", delay: 0.4 },
-                    opacity: { duration: 0.3 },
-                  },
-                },
-              }}
-            />
-
-            {/* Content container - only appears after background expansion */}
-            <motion.div
-              className={cn(
-                "fixed top-0 right-0 h-full flex flex-col justify-between py-24 px-10 pointer-events-auto",
-                isMobile ? "w-[300px]" : "w-[400px]"
-              )}
-              variants={{
-                closed: {
-                  opacity: 0,
-                  transition: { duration: 0.2 },
-                },
-                open: {
-                  opacity: 1,
-                  transition: { duration: 0.3, delay: 0.8 },
-                },
-              }}
-            >
-              {/* Menu Items */}
-              <ul className="flex flex-col space-y-6 mt-18">
-                {MENU_ITEMS.map((item, index) => (
-                  <motion.li
-                    key={item.href}
-                    variants={{
-                      closed: {
-                        x: 20,
-                        opacity: 0,
-                      },
-                      open: {
-                        x: 0,
-                        opacity: 1,
-                        transition: {
-                          delay: 0.9 + index * 0.05,
-                          duration: 0.3,
-                        },
-                      },
-                    }}
-                  >
-                    {index === MENU_ITEMS.length - 1 ? (
-                      <CustomButton
-                        href="/contact"
-                        variant="secondary"
-                        buttonTransition="transition-all duration-500 translate-y-[200%] lg:translate-y-[350%]"
-                        arrowTransition="w-0 group-hover:w-6 h-6 transition-all duration-500 overflow-hidden"
-                        arrowClassName="bg-white rounded-full"
-                        className="font-bold text-2xl"
-                      >
-                        Contact
-                      </CustomButton>
-                    ) : (
-                      <Link
-                        href={item.href}
-                        className={cn(
-                          "text-2xl font-bold text-white hover:text-black flex items-center group transition-all duration-500 focus:outline-none",
-                          selectedIndex === index && "text-black"
-                        )}
-                        ref={(el) => {
-                          if (el) linkRefs.current[index] = el;
-                        }}
-                      >
-                        {item.title}
-                      </Link>
-                    )}
-                  </motion.li>
-                ))}
-              </ul>
-
-              {/* Bottom spacer to ensure content doesn't overlap with the fixed bottom buttons */}
-              <div className="h-24"></div>
-            </motion.div>
-          </motion.div>
-        )}
-      </AnimatePresence>
     </nav>
-  );
-};
+  )
+}
 
-export default NavigationMenu;
+export default Navbar
+

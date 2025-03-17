@@ -7,7 +7,7 @@ import { ShowReel } from "@/components/pages/home/show-reel";
 import type { NextPage } from "next";
 import ScrollAnimation from "../components/scroll-animation";
 import ScrollSections from "@/components/common/scroll-section";
-
+import { LeadGenerationForm } from "@/components/pages/home/lead-generation-form";
 
 const Home: NextPage = () => {
   return (
@@ -21,6 +21,9 @@ const Home: NextPage = () => {
         <Projects />
         <Blogs />
         <NewsAndEvents />
+        <div className="fixed bottom-5 right-5 z-50">
+          <LeadGenerationForm />
+        </div>
       </section>
     </section>
   );

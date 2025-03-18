@@ -36,22 +36,19 @@ export const TEAM_MEMBERS = [
   {
     name: "Meenakshi Rao",
     position: "Executive Director",
-    // Changed from actual file paths to placeholder SVGs to prevent 404 errors
-    image: "/placeholder.svg?height=700&width=500",
+    image: "/assets/images/meenakshi.jpg", // Local image path from the public directory
     bio: "Visionary leader with extensive experience in energy and infrastructure sectors.",
   },
   {
     name: "Aparajeet Mittal",
     position: "Managing Partner",
-    // Changed from actual file paths to placeholder SVGs to prevent 404 errors
-    image: "/placeholder.svg?height=700&width=500",
+    image: "/assets/images/ak.jpg", // Local image path from the public directory
     bio: "Strategic thinker driving innovation and growth across the organization.",
   },
   {
     name: "Nisarg Doshi",
     position: "Chief Operations Officer",
-    // Changed from actual file paths to placeholder SVGs to prevent 404 errors
-    image: "/placeholder.svg?height=700&width=500",
+    image: "/assets/images/son.jpg", // Local image path from the public directory
     bio: "Operations expert ensuring excellence in project execution and delivery.",
   },
 ];
@@ -165,21 +162,21 @@ export const COMPANY_PROJECTS = [
       Currently operational units contribute to a significant portion of the plant's overall power generation.
       Information indicates that the plants current operating capacity is over 1210 MW.
       There is also information showing that MahaGenco has plans to, and or is building a new 660MW unit.`,
-    image: "/placeholder.svg?height=400&width=400",
+    image: "/assets/images/son.jpg",
   },
   {
     id: 2,
     title: "Solar Power Integration Project",
     description:
       "Implementation of large-scale solar power integration with existing thermal infrastructure. This project aims to reduce carbon emissions while maintaining reliable power output. The hybrid approach combines the benefits of renewable energy with the stability of traditional power generation methods.",
-    image: "/placeholder.svg?height=400&width=400",
+    image: "/assets/images/meenakshi.jpg",
   },
   {
     id: 3,
     title: "Smart Grid Implementation",
     description:
       "Modernizing the power distribution network with smart grid technologies to improve efficiency and reliability. This project includes advanced metering infrastructure, automated distribution systems, and real-time monitoring capabilities to optimize power delivery and reduce outages.",
-    image: "/placeholder.svg?height=400&width=400",
+    image: "/assets/images/ak.jpg",
   },
 ];
 
@@ -440,21 +437,21 @@ export const homePageScrollSections: Section[] = [
     number: "01",
     category: "COLLABORATE",
     title: "Bridge brands and creators seamlessly.",
-    mockupImage: "/images/mockups/Collaborate.png",
+    mockupImage: "/assets/images/meenakshi.jpg",
     isVideo: false,
   },
   {
     number: "02",
     category: "CREATE",
     title: "Deliver impactful, trendsetting content.",
-    mockupImage: "/images/mockups/Create.png",
+    mockupImage: "/assets/images/son.jpg",
     isVideo: false,
   },
   {
     number: "03",
     category: "AMPLIFY",
     title: "Transform partnerships into measurable success.",
-    mockupImage: "/images/mockups/Amplify.png",
+    mockupImage: "/assets/images/ak.jpg",
     isVideo: false,
   },
 ];

@@ -22,31 +22,31 @@ const Navbar = () => {
           </div>
 
           <div className="hidden md:flex md:items-center md:space-x-8">
-            <Link href="#" className="text-gray-400 hover:text-[#c3932f] transition-colors">
+            <Link href="/" className="text-gray-400 hover:text-[#c3932f] transition-colors">
               Home
             </Link>
-            <Link href="#" className="text-gray-400 hover:text-[#c3932f] transition-colors">
+            <Link href="/about" className="text-gray-400 hover:text-[#c3932f] transition-colors">
               About
             </Link>
-            <Link href="#" className="text-gray-400 hover:text-[#c3932f] transition-colors">
+            <Link href="/services" className="text-gray-400 hover:text-[#c3932f] transition-colors">
               Services
             </Link>
-            <Link href="#" className="text-gray-400 hover:text-[#c3932f] transition-colors">
+            <Link href="/ventures" className="text-gray-400 hover:text-[#c3932f] transition-colors">
               Ventures
             </Link>
-            <Link href="#" className="text-gray-400 hover:text-[#c3932f] transition-colors">
+            <Link href="/projects" className="text-gray-400 hover:text-[#c3932f] transition-colors">
               Projects
             </Link>
-            <Link href="#" className="text-gray-400 hover:text-[#c3932f] transition-colors">
+            <Link href="/blog" className="text-gray-400 hover:text-[#c3932f] transition-colors">
               Blog
             </Link>
-            <Link href="#" className="text-gray-400 hover:text-[#c3932f] transition-colors">
+            <Link href="/media" className="text-gray-400 hover:text-[#c3932f] transition-colors">
               Media
             </Link>
-            <Link href="#" className="text-gray-400 hover:text-[#c3932f] transition-colors">
+            <Link href="/resources" className="text-gray-400 hover:text-[#c3932f] transition-colors">
               Resources
             </Link>
-            <Link href="#" className="text-gray-400 hover:text-[#c3932f] transition-colors">
+            <Link href="/careers" className="text-gray-400 hover:text-[#c3932f] transition-colors">
               Careers
             </Link>
           </div>
@@ -83,13 +83,13 @@ const Navbar = () => {
             <Link href="#" className="text-gray-400 hover:text-[#c3932f] transition-colors">
               Home
             </Link>
-            <Link href="#" className="text-gray-400 hover:text-[#c3932f] transition-colors">
+            <Link href="/about" className="text-gray-400 hover:text-[#c3932f] transition-colors">
               About
             </Link>
-            <Link href="#" className="text-gray-400 hover:text-[#c3932f] transition-colors">
+            <Link href="/blog" className="text-gray-400 hover:text-[#c3932f] transition-colors">
               Blog
             </Link>
-            <Link href="#" className="text-gray-400 hover:text-[#c3932f] transition-colors">
+            <Link href="/pages" className="text-gray-400 hover:text-[#c3932f] transition-colors">
               Pages
             </Link>
             <Button className="bg-[#c3932f] hover:bg-[#b38429] text-white rounded-full transition-all duration-300 transform hover:scale-105">
@@ -103,4 +103,3 @@ const Navbar = () => {
 }
 
 export default Navbar
-

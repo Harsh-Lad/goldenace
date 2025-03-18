@@ -51,7 +51,7 @@ const COMPANIES = [
   },
   {
     name: "GAME Solar",
-    logo: "/placeholder.svg?height=200&width=200",
+    logo: "https://rilstaticasset.akamaized.net/sites/default/files/2023-09/green-energy.jpg",
     category: "Renewable Energy",
     description:
       "Leading provider of solar energy solutions for residential and commercial applications.",
@@ -217,7 +217,7 @@ export default function VenturesPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
             <div className="relative h-[400px] rounded-xl overflow-hidden shadow-xl border border-[#FFBF00]/20">
               <Image
-                src="/placeholder.svg?height=800&width=600&text=GAME+Solar"
+                src="https://rilstaticasset.akamaized.net/sites/default/files/2023-09/green-energy.jpg"
                 alt={featuredVenture.name}
                 fill
                 className="object-cover"

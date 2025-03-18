@@ -85,13 +85,13 @@ function AboutPage() {
                 </div>
                 <div className="relative h-[500px] rounded-2xl overflow-hidden shadow-xl">
                   <Image
-                    src="/placeholder.svg?height=1000&width=800"
+                    src="https://sloanreview.mit.edu/wp-content/uploads/2024/08/2024FALL_Misra-1290x860-1.jpg" // Image address link
                     alt="Golden Ace Ventures Vision"
                     fill
                     className="object-cover"
                     onError={(e) => {
                       const target = e.target as HTMLImageElement;
-                      target.src = "/placeholder.svg?height=1000&width=800";
+                      target.src = "https://via.placeholder.com/1000x800"; // Fallback to a placeholder image link
                       target.onerror = null; // Prevent infinite loop
                     }}
                   />
@@ -115,13 +115,13 @@ function AboutPage() {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
                 <div className="relative h-[500px] rounded-2xl overflow-hidden shadow-xl order-2 md:order-1">
                   <Image
-                    src="/placeholder.svg?height=1000&width=800"
+                    src="https://media.licdn.com/dms/image/v2/D5612AQHpyIe8J9pfEg/article-cover_image-shrink_720_1280/article-cover_image-shrink_720_1280/0/1708436440651?e=2147483647&v=beta&t=eEnvex6y8Bb4PPEEZQ7s87wZt_Yr4lhp6qKHB7WzcvY"
                     alt="Golden Ace Ventures Mission"
                     fill
                     className="object-cover"
                     onError={(e) => {
                       const target = e.target as HTMLImageElement;
-                      target.src = "/placeholder.svg?height=1000&width=800";
+                      target.src = "https://media.licdn.com/dms/image/v2/D5612AQHpyIe8J9pfEg/article-cover_image-shrink_720_1280/article-cover_image-shrink_720_1280/0/1708436440651?e=2147483647&v=beta&t=eEnvex6y8Bb4PPEEZQ7s87wZt_Yr4lhp6qKHB7WzcvY";
                       target.onerror = null;
                     }}
                   />

@@ -66,6 +66,7 @@ export function LeadGenerationForm() {
       } else {
         alert("Submission failed. Please try again."); // Temporary error message
       }
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     } catch (error) {
       alert("There was a problem submitting your information. Please try again."); // Temporary error message
     }

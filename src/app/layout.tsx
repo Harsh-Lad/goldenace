@@ -18,7 +18,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Goldenace Ventures",
+  title: "Goldenace-Ventures",
   description: "Goldenace Ventures LLP",
 };
 

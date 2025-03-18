@@ -86,10 +86,10 @@ export default function ScrollSections() {
                         {section.number}
                       </span>
                       <div className="mt-4 space-y-2">
-                        <span className="text-xs lg:text-sm tracking-[0.6rem]">
+                        <span className="text-md md:text-2xl 2xl:text-[2.2rem] mt-2 leading-[1rem] md:leading-[2rem] 2xl:leading-[3rem] font-medium">
                           {section.category}
                         </span>
-                        <h2 className="text-md md:text-2xl 2xl:text-[2.2rem] mt-2 leading-[1rem] md:leading-[2rem] 2xl:leading-[3rem] font-medium">
+                        <h2 className="text-xs lg:text-sm ">
                           {section.title}
                         </h2>
                       </div>

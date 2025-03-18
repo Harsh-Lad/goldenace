@@ -435,23 +435,23 @@ export interface Section {
 export const homePageScrollSections: Section[] = [
   {
     number: "01",
-    category: "COLLABORATE",
-    title: "Bridge brands and creators seamlessly.",
-    mockupImage: "/assets/images/meenakshi.jpg",
+    category: "Renewable, Green & Thermal Energy",
+    title: "Solar Projects,Thermal Energy Solutions: for thermal plant optimization.",
+    mockupImage: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ-UaJGpZa3q920qlt7LkWqnJKab__e8qAchg&s",
     isVideo: false,
   },
   {
     number: "02",
-    category: "CREATE",
-    title: "Deliver impactful, trendsetting content.",
-    mockupImage: "/assets/images/son.jpg",
+    category: "Infrastructure Development",
+    title: "Roads & Highways, LT & HT Panels, Urban & Industrial Development",
+    mockupImage: "https://business.cornell.edu/wp-content/uploads/sites/2/2022/06/India-infrastructure.featured.600x400-600x400.jpg",
     isVideo: false,
   },
   {
     number: "03",
-    category: "AMPLIFY",
-    title: "Transform partnerships into measurable success.",
-    mockupImage: "/assets/images/ak.jpg",
+    category: "Smart Tech & Innovation",
+    title: "IoT & AI Integration, Advanced Monitoring Systems, Industrial Automation",
+    mockupImage: "https://www.techwalls.com/wp-content/uploads/2018/10/smart-city-1.jpg",
     isVideo: false,
   },
 ];

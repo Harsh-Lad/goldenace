@@ -16,9 +16,9 @@ We provide expertise in strategic capital, asset maximization, and business acce
 `;
 
 const carouselImages = [
-  "/assets/images/texture.png",
-  "/assets/images/texture.png",
-  "/assets/images/texture.png",
+  "https://www.goldenaceventures.com/images/slide03.jpg",
+  "https://www.goldenaceventures.com/images/slide01.jpg",
+  "https://www.goldenaceventures.com/images/slide02.jpg",
 ];
 
 export default function AboutSection() {

@@ -162,21 +162,21 @@ export const COMPANY_PROJECTS = [
       Currently operational units contribute to a significant portion of the plant's overall power generation.
       Information indicates that the plants current operating capacity is over 1210 MW.
       There is also information showing that MahaGenco has plans to, and or is building a new 660MW unit.`,
-    image: "/assets/images/son.jpg",
+    image: "https://media.biltrax.com/wp-content/uploads/2022/07/Cofrentes_nuclear_power_plant_cooling_towers_retouched.jpg",
   },
   {
     id: 2,
     title: "Solar Power Integration Project",
     description:
       "Implementation of large-scale solar power integration with existing thermal infrastructure. This project aims to reduce carbon emissions while maintaining reliable power output. The hybrid approach combines the benefits of renewable energy with the stability of traditional power generation methods.",
-    image: "/assets/images/meenakshi.jpg",
+    image: "https://upload.wikimedia.org/wikipedia/commons/2/26/Electrical_and_Mechanical_Services_Department_Headquarters_Photovoltaics.jpg",
   },
   {
     id: 3,
     title: "Smart Grid Implementation",
     description:
       "Modernizing the power distribution network with smart grid technologies to improve efficiency and reliability. This project includes advanced metering infrastructure, automated distribution systems, and real-time monitoring capabilities to optimize power delivery and reduce outages.",
-    image: "/assets/images/ak.jpg",
+    image: "https://assets.bizclikmedia.net/1800/df939f5d2a2a1c5ebe57d77599d1298f:58ce784c0141c9e48c376e59e38ae392/gettyimages-1029186020-jpg.webp",
   },
 ];
 

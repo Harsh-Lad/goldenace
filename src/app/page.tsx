@@ -8,16 +8,16 @@ import type { NextPage } from "next";
 import ScrollAnimation from "../components/scroll-animation";
 import ScrollSections from "@/components/common/scroll-section";
 import { LeadGenerationForm } from "@/components/pages/home/lead-generation-form";
-import { Button } from "@/components/ui/button";
+import Link from "next/link";
 
 const Home: NextPage = () => {
   return (
     <section>
       <ScrollAnimation />
       <div className="fixed bottom-8 right-8 z-50">
-        <Button className="text-white p-6 rounded-4xl bg-amber-400 hover:bg-amber-300 cursor-pointer font-bold font-xl" >
-          Contact Us
-        </Button>
+      <Link href="/contact" className="text-white p-2 px-3 rounded-4xl bg-amber-400 hover:bg-amber-300 cursor-pointer font-bold font-xl">
+                Contact Us
+            </Link>
       </div>
       {/* <HomePageHeroSection /> */}
       <section className="backdrop-blur-[10px] bg-[rgba(255,255,255,0)]">

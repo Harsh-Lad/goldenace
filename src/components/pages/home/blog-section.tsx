@@ -20,21 +20,21 @@ function Blogs() {
       title: "Infrastructure Evolved",
       description:
         "Discover the latest developments in our robust and scalable infrastructure.",
-      image: "/placeholder.svg?height=600&width=800",
+      image: "https://cdn.corporatefinanceinstitute.com/assets/public-infrastructure.jpeg",
     },
     {
       id: 1,
       title: "Power Distribution",
       description:
         "Exploring innovative solutions in power distribution networks.",
-      image: "/placeholder.svg?height=600&width=800",
+      image: "https://www.customtruck.com/wp-content/uploads/2021/06/shutterstock_1493916902-scaled.jpg",
     },
     {
       id: 2,
       title: "Technology Stack",
       description:
         "Behind the scenes of our cutting-edge technology implementation.",
-      image: "/placeholder.svg?height=600&width=800",
+      image: "https://img.freepik.com/free-vector/big-data-processing-isometric-graph-diagram-inform-analysis-statistics-technology-objects_39422-910.jpg?semt=ais_hybrid",
     },
   ];
 

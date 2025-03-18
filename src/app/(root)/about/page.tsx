@@ -227,7 +227,7 @@ function AboutPage() {
                       }
                       alt={leader.name}
                       fill
-                      className="object-cover transition-transform duration-500 group-hover:scale-105"
+                      className="object-cover object-top transition-transform duration-500 group-hover:scale-105"
                       onError={(e) => {
                         const target = e.target as HTMLImageElement;
                         target.src = "/placeholder.svg?height=700&width=500";

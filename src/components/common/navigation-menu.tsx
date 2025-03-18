@@ -49,6 +49,9 @@ const Navbar = () => {
             <Link href="/careers" className="text-gray-400 hover:text-[#c3932f] transition-colors">
               Careers
             </Link>
+            <Link href="/contact" className="text-white p-2 px-3 rounded-4xl bg-amber-400 hover:bg-amber-300 cursor-pointer font-bold font-xl">
+                Contact Us
+            </Link>
           </div>
 
           <div className="md:hidden">

@@ -167,11 +167,12 @@ function Projects() {
             <button
               onClick={cycleCards}
               disabled={isAnimating}
-              className="absolute bottom-[-60px] left-1/2 transform -translate-x-1/2 bg-yellow-400 text-black rounded-full w-12 h-12 flex items-center justify-center hover:bg-yellow-300 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+              className="absolute bottom-[-60px] left-1/2 transform -translate-x-1/2 bg-yellow-400 text-black rounded-full w-24 h-12 flex items-center justify-center hover:bg-yellow-300 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
               aria-label={
                 isLastCard ? "Reset to first project" : "Next project"
               }
             >
+              Next
               <ChevronRight className="w-6 h-6" />
             </button>
           </div>

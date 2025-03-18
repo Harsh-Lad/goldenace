@@ -3,36 +3,27 @@ import Image from "next/image";
 import Link from "next/link";
 
 function NewsAndEvents() {
-  const featuredArticle = {
-    category: "Investments",
-    date: "Sep 30, 2025",
-    title: "How to raise capital: 5 fundraising strategies for your startup",
-    description:
-      "Lorem ipsum dolor amet consectetur diam nullam mauris non turpis mi sit in a nunc id lectus facilisi justo eu egestas amet.",
-    image: "/placeholder.svg?height=400&width=800",
-    link: "#",
-  };
 
   const articles = [
     {
       category: "Articles",
       date: "Sep 27, 2025",
       title: "We are leading Series A investment round for BRIX Templates",
-      image: "/placeholder.svg?height=300&width=400",
+      image: "https://mms.businesswire.com/media/20201110005579/en/837048/5/Blog_announcement_Series_A.jpg",
       link: "#",
     },
     {
       category: "Press releases",
       date: "Sep 24, 2025",
       title: "Early Stage Fund details for 2025 are now available",
-      image: "/placeholder.svg?height=300&width=400",
+      image: "https://assets.techcircle.in/uploads/article-image/2019/04/images/18217-17025-funding.jpg",
       link: "#",
     },
     {
       category: "Investments",
       date: "Sep 21, 2025",
       title: "Congratulations on new Webflow's Series D investment round",
-      image: "/placeholder.svg?height=300&width=400",
+      image: "https://cdn.prod.website-files.com/63bc89e88fed43ecd62ec947/659b647ed30ee3a3670673c6_Webflow%20Guide%20Hero.webp",
       link: "#",
     },
   ];
@@ -49,7 +40,7 @@ function NewsAndEvents() {
         </div>
 
         {/* Featured Article */}
-        <Link href={featuredArticle.link} className="block mb-12 group">
+        {/* <Link href={featuredArticle.link} className="block mb-12 group">
           <article className="grid md:grid-cols-2 gap-6 bg-gray-900/50 rounded-2xl p-4 md:p-6">
             <div className="relative aspect-[16/9] md:aspect-auto">
               <Image
@@ -79,7 +70,7 @@ function NewsAndEvents() {
               </div>
             </div>
           </article>
-        </Link>
+        </Link> */}
 
         {/* Article Grid - Updated with white border */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">

@@ -46,10 +46,16 @@ export const TEAM_MEMBERS = [
     bio: "Strategic thinker driving innovation and growth across the organization.",
   },
   {
-    name: "Nisarg Doshi",
+    name: "Avi Mittal",
     position: "Chief Operations Officer",
     image: "/assets/images/son.jpg", // Local image path from the public directory
     bio: "Operations expert ensuring excellence in project execution and delivery.",
+  },
+  {
+    name: "Nisarg Doshi",
+    position: "Head of Marketing",
+    image: "/assets/images/nisarg.jpeg", // Local image path from the public directory
+    bio: "Marketing expert with a proven track record in brand building and digital strategy.",
   },
 ];
 

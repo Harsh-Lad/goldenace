@@ -23,7 +23,6 @@ const carouselImages = [
 
 export default function AboutSection() {
   const scrollRef = useRef<HTMLDivElement>(null);
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [autoScrollSpeed, setAutoScrollSpeed] = useState(1); // pixels per frame
   const [isManualScrolling, setIsManualScrolling] = useState(false);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
@@ -116,6 +115,23 @@ export default function AboutSection() {
                 Pioneering Solutions for a Better Tomorrow
               </h3>
 
+              {/* Scrolling Text */}
+              <div
+                ref={scrollRef}
+                onMouseEnter={handleManualScrollStart}
+                onMouseLeave={handleManualScrollEnd}
+                onTouchStart={handleManualScrollStart}
+                onTouchEnd={handleManualScrollEnd}
+                className="h-40 rounded-3xl p-4 overflow-y-auto scrollbar-hide bg-transparent shadow-lg"
+              >
+                <div className="space-y-4 text-lg font-bold">
+                  {scrollingText.split("\n\n").map((paragraph, index) => (
+                    <p key={index}>{paragraph}</p>
+                  ))}
+                </div>
+              </div>
+
+              {/* About Us Button */}
               <CustomButton
                 href="/about"
                 variant="link"
@@ -148,28 +164,6 @@ export default function AboutSection() {
                 />
               ))}
             </figure>
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.3 }}
-              viewport={{ once: true }}
-              className="relative"
-            >
-              <div
-                ref={scrollRef}
-                onMouseEnter={handleManualScrollStart}
-                onMouseLeave={handleManualScrollEnd}
-                onTouchStart={handleManualScrollStart}
-                onTouchEnd={handleManualScrollEnd}
-                className="h-40 rounded-3xl p-6 overflow-y-auto scrollbar-hide"
-              >
-                <div className="space-y-4 text-lg font-bold">
-                  {scrollingText.split("\n\n").map((paragraph, index) => (
-                    <p key={index}>{paragraph}</p>
-                  ))}
-                </div>
-              </div>
-            </motion.div>
           </aside>
         </div>
       </div>

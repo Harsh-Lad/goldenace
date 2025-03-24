@@ -22,35 +22,83 @@ const Navbar = () => {
           </div>
 
           <div className="hidden md:flex md:items-center md:space-x-8">
-            <Link href="/" className="text-gray-400 hover:text-[#c3932f] transition-colors">
+            <Link
+              href="/"
+              className="text-gray-400 hover:text-[#c3932f] transition-colors relative group"
+            >
               Home
+              <span
+                className="absolute left-0 bottom-0 w-0 h-[2px] bg-[#c3932f] transition-all duration-500 ease-in-out group-hover:w-full group-hover:scale-110"
+              />
             </Link>
-            <Link href="/about" className="text-gray-400 hover:text-[#c3932f] transition-colors">
+            <Link
+              href="/about"
+              className="text-gray-400 hover:text-[#c3932f] transition-colors relative group"
+            >
               About
+              <span
+                className="absolute left-0 bottom-0 w-0 h-[2px] bg-[#c3932f] transition-all duration-500 ease-in-out group-hover:w-full group-hover:scale-110"
+              />
             </Link>
-            <Link href="/services" className="text-gray-400 hover:text-[#c3932f] transition-colors">
+            <Link
+              href="/services"
+              className="text-gray-400 hover:text-[#c3932f] transition-colors relative group"
+            >
               Services
+              <span
+                className="absolute left-0 bottom-0 w-0 h-[2px] bg-[#c3932f] transition-all duration-500 ease-in-out group-hover:w-full group-hover:scale-110"
+              />
             </Link>
-            <Link href="/ventures" className="text-gray-400 hover:text-[#c3932f] transition-colors">
+            <Link
+              href="/ventures"
+              className="text-gray-400 hover:text-[#c3932f] transition-colors relative group"
+            >
               Ventures
+              <span
+                className="absolute left-0 bottom-0 w-0 h-[2px] bg-[#c3932f] transition-all duration-500 ease-in-out group-hover:w-full group-hover:scale-110"
+              />
             </Link>
-            <Link href="/projects" className="text-gray-400 hover:text-[#c3932f] transition-colors">
+            <Link
+              href="/projects"
+              className="text-gray-400 hover:text-[#c3932f] transition-colors relative group"
+            >
               Projects
+              <span
+                className="absolute left-0 bottom-0 w-0 h-[2px] bg-[#c3932f] transition-all duration-500 ease-in-out group-hover:w-full group-hover:scale-110"
+              />
             </Link>
-            <Link href="/blogs" className="text-gray-400 hover:text-[#c3932f] transition-colors">
+            <Link
+              href="/blogs"
+              className="text-gray-400 hover:text-[#c3932f] transition-colors relative group"
+            >
               Blog
+              <span
+                className="absolute left-0 bottom-0 w-0 h-[2px] bg-[#c3932f] transition-all duration-500 ease-in-out group-hover:w-full group-hover:scale-110"
+              />
             </Link>
-            <Link href="/media" className="text-gray-400 hover:text-[#c3932f] transition-colors">
+            <Link
+              href="/media"
+              className="text-gray-400 hover:text-[#c3932f] transition-colors relative group"
+            >
               Media
+              <span
+                className="absolute left-0 bottom-0 w-0 h-[2px] bg-[#c3932f] transition-all duration-500 ease-in-out group-hover:w-full group-hover:scale-110"
+              />
             </Link>
-            {/* <Link href="#" className="text-gray-400 hover:text-[#c3932f] transition-colors">
-              Resources
-            </Link> */}
-            <Link href="/careers" className="text-gray-400 hover:text-[#c3932f] transition-colors">
+            <Link
+              href="/careers"
+              className="text-gray-400 hover:text-[#c3932f] transition-colors relative group"
+            >
               Careers
+              <span
+                className="absolute left-0 bottom-0 w-0 h-[2px] bg-[#c3932f] transition-all duration-500 ease-in-out group-hover:w-full group-hover:scale-110"
+              />
             </Link>
-            <Link href="/contact" className="text-white p-2 px-3 rounded-4xl bg-amber-400 hover:bg-amber-300 cursor-pointer font-bold font-xl">
-                Contact Us
+            <Link
+              href="/contact"
+              className="text-white p-2 px-3 rounded-4xl bg-amber-400 hover:bg-amber-300 cursor-pointer font-bold font-xl transition-all duration-300 transform hover:scale-105"
+            >
+              Contact Us
             </Link>
           </div>
 

@@ -38,6 +38,10 @@ function Blogs() {
     },
   ];
 
+  const handleNext = () => {
+    setActiveSlide((prev) => (prev + 1) % slides.length);
+  };
+
   return (
     <section className="py-16 px-4 md:px-8 overflow-hidden">
       <div className="max-w-7xl mx-auto">
@@ -96,21 +100,15 @@ function Blogs() {
           </div>
         </div>
 
-        {/* Navigation Dots */}
-        <div className="flex items-center justify-start gap-2">
-          {slides.map((slide, index) => (
-            <button
-              key={slide.id}
-              onClick={() => setActiveSlide(index)}
-              className={cn(
-                "h-2 rounded-full bg-yellow-400 transition-all duration-300",
-                index === activeSlide
-                  ? "w-12"
-                  : "w-2 opacity-50 hover:opacity-75"
-              )}
-              aria-label={`View slide ${index + 1}`}
-            />
-          ))}
+        {/* Next Button */}
+        <div className="flex justify-start mt-8">
+          <button
+            onClick={handleNext}
+            className="bg-[#FFBF00] text-black font-bold py-2 px-6 rounded-full hover:bg-[#e0a800] transition-all duration-300"
+            aria-label="Next Slide"
+          >
+            Next
+          </button>
         </div>
       </div>
     </section>

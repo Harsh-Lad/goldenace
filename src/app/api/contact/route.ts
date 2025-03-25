@@ -31,7 +31,7 @@ export async function POST(request: Request) {
 
     // Append data to **Sheet2**
     const response = await sheets.spreadsheets.values.append({
-      spreadsheetId: process.env.GOOGLE_SHEETS_SPREADSHEET_ID,
+      spreadsheetId: process.env.NEXT_PUBLIC_GOOGLE_SHEETS_SPREADSHEET_ID,
       range: 'Sheet2', // Changed from Sheet1 to Sheet2
       valueInputOption: 'USER_ENTERED',
       requestBody: {

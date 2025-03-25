@@ -1,7 +1,6 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
@@ -13,11 +12,6 @@ const formSchema = z.object({
 });
 
 export default function ContactPage() {
-  const [open, setOpen] = useState(false);
-
-  useEffect(() => {
-    setTimeout(() => setOpen(true), 1000);
-  }, []);
 
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
@@ -41,12 +35,12 @@ export default function ContactPage() {
       if (response.ok) {
         alert("Your message has been saved to Google Sheets (Sheet2)!");
         form.reset();
-        setOpen(false);
       } else {
         alert("Submission failed. Please try again.");
       }
     } catch (error) {
       alert("There was a problem submitting your information. Please try again.");
+      console.log(error)
     }
   }
 

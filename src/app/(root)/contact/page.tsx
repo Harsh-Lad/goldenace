@@ -33,7 +33,7 @@ export default function ContactPage() {
       });
 
       if (response.ok) {
-        alert("Your message has been saved to Google Sheets (Sheet2)!");
+        alert("Thankyou for contacting us will get back to you soon!");
         form.reset();
       } else {
         alert("Submission failed. Please try again.");

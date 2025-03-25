@@ -6,9 +6,74 @@ import { SOCIAL_LINKS } from "@/lib/constants";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { useState } from "react";
 
 function Footer() {
   const pathname = usePathname();
+  const [email, setEmail] = useState("");
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [subscriptionStatus, setSubscriptionStatus] = useState<{
+    type: "success" | "error" | "already-subscribed" | null;
+    message: string | null;
+  }>({ type: null, message: null });
+
+  const handleSubscribe = async (e: React.FormEvent) => {
+    e.preventDefault();
+    
+    if (!email || !email.includes('@')) {
+      setSubscriptionStatus({
+        type: "error",
+        message: "Please enter a valid email address."
+      });
+      return;
+    }
+
+    setIsSubmitting(true);
+    setSubscriptionStatus({ type: null, message: null });
+
+    try {
+      const response = await fetch("/api/newsletter", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ email }),
+      });
+
+      const data = await response.json();
+
+      if (data.success) {
+        setSubscriptionStatus({
+          type: "success",
+          message: "Thank you for subscribing to our newsletter!"
+        });
+        setEmail(""); // Clear input on success
+      } else if (data.message && data.message.includes("already subscribed")) {
+        // Specific handling for already subscribed emails
+        setSubscriptionStatus({
+          type: "already-subscribed",
+          message: "This email is already subscribed to our newsletter."
+        });
+      } 
+      else {
+        setSubscriptionStatus({
+          type: "error",
+          message: data.message || "Failed to subscribe. Please try again."
+        });
+      }
+    } catch (err) {
+      // Log the error to console
+      console.error("Newsletter subscription error:", err);
+      
+      setSubscriptionStatus({
+        type: "error",
+        message: "An error occurred. Please try again later."
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
   return (
     <footer
       className={cn(
@@ -17,7 +82,6 @@ function Footer() {
           "backdrop-blur-[10px] bg-[rgba(255,255,255,0.05)] border-t rounded-t-xl border-[rgba(255,255,255,0.3)"
       )}
     >
-      {/* Rest of the footer content remains the same... */}
       <div className="relative z-10">
         {/* Newsletter Section */}
         <div className="max-w-3xl mx-auto text-center mb-12">
@@ -25,16 +89,38 @@ function Footer() {
             Enter Our <span className="text-[#FFBF00]">World Of Power</span>{" "}
             that Doesn&apos;t Cost the Earth
           </h2>
-          <div className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
-            <Input
-              type="email"
-              placeholder="Enter your email address"
-              className="bg-transparent border-white/20 placeholder:text-gray-400"
-            />
-            <Button className="bg-[#FFBF00] text-black hover:bg-white/90 transition-colors">
-              Submit
-            </Button>
-          </div>
+          <form onSubmit={handleSubscribe} className="space-y-4">
+            <div className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
+              <Input
+                type="email"
+                placeholder="Enter your email address"
+                className="bg-transparent border-white/20 placeholder:text-gray-400"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                disabled={isSubmitting}
+              />
+              <Button 
+                type="submit"
+                className="bg-[#FFBF00] text-black hover:bg-white/90 transition-colors"
+                disabled={isSubmitting}
+              >
+                {isSubmitting ? "Submitting..." : "Submit"}
+              </Button>
+            </div>
+            
+            {subscriptionStatus.type && (
+              <div className={cn(
+                "text-sm p-2 rounded mt-2",
+                subscriptionStatus.type === "success" 
+                  ? "text-green-400 bg-green-900/30" 
+                  : subscriptionStatus.type === "already-subscribed"
+                    ? "text-yellow-400 bg-yellow-900/30"
+                    : "text-red-400 bg-red-900/30"
+              )}>
+                {subscriptionStatus.message}
+              </div>
+            )}
+          </form>
         </div>
 
         {/* Social Media Icons */}

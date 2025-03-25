@@ -37,7 +37,7 @@ const COMPANIES = [
     logo: "/assets/images/vivid.png",
     category: "Technology",
     description:
-      "Innovative solutions for smart energy management and monitoring systems.",
+      "Leaders in LT & HT electrical panel manufacturing, delivering innovative, reliable power solutions. Advanced automation and smart technology that optimizes energy management, driving robust operations and empowering global industries with sustainable infrastructure.",
     founded: "2018",
     location: "Bangalore, India",
     website: "https://vivid.example.com",
@@ -51,7 +51,7 @@ const COMPANIES = [
   },
   {
     name: "GAME Solar",
-    logo: "/assets/images/gener.jpg",
+    logo: "/assets/images/game.png",
     category: "Renewable Energy",
     description:
       "Leading provider of solar energy solutions for residential and commercial applications.",
@@ -88,7 +88,7 @@ const COMPANIES = [
     logo: "/assets/images/gener.jpg",
     category: "Investment",
     description:
-      "Startup accelerator and venture fund focused on energy and infrastructure innovations.",
+      "A top startup accelerator fueling early-stage companies with intensive mentorship and strategic capital. Their programs on entrepreneurship drive disruptive innovation. Backed by an ever-connected network, they propel scalable, sustainable venture success globally. ",
     founded: "2019",
     location: "Mumbai, India",
     website: "https://gener8tor.example.com",
@@ -102,10 +102,10 @@ const COMPANIES = [
   },
   {
     name: "OCT Online Cleaning Tech",
-    logo: "/assets/images/gener.jpg",
+    logo: "",
     category: "Energy",
     description:
-      "Innovative cleaning technologies for thermal power plants and industrial facilities.",
+      "Founded in 2020, they drive business transformation with cutting-edge tech, delivering innovative digital solutions and advanced IT services. Committed to quality and growth, they empower diverse industries with robust IT processes. ",
     founded: "2015",
     location: "Ahmedabad, India",
     website: "https://oct.example.com",
@@ -126,7 +126,7 @@ const VENTURE_CASE_STUDIES = [
     title: "Revolutionizing Solar Financing for Residential Customers",
     description:
       "How GAME Solar developed an innovative financing model that made solar energy accessible to middle-class homeowners across India.",
-    image: "/placeholder.svg?height=600&width=800",
+    image: "/assets/images/banner-homes.jpg",
     results: [
       "50,000+ residential installations completed",
       "Average customer payback period reduced to 3.5 years",
@@ -138,7 +138,7 @@ const VENTURE_CASE_STUDIES = [
     title: "Smart Security for Pune Smart City Project",
     description:
       "Secutech's implementation of integrated security and surveillance systems for the Pune Smart City initiative.",
-    image: "/placeholder.svg?height=600&width=800",
+    image: "/assets/images/Secutech.jpg",
     results: [
       "5,000+ AI-powered cameras deployed across the city",
       "Crime rates reduced by 30% in monitored areas",
@@ -150,7 +150,7 @@ const VENTURE_CASE_STUDIES = [
     title: "Efficiency Improvements at MahaGenco Thermal Plant",
     description:
       "Implementation of OCT's proprietary cleaning technology at MahaGenco's Bhusawal Thermal Power Plant.",
-    image: "/placeholder.svg?height=600&width=800",
+    image: "/assets/images/therm.jpg",
     results: [
       "Plant efficiency improved by 12.5%",
       "Annual water savings of 1.2 million liters",

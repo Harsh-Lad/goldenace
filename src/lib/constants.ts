@@ -40,33 +40,33 @@ export const TEAM_MEMBERS = [
     bio: "Visionary leader with extensive experience in energy and infrastructure sectors.",
   },
   {
-    name: "Aparajeet Mittal",
-    position: "Managing Partner",
+    name: "Anil Kumar Mittal",
+    position: "Chairman",
     image: "/assets/images/ak.jpg", // Local image path from the public directory
     bio: "Strategic thinker driving innovation and growth across the organization.",
   },
   {
-    name: "Avi Mittal",
-    position: "Chief Operations Officer",
+    name: "Aparjeet Mittal",
+    position: "Managing Partner & CEO",
     image: "/assets/images/son.jpg", // Local image path from the public directory
     bio: "Operations expert ensuring excellence in project execution and delivery.",
   },
   {
     name: "Nisarg Doshi",
-    position: "Head of Marketing",
+    position: "Cheif Business officer",
     image: "/assets/images/nisarg.jpeg", // Local image path from the public directory
     bio: "Marketing expert with a proven track record in brand building and digital strategy.",
   },
 ];
 
 export const COMPANIES = [
-  { name: "Vivid", logo: "/placeholder.svg?height=200&width=200" },
-  { name: "GAME Solar", logo: "/placeholder.svg?height=200&width=200" },
-  { name: "Secutech", logo: "/placeholder.svg?height=200&width=200" },
-  { name: "Gener8tor", logo: "/placeholder.svg?height=200&width=200" },
+  { name: "Vivid", logo: "/assets/images/vivid.png" },
+  { name: "GAME Solar", logo: "/assets/images/game.png" },
+  { name: "Secutech", logo: "/assets/images/Secutech.jpg" },
+  { name: "Gener8tor", logo: "/assets/images/gener.jpg" },
   {
-    name: "OCT Online Cleaning Tech",
-    logo: "/placeholder.svg?height=200&width=200",
+    name: "RE Plus",
+    logo: "/assets/images/RE.jpg",
   },
 ];
 
@@ -146,8 +146,8 @@ export const COMPANY_SERVICES = [
     title: "Start-up Incubation, Acceleration & Investments",
     description:
       "Nurturing high-potential start-ups with tailored incubation, acceleration, and investment partnerships.Strategic investment and capital support for promising ventures in renewable energy, infrastructure, and technology.",
-    image: "/images/assets/Reliance.png",
-    color: "oklch(0.769 0.188 70.08)", // purple
+      image: "/assets/images/smart.jpg",
+      color: "oklch(0.769 0.188 70.08)", // purple
   },
 ];
 
@@ -395,7 +395,7 @@ export const COMPANY_PROJECTS_EXTENDED = [
     title: "Clean Max",
     category: "Infrastructure",
     status: "Planning",
-    image: "/assets/images/ak.jpg",
+    image: "/assets/images/hero1.jpg",
     description:
       "Vivid powered up Clean Max Technology with high-performance HT and LT panels, ensuring smooth and efficient energy distribution for their renewable power projects. Our HT panels handle high-voltage transmission with precision, while LT panels keep essential systems running flawlessly.",
     tags: ["Smart City", "IoT", "Sustainability"],

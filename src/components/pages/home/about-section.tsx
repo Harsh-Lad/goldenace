@@ -15,9 +15,9 @@ We empower businesses with strategic capital, asset value maximization, and grow
 `;
 
 const carouselImages = [
-  "https://www.goldenaceventures.com/images/slide03.jpg",
-  "https://www.goldenaceventures.com/images/slide01.jpg",
-  "https://www.goldenaceventures.com/images/slide02.jpg",
+  "/assets/images/y.jpeg",
+  "/assets/images/pexels-photo-1714208.jpeg",
+  "/assets/images/pexels-photo-2116721.jpeg",
 ];
 
 export default function AboutSection() {
@@ -61,7 +61,7 @@ export default function AboutSection() {
     return () => {
       cancelAnimationFrame(animationFrameId);
     };
-  }, [ isManualScrolling]);
+  }, [isManualScrolling]);
 
   useEffect(() => {
     const intervalId = setInterval(() => {
@@ -110,7 +110,7 @@ export default function AboutSection() {
               className="space-y-6"
             >
               <h3 className="text-2xl md:text-3xl font-medium pl-3 pt-10">
-              Approaching Innovation, With Continuous Renewal 
+                Approaching Innovation, With Continuous Renewal
               </h3>
 
               {/* Scrolling Text */}
@@ -135,7 +135,8 @@ export default function AboutSection() {
                 variant="link"
                 buttonTransition="bg-[#FFBF00] text-black opacity-80 hover:opacity-100 transition-opacity duration-300"
                 arrowClassName="w-6 h-6 group-hover:rotate-45 transition-transform duration-300"
-                className="font-bold text-xl text-white  ml-4 bg-amber-400 hover:bg-amber-300 cursor-pointer font-bold font-xl transition-all duration-300 transform hover:scale-105">
+                className="font-bold text-xl text-white ml-4 bg-amber-400 hover:bg-amber-300 cursor-pointer font-bold font-xl transition-all duration-300 transform hover:scale-105"
+              >
                 About Us
               </CustomButton>
             </motion.div>
@@ -143,7 +144,7 @@ export default function AboutSection() {
 
           {/* Right Column */}
           <aside className="flex flex-col gap-4">
-            <figure className="relative h-100 w-full overflow-hidden">
+            <figure className="relative h-[400px] w-full overflow-hidden">
               {carouselImages.map((src, index) => (
                 <Image
                   key={index}
@@ -155,8 +156,9 @@ export default function AboutSection() {
                     `absolute top-0 left-0 h-full w-full transition-opacity duration-1000 rounded-4xl`,
                     index === currentImageIndex ? "opacity-100" : "opacity-0"
                   )}
-                  width={120}
-                  height={120}
+                  width={1200} // Updated width
+                  height={800} // Updated height
+                  objectFit="cover" // Ensures proper scaling
                   priority
                 />
               ))}

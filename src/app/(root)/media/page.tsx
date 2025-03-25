@@ -48,15 +48,7 @@ function MediaPage() {
       category: "Partnership",
       excerpt:
         "Golden Ace Ventures LLP has announced a strategic partnership with Secutech to develop and implement smart city solutions across India.",
-      image: "/placeholder.svg?height=600&width=800",
-    },
-    {
-      title: "MahaGenco Bhusawal Thermal Plant POC Successfully Completed",
-      date: "May 22, 2023",
-      category: "Project",
-      excerpt:
-        "The proof of concept implementation at MahaGenco Bhusawal Thermal Power Plant has been successfully completed, demonstrating significant efficiency improvements.",
-      image: "/placeholder.svg?height=600&width=800",
+      image: "/assets/images/Secutech.jpg",
     },
     {
       title: "Golden Ace Ventures to Participate in RE Invest 2024",
@@ -64,7 +56,7 @@ function MediaPage() {
       category: "Event",
       excerpt:
         "Golden Ace Ventures LLP will be participating in RE Invest 2024, showcasing its renewable energy solutions and investment opportunities.",
-      image: "/placeholder.svg?height=600&width=800",
+      image: "/assets/images/RE.jpg",
     },
     {
       title: "Aparajeet Mittal Speaks at Infrastructure Development Summit",
@@ -72,7 +64,7 @@ function MediaPage() {
       category: "Speaking",
       excerpt:
         "Managing Partner Aparajeet Mittal delivered a keynote address on the future of infrastructure development at the annual Infrastructure Development Summit.",
-      image: "/placeholder.svg?height=600&width=800",
+      image: "/assets/images/ak.jpg",
     },
   ];
 
@@ -175,7 +167,7 @@ function MediaPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
             <div className="relative h-[400px] rounded-xl overflow-hidden shadow-xl border border-[#FFBF00]/20">
               <Image
-                src="/placeholder.svg?height=800&width=600"
+                src="/assets/images/Secutech.jpg"
                 alt="Latest News"
                 fill
                 className="object-cover"

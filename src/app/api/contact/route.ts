@@ -33,7 +33,7 @@ export async function POST(request: Request) {
 
     // Append data to **Sheet2**
     const response = await sheets.spreadsheets.values.append({
-      spreadsheetId: process.env.GOOGLE_SHEETS_SPREADSHEET_ID,
+      spreadsheetId: process.env.NEXT_PUBLIC_GOOGLE_SHEETS_SPREADSHEET_ID,
       range: 'Sheet2', // Changed from Sheet1 to Sheet2
       valueInputOption: 'USER_ENTERED',
       requestBody: {
@@ -44,7 +44,7 @@ export async function POST(request: Request) {
     // Return success response
     return NextResponse.json({
       success: true,
-      message: 'Form data submitted successfully to Sheet2',
+      message: 'Form data submitted successfully',
       rows: response.data.updates?.updatedRows || 0,
     });
 

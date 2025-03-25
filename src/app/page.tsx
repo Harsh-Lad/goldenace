@@ -6,7 +6,6 @@ import Projects from "@/components/pages/home/project-section";
 import { ShowReel } from "@/components/pages/home/show-reel";
 import type { NextPage } from "next";
 import ScrollAnimation from "../components/scroll-animation";
-import ScrollSections from "@/components/common/scroll-section";
 import { LeadGenerationForm } from "@/components/pages/home/lead-generation-form";
 import Link from "next/link";
 

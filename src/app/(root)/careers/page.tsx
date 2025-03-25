@@ -143,7 +143,7 @@ function CareersPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
             <div className="relative h-[400px] rounded-xl overflow-hidden shadow-xl border border-[#FFBF00]/20">
               <Image
-                src="/placeholder.svg?height=800&width=600"
+                src="/assets/images/join.jpg"
                 alt="Careers at Golden Ace Ventures"
                 fill
                 className="object-cover"

@@ -111,50 +111,42 @@ export const COMPANY_TIMELINE = [
 export const COMPANY_SERVICES = [
   {
     id: 1,
-    title: "Renewable Energy",
+    title: "Renewable, Green & Thermal Energy",
     description:
-      "Harnessing natural resources for sustainable power generation with minimal environmental impact.",
-    image: "/placeholder.svg?height=400&width=400",
-    color: "oklch(0.769 0.188 70.08)", // blue
-  },
-  {
-    id: 2,
-    title: "Thermal Power",
-    description:
-      "Efficient thermal energy conversion systems for reliable and consistent power output.",
-    image: "/placeholder.svg?height=400&width=400",
+      "Solar EPC Project Support Financing with REC & IREDA-approved funding. • End-to-end EPC projects from feasibility through to implementation. • Solar PV module manufacturing & supplies with an emphasis on high-efficiency and sustainable growth.Innovative thermal energy solutions and online cleaning technology to boost operational efficiency and reduce emissions. Advanced BESS solutions for energy storage, grid stability, and integration of renewable sources.",
+    image: "/assets/images/solenerg.jfif",
     color: "oklch(0.769 0.188 70.08)", // red
   },
   {
-    id: 3,
-    title: "Smart Solutions",
+    id: 2,
+    title: "Infrastructure & Manufacturing",
     description:
-      "Intelligent systems that optimize energy distribution and consumption patterns.",
-    image: "/placeholder.svg?height=400&width=400",
+      "Design and manufacture of LT & HT electrical panels tailored for industrial and commercial applications. Comprehensive consultancy and project management for roads & highways development. Execution of smart city projects and large-scale urban development initiatives that catalyze industrial development and manufacturing growth.",
+    image: "/assets/images/infrastr.jpg",
     color: "oklch(0.769 0.188 70.08)", // green
   },
   {
-    id: 4,
-    title: "Grid Management",
+    id: 3,
+    title: "Smart Technology & Innovation ",
     description:
-      "Advanced infrastructure for efficient power transmission and distribution networks.",
-    image: "/placeholder.svg?height=400&width=400",
+      "Implement industrial automation and advanced monitoring systems to enhance productivity and operational intelligence. Drive digital transformation with integrated smart technology for optimized performance.",
+    image: "/assets/images/smart.jpg",
     color: "oklch(0.769 0.188 70.08)", // amber
   },
   {
-    id: 5,
-    title: "Energy Storage",
+    id: 4,
+    title: "Business Consultancy & Advisory",
     description:
-      "Innovative technologies to store excess energy for use during peak demand periods.",
-    image: "/placeholder.svg?height=400&width=400",
+      "Customized solutions to accelerate business growth and expand market presence. Expert guidance in strategic capital formation, M&A, and funding strategies. High-impact strategies to maximize market outreach and brandpositioning.",
+    image: "/assets/images/phoenix.jpg",
     color: "oklch(0.769 0.188 70.08)", // purple
   },
   {
-    id: 6,
-    title: "Energy Storage",
+    id: 5,
+    title: "Start-up Incubation, Acceleration & Investments",
     description:
-      "Innovative technologies to store excess energy for use during peak demand periods.",
-    image: "/placeholder.svg?height=400&width=400",
+      "Nurturing high-potential start-ups with tailored incubation, acceleration, and investment partnerships.Strategic investment and capital support for promising ventures in renewable energy, infrastructure, and technology.",
+    image: "/images/assets/Reliance.png",
     color: "oklch(0.769 0.188 70.08)", // purple
   },
 ];
@@ -191,7 +183,7 @@ export const COMPANY_BLOGS = [
     title: "The Future of Renewable Energy",
     excerpt:
       "Exploring the latest trends and innovations in renewable energy sources.",
-    image: "/placeholder.svg",
+    image: "/assets/images/future.png",
     category: "Energy",
     date: "2024-01-20",
     author: "John Doe",
@@ -201,8 +193,8 @@ export const COMPANY_BLOGS = [
     title: "Infrastructure Development in Urban Areas",
     excerpt:
       "Discussing the challenges and opportunities in building sustainable infrastructure in cities.",
-    image: "/placeholder.svg",
-    category: "Infrastructure",
+      image: "/assets/images/infra.jpg",
+      category: "Infrastructure",
     date: "2024-02-15",
     author: "Jane Smith",
     readTime: "7 min",
@@ -211,7 +203,7 @@ export const COMPANY_BLOGS = [
     title: "AI and IoT: Transforming Industries",
     excerpt:
       "How artificial intelligence and the Internet of Things are revolutionizing various sectors.",
-    image: "/placeholder.svg",
+    image: "/assets/images/iot-and-ai.jpg",
     category: "Technology",
     date: "2024-03-10",
     author: "David Lee",
@@ -220,7 +212,7 @@ export const COMPANY_BLOGS = [
   {
     title: "Sustainable Business Practices",
     excerpt: "Adopting eco-friendly strategies for long-term business success.",
-    image: "/placeholder.svg",
+    image: "/assets/images/susbus.png",
     category: "Business",
     date: "2024-04-05",
     author: "Emily White",
@@ -229,7 +221,7 @@ export const COMPANY_BLOGS = [
   {
     title: "Solar Energy Innovations",
     excerpt: "New technologies and advancements in solar power generation.",
-    image: "/placeholder.svg",
+    image: "/assets/images/solenerg.jfif",
     category: "Energy",
     date: "2024-05-01",
     author: "Robert Green",
@@ -239,8 +231,8 @@ export const COMPANY_BLOGS = [
     title: "Smart City Development",
     excerpt:
       "Creating efficient and sustainable urban environments with technology.",
-    image: "/placeholder.svg",
-    category: "Infrastructure",
+      image: "/assets/images/smart.jpg",
+      category: "Infrastructure",
     date: "2024-05-26",
     author: "Linda Brown",
     readTime: "7 min",
@@ -373,62 +365,87 @@ export const SERVICES_DATA = [
 
 export const COMPANY_PROJECTS_EXTENDED = [
   {
-    title: "MahaGenco Bhusawal Thermal Plant POC",
+    title: "Vivid Projects",
     category: "Energy",
     status: "Ongoing",
-    image: "/placeholder.svg?height=600&width=800",
+    image: "/assets/images/images.jfif",
     description:
-      "Proof of concept implementation for efficiency improvements at the MahaGenco Bhusawal Thermal Power Plant.",
+      "From design to delivery, our team ensured that the LT & HT panels meet strict quality, safety, and performance standards, supporting seamless operations for the data centre. With precision engineering and robust build quality, our panels play a crucial role in ensuring uninterrupted power flow, enhanced efficiency, and long-term reliability. ",
     tags: ["Thermal Energy", "Efficiency", "POC"],
   },
   {
-    title: "Highway Development Project",
+    title: "Mumbai Metro",
     category: "Infrastructure",
     status: "Completed",
-    image: "/placeholder.svg?height=600&width=800",
+    image: "/assets/images/metro.jpeg",
     description:
-      "Large-scale highway development project improving connectivity and transportation infrastructure.",
+      "Vivid supplied high-performance LT panels to key Mumbai Metro stations, ensuring reliable power distribution for uninterrupted operations. Each panel was designed to handle high electrical loads, withstand harsh conditions, and meet stringent safety standards",
     tags: ["Roads", "Infrastructure", "Development"],
   },
   {
-    title: "Solar PV Manufacturing Scale-up",
+    title: "Phoenix Mall",
     category: "Energy",
     status: "In Progress",
-    image: "/placeholder.svg?height=600&width=800",
+    image: "/assets/images/phoenix.jpg",
     description:
-      "Scaling up Solar PV Manufacturing capacity to 1300 MW, enhancing renewable energy production capabilities.",
+      "Vivid delivered top-tier LT panels to Phoenix Mall, ensuring seamless power distribution across its massive retail, entertainment, and hospitality spaces. Designed to handle heavy electrical demand, our panels keep escalators running, lights shining, and HVAC systems operating efficiently.",
     tags: ["Solar", "Manufacturing", "Scale-up"],
   },
   {
-    title: "Smart City Infrastructure",
+    title: "Clean Max",
     category: "Infrastructure",
     status: "Planning",
-    image: "/placeholder.svg?height=600&width=800",
+    image: "/assets/images/ak.jpg",
     description:
-      "Comprehensive smart city infrastructure development with IoT integration and sustainable design principles.",
+      "Vivid powered up Clean Max Technology with high-performance HT and LT panels, ensuring smooth and efficient energy distribution for their renewable power projects. Our HT panels handle high-voltage transmission with precision, while LT panels keep essential systems running flawlessly.",
     tags: ["Smart City", "IoT", "Sustainability"],
   },
   {
-    title: "Industrial Automation System",
+    title: "Smart Fire Safety Infrastructure at Park Hyatt Hotel, Goa",
     category: "Technology",
     status: "Completed",
-    image: "/placeholder.svg?height=600&width=800",
+    image: "/assets/images/g.png",
     description:
-      "AI-driven industrial automation system implementation for manufacturing process optimization.",
+      "The Park Hyatt Hotel in Goa, spread over 45 acres with 250 villas and suites, has undergone a smart retrofit to enhance fire safety and emergency evacuation, ensuring the highest level of guest safety as per Hyatt standards.",
     tags: ["Automation", "AI", "Manufacturing"],
   },
   {
-    title: "Renewable Energy Financing",
+    title: "Smart Healthcare Infrastructure at Kokilaben Ambani Hospital, Mumbai",
     category: "Advisory",
     status: "Ongoing",
-    image: "/placeholder.svg?height=600&width=800",
+    image: "/assets/images/d.png",
     description:
-      "Structured financing solutions for large-scale renewable energy projects, enabling sustainable development.",
+      "The Kokilaben Ambani Hospital in Mumbai is a leading-edge smart hospital with 800+ beds, designed to deliver high-quality healthcare through integrated technology and automation. ",
     tags: ["Finance", "Renewable", "Advisory"],
   },
+  {
+    title: "Smart and Sustainable Infrastructure at ONGC HQ, Mumbai",
+    category: "Energy",
+    status: "Ongoing",
+    image: "/assets/images/ongc.jpg",
+    description:
+      "The ONGC Headquarters in Mumbai stands as a benchmark in smart and sustainable infrastructure, combining advanced building management, security, and smart applications to create a highly efficient and secure environment. ",
+    tags: ["Green Energy", "Solar", "Wind"],
+  },
+  {
+    title: "Smart Infrastructure at Reliance ADAG Global HQ",
+    category: "Infrastructure",
+    status: "Completed",
+    image: "/assets/images/Reliance.png",
+    description:
+      "The Global HQ of Reliance ADAG Group has been transformed into a state-of-the-art smart facility, integrating IBMS, ISMS, ICT, and smart applications for enhanced security, efficiency, and control. ",
+    tags: ["Smart City", "IoT", "Infrastructure"],
+  },
+  {
+    title: "Shockwave Cleaning Technology at Koradi Power Station",
+    category: "Energy",
+    status: "In Progress",
+    image: "/assets/images/engie.jpg",
+    description:
+      "Boilers in power plants accumulate significant fouling over time, reducing efficiency and increasing downtime during maintenance. Traditional cleaning methods can be time-consuming and require shutdowns, impacting productivity. Mahagenco sought a more efficient cleaning solution that could be performed online without disrupting operations. ",
+    tags: ["Hydroelectric", "Renewable Energy", "Sustainability"],
+  },
 ];
-
-
 
 export interface Section {
   number: string;

@@ -34,7 +34,7 @@ import { useState } from "react";
 const COMPANIES = [
   {
     name: "Vivid",
-    logo: "/placeholder.svg?height=200&width=200",
+    logo: "/assets/images/vivid.png",
     category: "Technology",
     description:
       "Innovative solutions for smart energy management and monitoring systems.",
@@ -51,7 +51,7 @@ const COMPANIES = [
   },
   {
     name: "GAME Solar",
-    logo: "https://rilstaticasset.akamaized.net/sites/default/files/2023-09/green-energy.jpg",
+    logo: "/assets/images/gener.jpg",
     category: "Renewable Energy",
     description:
       "Leading provider of solar energy solutions for residential and commercial applications.",
@@ -68,7 +68,7 @@ const COMPANIES = [
   },
   {
     name: "Secutech",
-    logo: "/placeholder.svg?height=200&width=200",
+    logo: "/assets/images/Secutech.jpg",
     category: "Infrastructure",
     description:
       "Security and surveillance technology for smart infrastructure and urban development.",
@@ -85,7 +85,7 @@ const COMPANIES = [
   },
   {
     name: "Gener8tor",
-    logo: "/placeholder.svg?height=200&width=200",
+    logo: "/assets/images/gener.jpg",
     category: "Investment",
     description:
       "Startup accelerator and venture fund focused on energy and infrastructure innovations.",
@@ -102,7 +102,7 @@ const COMPANIES = [
   },
   {
     name: "OCT Online Cleaning Tech",
-    logo: "/placeholder.svg?height=200&width=200",
+    logo: "/assets/images/gener.jpg",
     category: "Energy",
     description:
       "Innovative cleaning technologies for thermal power plants and industrial facilities.",
@@ -201,7 +201,7 @@ export default function VenturesPage() {
   return (
     <div className="container mx-auto px-4 py-12">
       <PageTitleSection
-        title="Our Ventures & Investments"
+        title="Associated Partners"
         description="Pioneering innovations across energy, infrastructure, and technology sectors"
       />
 
@@ -309,7 +309,7 @@ export default function VenturesPage() {
           className="my-16"
         >
           <h2 className="text-3xl font-bold mb-10 text-center bg-clip-text text-transparent bg-gradient-to-r from-[#FFBF00] to-[#FFBF00]/70">
-            Our Ventures Portfolio
+            Our Parnter Portfolio
           </h2>
           <Tabs
             defaultValue="all"

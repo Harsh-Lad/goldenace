@@ -61,7 +61,7 @@ function ProjectsPage() {
           variants={fadeInUp}
           className="my-12"
         >
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+          {/* <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
             <div>
               <h2 className="text-3xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-[#FFBF00] to-[#FFBF00]/70">
                 Featured Project
@@ -84,7 +84,7 @@ function ProjectsPage() {
             </div>
             <div className="relative h-[400px] rounded-xl overflow-hidden shadow-xl border border-[#FFBF00]/20">
               <Image
-                src="/placeholder.svg?height=800&width=1200"
+                src="/assets/images/Featured.jpg"
                 alt="MahaGenco Bhusawal Thermal Plant"
                 fill
                 className="object-cover"
@@ -101,7 +101,7 @@ function ProjectsPage() {
                 </p>
               </div>
             </div>
-          </div>
+          </div> */}
         </motion.section>
         <motion.section
           initial="hidden"

@@ -8,11 +8,10 @@ import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 
 const scrollingText = `
-Golden Ace Ventures LLP is a forward-thinking business consulting firm specializing in finance, infrastructure, smart technology, and investments. With a strong global presence, it develops high-potential projects with long-term sustainability.
+Golden Ace Ventures, LLP is a dynamic business consulting firm offering bespoke solutions for next-generation projects. At the intersection of strategic consulting, 
+financial intelligence, and infrastructure expertise, our approach is defined by market-driven execution. 
 
-We have a global presence, mainly operating out of India, Kenya, the UK, and Dubai.
-
-We provide expertise in strategic capital, asset maximization, and business acceleration.
+We empower businesses with strategic capital, asset value maximization, and growth acceleration to transform traditional industries into sustainable, high-impact ventures across renewable energy, innovative technology, and infrastructure development. 
 `;
 
 const carouselImages = [
@@ -110,8 +109,8 @@ export default function AboutSection() {
               viewport={{ once: true }}
               className="space-y-6"
             >
-              <h3 className="text-2xl md:text-3xl font-medium">
-                Pioneering Solutions for a Better Tomorrow
+              <h3 className="text-2xl md:text-3xl font-medium pl-3 pt-10">
+              Approaching Innovation, With Continuous Renewal 
               </h3>
 
               {/* Scrolling Text */}
@@ -136,8 +135,7 @@ export default function AboutSection() {
                 variant="link"
                 buttonTransition="bg-[#FFBF00] text-black opacity-80 hover:opacity-100 transition-opacity duration-300"
                 arrowClassName="w-6 h-6 group-hover:rotate-45 transition-transform duration-300"
-                className="font-bold text-xl"
-              >
+                className="font-bold text-xl text-white  ml-4 bg-amber-400 hover:bg-amber-300 cursor-pointer font-bold font-xl transition-all duration-300 transform hover:scale-105">
                 About Us
               </CustomButton>
             </motion.div>
@@ -145,7 +143,7 @@ export default function AboutSection() {
 
           {/* Right Column */}
           <aside className="flex flex-col gap-4">
-            <figure className="relative h-80 w-full overflow-hidden">
+            <figure className="relative h-100 w-full overflow-hidden">
               {carouselImages.map((src, index) => (
                 <Image
                   key={index}

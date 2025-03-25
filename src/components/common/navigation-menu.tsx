@@ -53,7 +53,7 @@ const Navbar = () => {
               href="/ventures"
               className="text-gray-400 hover:text-[#c3932f] transition-colors relative group"
             >
-              Ventures
+              Partners
               <span
                 className="absolute left-0 bottom-0 w-0 h-[2px] bg-[#c3932f] transition-all duration-500 ease-in-out group-hover:w-full group-hover:scale-110"
               />

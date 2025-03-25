@@ -81,7 +81,7 @@ function AboutPage() {
                     Our Vision
                   </h2>
                   <p className="text-lg text-muted-foreground mb-4 leading-relaxed">
-                  To be the premier strategic consulting firm that drives transformation in renewable energy, infrastructure, smart technology  and high-growth sectors globally.                  </p>
+                  To be THE strategic consulting firm fueling transformation in renewable energy, infrastructure, smart technology, and high-growth sectors worldwide.</p>
                 </div>
                 <div className="relative h-[500px] rounded-2xl overflow-hidden shadow-xl">
                   <Image
@@ -143,7 +143,7 @@ function AboutPage() {
                     Our Mission
                   </h2>
                   <p className="text-lg text-muted-foreground mb-4 leading-relaxed">
-                  Empowering businesses with smart capital, strategic insights, and operational excellence, ensuring sustainable and profitable growth across industries.                  </p>
+                  Raising businesses with smart capital, strategic insights, and operational excellence to achieve sustainable, profitable growth across industries.  </p>
                 </div>
               </div>
             </TabsContent>
@@ -156,8 +156,7 @@ function AboutPage() {
                   </div>
                   <h3 className="text-xl font-bold mb-3">Innovation</h3>
                   <p className="text-muted-foreground">
-                    We embrace creative thinking and cutting-edge solutions to
-                    drive progress and overcome challenges.
+                  We drive creative thinking and cutting-edge solutions.
                   </p>
                 </div>
 
@@ -167,8 +166,7 @@ function AboutPage() {
                   </div>
                   <h3 className="text-xl font-bold mb-3">Sustainability</h3>
                   <p className="text-muted-foreground">
-                    We are committed to environmentally responsible practices
-                    that ensure long-term benefits for our planet.
+                  We champion responsible practices that secure long-term benefits 
                   </p>
                 </div>
 
@@ -178,8 +176,7 @@ function AboutPage() {
                   </div>
                   <h3 className="text-xl font-bold mb-3">Integrity</h3>
                   <p className="text-muted-foreground">
-                    We uphold the highest standards of honesty, transparency,
-                    and ethical conduct in all our endeavors.
+                  We commit to unwavering honesty, transparency, and ethical conduct in every decision and action.
                   </p>
                 </div>
               </div>

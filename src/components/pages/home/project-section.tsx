@@ -1,14 +1,14 @@
 "use client";
 
 import SectionHeader from "@/components/common/section-header";
-import { COMPANY_PROJECTS } from "@/lib/constants";
+import { COMPANY_SERVICES } from "@/lib/constants"; // Use services instead of projects
 import { AnimatePresence, motion } from "framer-motion";
 import { ChevronRight } from "lucide-react";
 import Image from "next/image";
 import { useState } from "react";
 
-function Projects() {
-  const [cards, setCards] = useState([0, 1, 2]); // Indices of cards in stack order (top to bottom)
+function Services() {
+  const [cards, setCards] = useState([0, 1, 2, 3, 4]); // Indices of cards in stack order (top to bottom)
   const [isAnimating, setIsAnimating] = useState(false);
 
   // Function to cycle to next card with animation
@@ -18,13 +18,13 @@ function Projects() {
     setIsAnimating(true);
 
     // Check if we're on the last card
-    const isLastCard = cards[0] === COMPANY_PROJECTS.length - 1;
+    const isLastCard = cards[0] === COMPANY_SERVICES.length - 1;
 
     // After animation completes, update the card order
     setTimeout(() => {
       if (isLastCard) {
         // Reset to original order if we're on the last card
-        setCards([0, 1, 2]);
+        setCards([0, 1, 2, 3, 4]);
       } else {
         // Otherwise, move the top card to the bottom
         setCards((prevCards) => {
@@ -40,11 +40,11 @@ function Projects() {
     }, 600); // Match this with the animation duration
   };
 
-  // Get active project (top card)
-  const activeProject = cards[0];
+  // Get active service (top card)
+  const activeService = cards[0];
 
   // Check if we're on the last card
-  const isLastCard = activeProject === COMPANY_PROJECTS.length - 1;
+  const isLastCard = activeService === COMPANY_SERVICES.length - 1;
 
   // Card positions and animations
   const getCardStyles = (stackIndex: number) => {
@@ -53,6 +53,8 @@ function Projects() {
       { rotate: "-2deg", translateX: "-5px", translateY: "0px", scale: 1 },
       { rotate: "2deg", translateX: "5px", translateY: "-5px", scale: 0.97 },
       { rotate: "-1deg", translateX: "0px", translateY: "5px", scale: 0.94 },
+      { rotate: "1deg", translateX: "10px", translateY: "-10px", scale: 0.91 },
+      { rotate: "-3deg", translateX: "-10px", translateY: "10px", scale: 0.88 },
     ];
 
     return basePositions[stackIndex];
@@ -61,25 +63,25 @@ function Projects() {
   return (
     <section className="py-16 px-4 md:px-8 min-h-screen">
       <div className="max-w-7xl mx-auto">
-        <SectionHeader title="Projects" description="Goldenace Ventures LLP" />
+        <SectionHeader title="Services" description="Goldenace Ventures LLP" />
 
-        {/* Project Content */}
+        {/* Service Content */}
         <div className="grid md:grid-cols-2 gap-8 items-center">
           {/* Text Content */}
           <div className="max-w-xl">
             <AnimatePresence mode="wait">
               <motion.div
-                key={activeProject}
+                key={activeService}
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -20 }}
                 transition={{ duration: 0.3 }}
               >
                 <h3 className="text-3xl font-bold mb-6">
-                  {COMPANY_PROJECTS[activeProject].title}
+                  {COMPANY_SERVICES[activeService].title}
                 </h3>
                 <p className="text-gray-300 whitespace-pre-line leading-relaxed">
-                  {COMPANY_PROJECTS[activeProject].description}
+                  {COMPANY_SERVICES[activeService].description}
                 </p>
               </motion.div>
             </AnimatePresence>
@@ -89,13 +91,13 @@ function Projects() {
           <div className="relative h-[400px] flex items-center justify-center">
             {/* Card Stack */}
             <div className="relative w-[300px] h-[300px] perspective-[1200px]">
-              {cards.map((projectIndex, stackIndex) => {
+              {cards.map((serviceIndex, stackIndex) => {
                 const isTopCard = stackIndex === 0;
                 const cardStyles = getCardStyles(stackIndex);
 
                 return (
                   <motion.div
-                    key={`${projectIndex}-${cards.join("-")}`}
+                    key={`${serviceIndex}-${cards.join("-")}`}
                     className="absolute top-0 left-0 w-full h-full"
                     style={{
                       zIndex: cards.length - stackIndex,
@@ -144,15 +146,15 @@ function Projects() {
                     <div className="relative w-full h-full rounded-3xl overflow-hidden shadow-lg">
                       <Image
                         src={
-                          COMPANY_PROJECTS[projectIndex].image ||
+                          COMPANY_SERVICES[serviceIndex].image ||
                           "/placeholder.svg"
                         }
-                        alt={COMPANY_PROJECTS[projectIndex].title}
+                        alt={COMPANY_SERVICES[serviceIndex].title}
                         fill
                         className="object-cover"
                       />
                       <div className="absolute top-4 right-4 bg-white/10 backdrop-blur-sm rounded-full w-12 h-12 flex items-center justify-center text-2xl font-bold">
-                        {String(COMPANY_PROJECTS[projectIndex].id).padStart(
+                        {String(COMPANY_SERVICES[serviceIndex].id).padStart(
                           2,
                           "0"
                         )}
@@ -169,7 +171,7 @@ function Projects() {
               disabled={isAnimating}
               className="absolute bottom-[-60px] left-1/2 transform -translate-x-1/2 bg-yellow-400 text-black rounded-full w-24 h-12 flex items-center justify-center hover:bg-yellow-300 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
               aria-label={
-                isLastCard ? "Reset to first project" : "Next project"
+                isLastCard ? "Reset to first service" : "Next service"
               }
             >
               Next
@@ -182,4 +184,4 @@ function Projects() {
   );
 }
 
-export default Projects;
+export default Services;

@@ -23,7 +23,7 @@ const Home: NextPage = () => {
       <section className="backdrop-blur-[10px] bg-[rgba(255,255,255,0)]">
         <ShowReel />
         <AboutSection />
-        <ScrollSections/>
+        {/* <ScrollSections/> */}
         <Projects />
         <Blogs />
         <NewsAndEvents />

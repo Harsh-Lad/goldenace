@@ -23,7 +23,6 @@ const carouselImages = [
 
 export default function AboutSection() {
   const scrollRef = useRef<HTMLDivElement>(null);
-  const [autoScrollSpeed, setAutoScrollSpeed] = useState(1); // pixels per frame
   const [isManualScrolling, setIsManualScrolling] = useState(false);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
@@ -35,7 +34,7 @@ export default function AboutSection() {
       if (!scrollRef.current || isManualScrolling) return;
 
       const deltaTime = currentTime - lastTime;
-      const scrollAmount = (autoScrollSpeed * deltaTime) / 16; // normalize to 60fps
+      const scrollAmount = (1 * deltaTime) / 16; // normalize to 60fps
 
       scrollRef.current.scrollTop += scrollAmount;
 
@@ -63,7 +62,7 @@ export default function AboutSection() {
     return () => {
       cancelAnimationFrame(animationFrameId);
     };
-  }, [autoScrollSpeed, isManualScrolling]);
+  }, [ isManualScrolling]);
 
   useEffect(() => {
     const intervalId = setInterval(() => {

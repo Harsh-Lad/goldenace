@@ -1,10 +1,5 @@
 import { NextResponse } from 'next/server';
 import { google } from 'googleapis';
-import path from 'path';
-import fs from 'fs';
-
-// Import service account key directly with the correct filename
-const keyFilePath = path.join(process.cwd(), 'key.json');
 
 export async function POST(request: Request) {
   try {
@@ -14,12 +9,19 @@ export async function POST(request: Request) {
     // Extract the form data
     const { firstName, lastName, email, phone, companyName } = body;
     
-    // Read and parse the service account key file
-    const keyFileContent = JSON.parse(fs.readFileSync(keyFilePath, 'utf8'));
+    // Get the service account key from environment variable
+    const keyString = process.env.NEXT_PUBLIC_GOOGLE_SERVICE_ACCOUNT_KEY;
     
-    // Authenticate with Google Sheets API using key file directly
+    if (!keyString) {
+      throw new Error('Google service account key not found in environment variables');
+    }
+    
+    // Parse the JSON string from the environment variable
+    const credentials = JSON.parse(keyString);
+    
+    // Authenticate with Google Sheets API using credentials from env var
     const auth = new google.auth.GoogleAuth({
-      credentials: keyFileContent,
+      credentials,
       scopes: ['https://www.googleapis.com/auth/spreadsheets'],
     });
 

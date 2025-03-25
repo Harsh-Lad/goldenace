@@ -170,7 +170,7 @@ function MediaPage() {
                 src="/assets/images/Secutech.jpg"
                 alt="Latest News"
                 fill
-                className="object-cover"
+                className="object-cover object-top"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end">
                 <div className="p-8 text-white">
@@ -208,7 +208,7 @@ function MediaPage() {
                         src={item.image || "/placeholder.svg"}
                         alt={item.title}
                         fill
-                        className="object-cover"
+                        className="object-cover object-top"
                       />
                     </div>
                     <div>

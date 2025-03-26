@@ -12,7 +12,7 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import { useState } from "react";
 
-export const SERVICES_DATA = [
+const SERVICES_DATA = [
   {
     id: "energy",
     title: "Renewable, Green & Thermal Energy",

@@ -1,92 +1,98 @@
-"use client"
+"use client";
 
-import { useEffect, useRef, useState } from "react"
-import { motion, AnimatePresence } from "framer-motion"
-import Image from "next/image"
-import { cn } from "@/lib/utils"
+import { cn } from "@/lib/utils";
+import { AnimatePresence, motion } from "framer-motion";
+import Image from "next/image";
+import { useEffect, useRef, useState } from "react";
 
 interface CardProps {
-  id: number
-  title: string
-  description: string
-  image: string
-  color: string
+  id: number;
+  title: string;
+  description: string;
+  image: string;
+  color: string;
 }
 
 interface CircularCardCarouselProps {
-  cards: CardProps[]
+  cards: CardProps[];
 }
 
-export default function CircularCardCarousel({ cards }: CircularCardCarouselProps) {
-  const [activeIndex, setActiveIndex] = useState(0)
-  const [isAnimating, setIsAnimating] = useState(false)
-  const containerRef = useRef<HTMLDivElement>(null)
-  const [containerSize, setContainerSize] = useState({ width: 0, height: 0 })
+export default function CircularCardCarousel({
+  cards,
+}: CircularCardCarouselProps) {
+  const [activeIndex, setActiveIndex] = useState(0);
+  const [isAnimating, setIsAnimating] = useState(false);
+  const containerRef = useRef<HTMLDivElement>(null);
+  const [containerSize, setContainerSize] = useState({ width: 0, height: 0 });
 
   // Update container size on window resize
   useEffect(() => {
     const updateSize = () => {
       if (containerRef.current) {
-        const rect = containerRef.current.getBoundingClientRect()
+        const rect = containerRef.current.getBoundingClientRect();
         // Use the smaller dimension to ensure it fits on all screens
-        const size = Math.min(rect.width * 0.9, window.innerHeight * 0.7)
+        const size = Math.min(rect.width * 0.9, window.innerHeight * 0.7);
         setContainerSize({
           width: size,
           height: size,
-        })
+        });
       }
-    }
+    };
 
     // Initial size calculation
-    updateSize()
+    updateSize();
 
     // Add resize listener
-    window.addEventListener("resize", updateSize)
+    window.addEventListener("resize", updateSize);
 
     // Cleanup
-    return () => window.removeEventListener("resize", updateSize)
-  }, [])
+    return () => window.removeEventListener("resize", updateSize);
+  }, []);
 
   // Function to animate cards along the circular path
   const animateCircularSlide = (direction: "next" | "prev") => {
-    if (isAnimating) return
+    if (isAnimating) return;
 
-    setIsAnimating(true)
+    setIsAnimating(true);
 
     // Calculate the next active index
     const nextIndex =
-      direction === "next" ? (activeIndex + 1) % cards.length : (activeIndex - 1 + cards.length) % cards.length
+      direction === "next"
+        ? (activeIndex + 1) % cards.length
+        : (activeIndex - 1 + cards.length) % cards.length;
 
-    setActiveIndex(nextIndex)
+    setActiveIndex(nextIndex);
 
     // After animation completes, reset animating state
     setTimeout(() => {
-      setIsAnimating(false)
-    }, 600)
-  }
+      setIsAnimating(false);
+    }, 600);
+  };
 
   // Handle direct navigation to a specific card
   const handleCardClick = (index: number) => {
-    if (isAnimating || index === activeIndex) return
+    if (isAnimating || index === activeIndex) return;
 
     // Determine direction for smoother animation
-    const currentIndex = activeIndex
-    const cardCount = cards.length
+    const currentIndex = activeIndex;
+    const cardCount = cards.length;
 
     // Calculate distance in both directions
-    const clockwiseDistance = (index - currentIndex + cardCount) % cardCount
-    const counterclockwiseDistance = (currentIndex - index + cardCount) % cardCount
+    const clockwiseDistance = (index - currentIndex + cardCount) % cardCount;
+    const counterclockwiseDistance =
+      (currentIndex - index + cardCount) % cardCount;
 
     // Choose the shortest path
-    const direction = clockwiseDistance <= counterclockwiseDistance ? "next" : "prev"
+    const direction =
+      clockwiseDistance <= counterclockwiseDistance ? "next" : "prev";
 
-    animateCircularSlide(direction)
-  }
+    animateCircularSlide(direction);
+  };
 
   // Calculate wheel radius and card size
-  const radius = Math.min(containerSize.width, containerSize.height) * 0.4
-  const cardWidth = Math.min(containerSize.width, containerSize.height) * 0.25
-  const cardHeight = cardWidth * 1.6
+  const radius = Math.min(containerSize.width, containerSize.height) * 0.4;
+  const cardWidth = Math.min(containerSize.width, containerSize.height) * 0.25;
+  const cardHeight = cardWidth * 1.6;
 
   return (
     <div
@@ -110,8 +116,16 @@ export default function CircularCardCarousel({ cards }: CircularCardCarouselProp
           transition={{ duration: 0.3 }}
           className="absolute top-0 left-1/2 -translate-x-1/2 text-center w-full max-w-md"
         >
-          <h3 className="text-2xl font-bold text-yellow-400">{cards[activeIndex].title}</h3>
-          <p className="text-gray-300 text-sm mt-2">{cards[activeIndex].description}</p>
+          {cards?.[activeIndex] && (
+            <>
+              <h3 className="text-2xl font-bold text-yellow-400">
+                {cards[activeIndex].title}
+              </h3>
+              <p className="text-gray-300 text-sm mt-2">
+                {cards[activeIndex].description}
+              </p>
+            </>
+          )}
         </motion.div>
       </AnimatePresence>
 
@@ -124,31 +138,37 @@ export default function CircularCardCarousel({ cards }: CircularCardCarouselProp
       >
         {cards.map((card, index) => {
           // Calculate position on the wheel
-          const cardCount = cards.length
-          const angleStep = 360 / cardCount
+          const cardCount = cards.length;
+          const angleStep = 360 / cardCount;
 
           // Calculate the visual angle for this card relative to active card
-          const relativeIndex = (index - activeIndex + cardCount) % cardCount
-          const visualAngle = relativeIndex * angleStep
+          const relativeIndex = (index - activeIndex + cardCount) % cardCount;
+          const visualAngle = relativeIndex * angleStep;
 
           // Convert to radians for position calculation
-          const radian = (visualAngle * Math.PI) / 180
+          const radian = (visualAngle * Math.PI) / 180;
 
           // Calculate position
-          const x = Math.cos(radian) * radius
-          const y = Math.sin(radian) * radius
+          const x = Math.cos(radian) * radius;
+          const y = Math.sin(radian) * radius;
 
           // Determine visibility and z-index based on position
-          const isActive = index === activeIndex
-          const isVisible = relativeIndex <= 3 || relativeIndex >= cardCount - 3
+          const isActive = index === activeIndex;
+          const isVisible =
+            relativeIndex <= 3 || relativeIndex >= cardCount - 3;
 
           // Calculate opacity and scale based on position
-          const distanceFromActive = Math.min(relativeIndex, cardCount - relativeIndex)
+          const distanceFromActive = Math.min(
+            relativeIndex,
+            cardCount - relativeIndex
+          );
 
-          const opacity = Math.max(0.4, 1 - distanceFromActive * 0.2)
-          const scale = isActive ? 1.1 : Math.max(0.8, 1 - distanceFromActive * 0.1)
+          const opacity = Math.max(0.4, 1 - distanceFromActive * 0.2);
+          const scale = isActive
+            ? 1.1
+            : Math.max(0.8, 1 - distanceFromActive * 0.1);
 
-          if (!isVisible) return null
+          if (!isVisible) return null;
 
           return (
             <motion.div
@@ -191,12 +211,23 @@ export default function CircularCardCarousel({ cards }: CircularCardCarouselProp
                   className="object-cover mix-blend-overlay opacity-60"
                 />
                 <div className="absolute inset-0 p-4 flex flex-col justify-end">
-                  <h3 className={cn("font-bold text-white", isActive ? "text-lg" : "text-base")}>{card.title}</h3>
-                  {isActive && <p className="text-xs text-white/80 mt-2 line-clamp-3">{card.description}</p>}
+                  <h3
+                    className={cn(
+                      "font-bold text-white",
+                      isActive ? "text-lg" : "text-base"
+                    )}
+                  >
+                    {card.title}
+                  </h3>
+                  {isActive && (
+                    <p className="text-xs text-white/80 mt-2 line-clamp-3">
+                      {card.description}
+                    </p>
+                  )}
                 </div>
               </div>
             </motion.div>
-          )
+          );
         })}
       </div>
 
@@ -235,6 +266,5 @@ export default function CircularCardCarousel({ cards }: CircularCardCarouselProp
         </button>
       </div>
     </div>
-  )
+  );
 }
-

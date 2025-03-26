@@ -78,10 +78,12 @@ function Services() {
                 transition={{ duration: 0.3 }}
               >
                 <h3 className="text-3xl font-bold mb-6">
-                  {COMPANY_SERVICES[activeService].title}
+                  {activeService !== undefined &&
+                    COMPANY_SERVICES[activeService]?.title}
                 </h3>
                 <p className="text-gray-300 whitespace-pre-line leading-relaxed">
-                  {COMPANY_SERVICES[activeService].description}
+                  {activeService !== undefined &&
+                    COMPANY_SERVICES[activeService]?.description}
                 </p>
               </motion.div>
             </AnimatePresence>
@@ -105,7 +107,7 @@ function Services() {
                     initial={cardStyles}
                     animate={{
                       ...cardStyles,
-                      ...(isAnimating && isTopCard
+                      ...(isAnimating && isTopCard && cardStyles
                         ? {
                             y: [0, -50, 200],
                             x: [0, -100, 0],
@@ -115,7 +117,7 @@ function Services() {
                             zIndex: 0,
                           }
                         : {}),
-                      ...(isAnimating && !isTopCard
+                      ...(isAnimating && cardStyles && !isTopCard
                         ? {
                             y:
                               stackIndex === 1
@@ -146,18 +148,19 @@ function Services() {
                     <div className="relative w-full h-full rounded-3xl overflow-hidden shadow-lg">
                       <Image
                         src={
-                          COMPANY_SERVICES[serviceIndex].image ||
+                          COMPANY_SERVICES[serviceIndex]?.image ||
                           "/placeholder.svg"
                         }
-                        alt={COMPANY_SERVICES[serviceIndex].title}
+                        alt={
+                          COMPANY_SERVICES[serviceIndex]?.title || "Placeholder"
+                        }
                         fill
                         className="object-cover"
                       />
                       <div className="absolute top-4 right-4 bg-white/10 backdrop-blur-sm rounded-full w-12 h-12 flex items-center justify-center text-2xl font-bold">
-                        {String(COMPANY_SERVICES[serviceIndex].id).padStart(
-                          2,
-                          "0"
-                        )}
+                        {String(
+                          COMPANY_SERVICES[serviceIndex]?.id || 0
+                        ).padStart(2, "0")}
                       </div>
                     </div>
                   </motion.div>

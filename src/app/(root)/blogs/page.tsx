@@ -39,7 +39,7 @@ export default function BlogsPage() {
   return (
     <main className="container mx-auto px-4">
       <div className="py-12 md:py-16">
-        <h1 className="text-4xl md:text-5xl font-bold text-center mb-8 bg-clip-text text-transparent bg-gradient-to-r from-[#FFBF00] to-[#FFBF00]/70">
+        <h1 className="text-4xl mt-24 md:text-5xl font-bold text-center mb-8 bg-clip-text text-transparent bg-gradient-to-r from-[#FFBF00] to-[#FFBF00]/70">
           Our Blog
         </h1>
         <p className="text-center text-muted-foreground max-w-2xl mx-auto mb-12">

@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { COMPANY_BLOGS } from "@/lib/constants";
-import { ArrowLeft, Calendar, Clock, User } from "lucide-react";
+import { ArrowLeft, Calendar, Clock } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
@@ -43,10 +43,7 @@ export default async function BlogDetailPage({
               <Clock className="h-4 w-4 mr-1" />
               <span>{blog.readTime}</span>
             </div>
-            <div className="flex items-center">
-              <User className="h-4 w-4 mr-1" />
-              <span>{blog.author}</span>
-            </div>
+            
           </div>
 
           <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-[#FFBF00] to-[#FFBF00]/70">

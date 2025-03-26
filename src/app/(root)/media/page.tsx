@@ -28,27 +28,15 @@ function MediaPage() {
     },
   };
 
-  // const staggerContainer = {
-  //   hidden: { opacity: 0 },
-  //   visible: {
-  //     opacity: 1,
-  //     transition: {
-  //       staggerChildren: 0.15,
-  //       delayChildren: 0.3,
-  //     },
-  //   },
-  // };
-
   const newsItems = [
     {
-      title:
-        "The Consumption Bet",
+      title: "The Consumption Bet",
       // date: "June 15, 2023",
       category: "Partnership",
       excerpt:
         "Avi Mittal: Powering Innovation, Transformating Industries, and Leading India's Green Revolution.",
       image: "/assets/images/tsb.png",
-      pdfUrl: "/assets/pdfs/DOC-20250211-WA0008..pdf"
+      pdfUrl: "/assets/pdfs/consumption.pdf"
     },
     {
       title: "Interview between Rahul Tarani and Avi Mittal",
@@ -59,15 +47,15 @@ function MediaPage() {
       image: "/assets/images/inter.png",
       pdfUrl: "/assets/pdfs/Interview - Skyytop.pdf"
     },
-    // {
-    //   title: "Aparajeet Mittal Speaks at Infrastructure Development Summit",
-    //   date: "March 5, 2023",
-    //   category: "Speaking",
-    //   excerpt:
-    //     "Managing Partner Aparajeet Mittal delivered a keynote address on the future of infrastructure development at the annual Infrastructure Development Summit.",
-    //   image: "/assets/images/ak.jpg",
-    //   pdfUrl: "/assets/pdfs/infrastructure-summit.pdf"
-    // },
+    {
+      title: "Game Changers",
+      // date: "March 5, 2023",
+      category: "Speaking",
+      excerpt:
+        "Avi Mittal: Powering Innovation, Transforming Industries, and Leading India's Green Revolution",
+      image: "/assets/images/son.jpg",
+      pdfUrl: "/assets/pdfs/gamechangers.pdf"
+    },
   ];
 
   // Suppress TypeScript errors for specific lines
@@ -126,32 +114,36 @@ function MediaPage() {
 
   const mediaResources = [
     {
-      title: "Company Brochure",
+      title: "Game Brochure",
       type: "PDF",
       size: "2.5 MB",
       description:
         "Comprehensive overview of Golden Ace Ventures LLP, our services, and key projects.",
+      pdfUrl: "/assets/pdfs/GAME_brochure.pdf"
     },
     {
-      title: "Corporate Presentation",
-      type: "PPT",
+      title: "ST-Secutech Corporate Profile 2021_compressed",
+      type: "PDF",
       size: "5.8 MB",
       description:
         "Detailed presentation on Golden Ace Ventures' vision, mission, and strategic initiatives.",
+      pdfUrl: "/assets/pdfs/ST-Secutech Corporate Profile 2021_compressed.pdf"
     },
     {
-      title: "Brand Guidelines",
+      title: "ONLINE CLEANING TECHNOLOGIES PVT LTD - PPT",
       type: "PDF",
       size: "3.2 MB",
       description:
         "Official brand guidelines including logo usage, color palette, and typography.",
+      pdfUrl: "/assets/pdfs/ONLINE CLEANING TECHNOLOGIES PVT LTD - PPT.pdf"
     },
     {
-      title: "Company Fact Sheet",
+      title: "VIVID PPT",
       type: "PDF",
       size: "1.1 MB",
       description:
         "Quick reference guide with key facts and figures about Golden Ace Ventures LLP.",
+      pdfUrl: "/assets/pdfs/VIVID PPT.pdf Main.pdf"
     },
   ];
 
@@ -173,86 +165,7 @@ function MediaPage() {
           className="my-16"
         >
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-            {/* <div className="relative h-[400px] rounded-xl overflow-hidden shadow-xl border border-[#FFBF00]/20">
-              <Image
-                src="/assets/images/Secutech.jpg"
-                alt="Latest News"
-                fill
-                className="object-cover object-top"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end">
-                <div className="p-8 text-white">
-                  <Badge className="mb-2 bg-[#FFBF00] hover:bg-[#FFBF00]/80 text-black">
-                    Partnership
-                  </Badge>
-                  <h3 className="text-2xl font-bold mb-2">
-                    Golden Ace Ventures Announces Partnership with Secutech
-                  </h3>
-                  <p className="text-white/80 mb-4">
-                    Strategic collaboration to develop and implement smart city
-                    solutions across India.
-                  </p>
-                  <Button className="bg-[#FFBF00] hover:bg-[#FFBF00]/80 text-black">
-                    Read Full Story <ArrowRight className="ml-2 h-4 w-4" />
-                  </Button>
-                </div>
-              </div>
-            </div>
-            <div>
-              <h2 className="text-3xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-[#FFBF00] to-[#FFBF00]/70">
-                Latest News
-              </h2>
-              <div className="space-y-6">
-                {newsItems.slice(0, 3).map((item, index) => (
-                  <motion.div
-                    key={index}
-                    initial={{ opacity: 0, x: -20 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ duration: 0.5, delay: index * 0.1 }}
-                    className="flex gap-4 border-b border-[#FFBF00]/20 pb-4"
-                  >
-                    <div className="relative h-20 w-20 flex-shrink-0 rounded-md overflow-hidden">
-                      <Image
-                        src={item.image || "/placeholder.svg"}
-                        alt={item.title}
-                        fill
-                        className="object-cover object-top"
-                      />
-                    </div>
-                    <div>
-                      <div className="flex items-center gap-2 mb-1">
-                        <Badge
-                          variant="outline"
-                          className="text-xs border-[#FFBF00]/30 text-[#FFBF00] hover:bg-[#FFBF00]/10"
-                        >
-                          {item.category}
-                        </Badge>
-                        <span className="text-xs text-muted-foreground">
-                          {item.date}
-                        </span>
-                      </div>
-                      <h3 className="font-medium mb-1 line-clamp-2 hover:text-[#FFBF00] transition-colors">
-                        {item.title}
-                      </h3>
-                      <Button
-                        variant="link"
-                        className="p-0 h-auto text-sm text-[#FFBF00] hover:text-[#FFBF00]/80"
-                      >
-                        Read More <ArrowRight className="ml-1 h-3 w-3" />
-                      </Button>
-                    </div>
-                  </motion.div>
-                ))}
-              </div>
-              <div className="mt-6"> */}
-                {/* <Button
-                  variant="outline"
-                  className="border-[#FFBF00]/30 text-[#FFBF00] hover:bg-[#FFBF00]/10 hover:text-[#FFBF00]"
-                >
-                  View All News
-                </Button> */}
-              {/* </div>
-            </div> */}
+            {/* Content removed for brevity */}
           </div>
         </motion.section>
         <motion.section
@@ -277,18 +190,6 @@ function MediaPage() {
                   className="data-[state=active]:bg-[#FFBF00] data-[state=active]:text-black"
                 >
                   News
-                </TabsTrigger>
-                <TabsTrigger
-                  value="events"
-                  className="data-[state=active]:bg-[#FFBF00] data-[state=active]:text-black"
-                >
-                  Events
-                </TabsTrigger>
-                <TabsTrigger
-                  value="press"
-                  className="data-[state=active]:bg-[#FFBF00] data-[state=active]:text-black"
-                >
-                  Press Releases
                 </TabsTrigger>
                 <TabsTrigger
                   value="resources"
@@ -316,12 +217,12 @@ function MediaPage() {
                     whileHover={{ y: -10 }}
                   >
                     <Card className="overflow-hidden border border-[#FFBF00]/20 hover:border-[#FFBF00]/50 transition-all duration-300 hover:shadow-lg h-full">
-                      <div className="relative h-[200px] overflow-hidden">
+                      <div className="relative h-[300px] overflow-hidden">
                         <Image
                           src={item.image || "/placeholder.svg"}
                           alt={item.title}
                           fill
-                          className="object-cover transition-transform duration-500 hover:scale-105"
+                          className="object-contain bg-white object-center transition-transform duration-500 hover:scale-105"
                         />
                         <div className="absolute top-2 right-2">
                           <Badge className="bg-[#FFBF00] hover:bg-[#FFBF00]/80 text-black">
@@ -346,6 +247,7 @@ function MediaPage() {
                             className="border-[#FFBF00]/30 text-[#FFBF00] hover:bg-[#FFBF00]/10"
                             onClick={() => handlePdfOpen(item)}
                           >
+                            <Download className="mr-2 h-4 w-4" />
                             Read Full News
                           </Button>
                         </div>
@@ -553,14 +455,15 @@ function MediaPage() {
                             <div className="flex gap-2 text-sm text-muted-foreground mb-2">
                               <span>{resource.type}</span>
                               <span>•</span>
-                              <span>{resource.size}</span>
+                              {/* <span>{resource.size}</span> */}
                             </div>
-                            <p className="text-sm text-muted-foreground mb-3">
+                            {/* <p className="text-sm text-muted-foreground mb-3">
                               {resource.description}
-                            </p>
+                            </p> */}
                             <Button
                               variant="link"
                               className="p-0 h-auto text-sm text-[#FFBF00] hover:text-[#FFBF00]/80"
+                              onClick={() => window.open(resource.pdfUrl, '_blank')}
                             >
                               Download <Download className="ml-1 h-3 w-3" />
                             </Button>
@@ -570,30 +473,6 @@ function MediaPage() {
                     </motion.div>
                   ))}
                 </div>
-                <motion.div
-                  initial={{ opacity: 0, y: 30 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5, delay: 0.4 }}
-                  className="mt-8 p-6 bg-[#FFBF00]/5 rounded-lg border border-[#FFBF00]/20"
-                >
-                  <h3 className="text-xl font-bold mb-4 text-[#FFBF00]">
-                    Media Contact
-                  </h3>
-                  <p className="mb-4">
-                    For media inquiries, please contact our communications team:
-                  </p>
-                  <div className="space-y-2">
-                    <p>
-                      <strong>Email:</strong> media@goldenaceventures.com
-                    </p>
-                    <p>
-                      <strong>Phone:</strong> +91 XXXX XXXX XX
-                    </p>
-                  </div>
-                  <Button className="mt-4 bg-[#FFBF00] hover:bg-[#FFBF00]/80 text-black">
-                    Contact Media Relations
-                  </Button>
-                </motion.div>
               </motion.div>
             </TabsContent>
           </Tabs>
@@ -605,115 +484,8 @@ function MediaPage() {
           viewport={{ once: true, margin: "-100px" }}
           className="my-16"
         >
-          {/* Media Kit Section - Commented Out
-          <div className="max-w-4xl mx-auto px-4 text-center">
-            <h2 className="text-3xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-[#FFBF00] to-[#FFBF00]/70">
-              Media Kit
-            </h2>
-            <p className="text-lg text-muted-foreground mb-8">
-              Download our comprehensive media kit containing company
-              information, logos, executive bios, and high-resolution images for
-              press and publication use.
-            </p>
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-              <Button
-                size="lg"
-                className="group bg-[#FFBF00] hover:bg-[#FFBF00]/80 text-black"
-              >
-                Download Media Kit
-                <motion.span
-                  initial={{ y: 0 }}
-                  whileHover={{ y: 5 }}
-                  transition={{ duration: 0.3 }}
-                >
-                  <Download className="ml-2 h-4 w-4" />
-                </motion.span>
-              </Button>
-              <Button
-                size="lg"
-                variant="outline"
-                className="border-[#FFBF00]/30 text-[#FFBF00] hover:bg-[#FFBF00]/10"
-              >
-                View Brand Guidelines
-              </Button>
-            </div>
-          </div>
-          */}
+          {/* Media Kit Section removed for brevity */}
         </motion.section>
-
-        {/* In The News Section - Commented Out
-        <motion.section
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-100px" }}
-          variants={fadeInUp}
-          className="my-16"
-        >
-          <h2 className="text-3xl font-bold mb-10 text-center bg-clip-text text-transparent bg-gradient-to-r from-[#FFBF00] to-[#FFBF00]/70">
-            In The News
-          </h2>
-          <motion.div
-            variants={staggerContainer}
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
-          >
-            {[
-              {
-                title:
-                  "Golden Ace Ventures Leading the Way in Renewable Energy",
-                source: "Energy Today",
-                date: "June 5, 2023",
-                link: "#",
-              },
-              {
-                title:
-                  "Smart Infrastructure: An Interview with Aparajeet Mittal",
-                source: "Infrastructure Insights",
-                date: "May 12, 2023",
-                link: "#",
-              },
-              {
-                title: "The Future of Solar Manufacturing in India",
-                source: "Renewable Energy World",
-                date: "April 22, 2023",
-                link: "#",
-              },
-            ].map((item, index) => (
-              <motion.div
-                key={index}
-                variants={fadeInUp}
-                whileHover={{ y: -10 }}
-                transition={{ duration: 0.3 }}
-              >
-                <Card className="overflow-hidden border border-[#FFBF00]/20 hover:border-[#FFBF00]/50 transition-all duration-300 hover:shadow-lg">
-                  <CardContent className="p-6">
-                    <div className="flex items-center justify-between mb-3">
-                      <Badge
-                        variant="secondary"
-                        className="bg-[#FFBF00]/10 hover:bg-[#FFBF00]/20 text-[#FFBF00]"
-                      >
-                        {item.source}
-                      </Badge>
-                      <div className="text-sm text-muted-foreground">
-                        {item.date}
-                      </div>
-                    </div>
-                    <h3 className="font-bold mb-4 hover:text-[#FFBF00] transition-colors line-clamp-1">
-                      {item.title}
-                    </h3>
-                    <Button
-                      variant="outline"
-                      size="sm"
-                      className="w-full border-[#FFBF00]/30 text-[#FFBF00] hover:bg-[#FFBF00]/10"
-                    >
-                      Read Article <ExternalLink className="ml-1 h-3 w-3" />
-                    </Button>
-                  </CardContent>
-                </Card>
-              </motion.div>
-            ))}
-          </motion.div>
-        </motion.section>
-        */}
       </section>
     </main>
   );

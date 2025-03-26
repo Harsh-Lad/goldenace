@@ -8,23 +8,23 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
+// import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { motion } from "framer-motion";
 import {
-  ArrowRight,
+  // ArrowRight,
   Award,
   Building,
-  Calendar,
-  Globe,
+  // Calendar,
+  // Globe,
   Lightbulb,
   Shield,
   TrendingUp,
-  Users
+  // Users
 } from "lucide-react";
 import Image from "next/image";
-import Link from "next/link";
+// import Link from "next/link";
 import { useState } from "react";
 
 // Company data
@@ -36,7 +36,7 @@ const COMPANIES = [
     description:
       "Leaders in LT & HT electrical panel manufacturing, delivering innovative, reliable power solutions. Advanced automation and smart technology that optimizes energy management, driving robust operations and empowering global industries with sustainable infrastructure.",
     founded: "2018",
-    location: "Bangalore, India",
+    location: "Mumbai, India",
     website: "https://vivid.example.com",
     employees: "50-100",
     investment: "Series A",
@@ -64,13 +64,13 @@ const COMPANIES = [
     ],
   },
   {
-    name: "Secutech",
-    logo: "/assets/images/Secutech.png",
+    name: "Re Plus",
+    logo: "/assets/images/RE.png",
     category: "Infrastructure",
     description:
       "Security and surveillance technology for smart infrastructure and urban development.",
     founded: "2017",
-    location: "Delhi, India",
+    location: "Pune, India",
     website: "https://secutech.example.com",
     employees: "50-100",
     investment: "Series A",
@@ -87,7 +87,7 @@ const COMPANIES = [
     description:
       "A top startup accelerator fueling early-stage companies with intensive mentorship and strategic capital. Their programs on entrepreneurship drive disruptive innovation. Backed by an ever-connected network, they propel scalable, sustainable venture success globally. ",
     founded: "2019",
-    location: "Mumbai, India",
+    location: "Washington, US",
     website: "https://gener8tor.example.com",
     employees: "25-50",
     investment: "Fund",
@@ -105,6 +105,40 @@ const COMPANIES = [
       "Founded in 2020, they drive business transformation with cutting-edge tech, delivering innovative digital solutions and advanced IT services. Committed to quality and growth, they empower diverse industries with robust IT processes. ",
     founded: "2015",
     location: "Ahmedabad, India",
+    website: "https://oct.example.com",
+    employees: "100-250",
+    investment: "Series B",
+    highlights: [
+      "Patented online cleaning technology for thermal power plants",
+      "Improved efficiency by up to 15% in over 50 power plants",
+      "Reduced water consumption in cleaning processes by 70%",
+    ],
+  },
+  {
+    name: "Magic Paws Co",
+    logo: "/assets/images/magicpaws.png",
+    category: "Investment",
+    description:
+      "A pet care brand offering premium products to boost the health and happiness of your furry friends. Their curated collection spans accessories, grooming, and nutritional solutions for modern pet care. With quality and sustainability at heart, they deliver transformative pet care solutions. ",
+    founded: "2015",
+    location: "Mumbai, India",
+    website: "https://oct.example.com",
+    employees: "100-250",
+    investment: "Series B",
+    highlights: [
+      "Patented online cleaning technology for thermal power plants",
+      "Improved efficiency by up to 15% in over 50 power plants",
+      "Reduced water consumption in cleaning processes by 70%",
+    ],
+  },
+  {
+    name: "Mechtech",
+    logo: "/assets/images/mechtech.png",
+    category: "Investment",
+    description:
+      "A premier provider of engineering solutions, specializing in sustainable infrastructure and industrial projects. They deliver turnkey project management, and smart tech integration with cutting-edge designs to boost efficiency, transform industries, and fuel global growth and profitability.",
+    founded: "2015",
+    location: "Gujarat, India",
     website: "https://oct.example.com",
     employees: "100-250",
     investment: "Series B",
@@ -148,7 +182,7 @@ export default function VenturesPage() {
   );
 
   // Get featured venture (for example, the first one)
-  const featuredVenture = COMPANIES[1]; // GAME Solar
+  // const featuredVenture = COMPANIES[1]; // GAME Solar
 
   return (
     <div className="container mx-auto px-4 py-12">
@@ -159,7 +193,7 @@ export default function VenturesPage() {
 
       <section className="max-w-7xl mx-auto">
         {/* Featured Venture Section */}
-        <motion.section
+        {/* <motion.section
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-100px" }}
@@ -259,7 +293,7 @@ export default function VenturesPage() {
               </div>
             </div>
           </div>
-        </motion.section>
+        </motion.section> */}
         {/* Ventures Portfolio Section */}
         <motion.section
           initial="hidden"
@@ -334,10 +368,10 @@ export default function VenturesPage() {
                           {company.description}
                         </p>
                         <div className="grid grid-cols-2 gap-4 text-sm">
-                          <div className="flex items-center">
+                          {/* <div className="flex items-center">
                             <Calendar className="h-4 w-4 mr-2 text-[#FFBF00]" />
                             <span>Founded: {company.founded}</span>
-                          </div>
+                          </div> */}
                           <div className="flex items-center">
                             <Building className="h-4 w-4 mr-2 text-[#FFBF00]" />
                             <span>{company.location}</span>

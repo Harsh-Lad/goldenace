@@ -60,7 +60,7 @@ export function ShowReel() {
 
   return (
     <section
-      className="relative w-screen h-screen flex items-center justify-center"
+      className="relative w-screen h-auto md:h-screen mt-24 md:mt-10 flex items-center justify-center"
       ref={containerRef}
     >
       <AnimatePresence>
@@ -74,7 +74,7 @@ export function ShowReel() {
             stiffness: 300,
             damping: 25,
           }}
-          className="flex items-center h-screen justify-center bg-black/90 rounded-xl overflow-hidden shadow-lg"
+          className="flex items-center h-auto md:h-screen  justify-center bg-black/90 rounded-xl overflow-hidden shadow-lg"
         >
           <div className="relative w-full">
             <video

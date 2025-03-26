@@ -51,14 +51,37 @@ function Blogs() {
           <p className="text-gray-400 text-lg">Goldenace Ventures LLP</p>
         </div>
 
-        {/* Carousel - Fixed height with clickable images */}
-        <div className="relative mb-8">
-          <div className="flex gap-4 items-start h-[500px]">
+        {/* Render slides as a list on small screens */}
+        <div className="block md:hidden space-y-8">
+          {slides.map((slide) => (
+            <div
+              key={slide.id}
+              className="relative w-full h-[300px] rounded-3xl overflow-hidden"
+            >
+              <Image
+                src={slide.image || "/placeholder.svg"}
+                alt={slide.title}
+                fill
+                className="object-cover"
+              />
+              <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black/80 to-transparent">
+                <h3 className="text-2xl font-bold mb-2 text-white">
+                  {slide.title}
+                </h3>
+                <p className="text-sm text-gray-200">{slide.description}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* Carousel - Slider for larger screens */}
+        <div className="hidden md:block relative mb-8">
+          <div className="flex flex-row gap-4">
             {slides.map((slide, index) => (
               <div
                 key={slide.id}
                 className={cn(
-                  "relative h-full transition-all duration-500 ease-in-out rounded-3xl overflow-hidden cursor-pointer",
+                  "relative w-full h-[500px] transition-all duration-500 ease-in-out rounded-3xl overflow-hidden cursor-pointer",
                   index === activeSlide
                     ? "flex-1"
                     : "w-[200px] opacity-70 hover:opacity-90"
@@ -86,11 +109,11 @@ function Blogs() {
                     index !== activeSlide && "opacity-0 group-hover:opacity-100"
                   )}
                 >
-                  <h3 className="text-2xl md:text-3xl font-bold mb-2">
+                  <h3 className="text-3xl font-bold mb-2 text-white">
                     {slide.title}
                   </h3>
                   {index === activeSlide && (
-                    <p className="text-sm md:text-base text-gray-200">
+                    <p className="text-base text-gray-200">
                       {slide.description}
                     </p>
                   )}
@@ -101,7 +124,7 @@ function Blogs() {
         </div>
 
         {/* Next Button */}
-        <div className="flex justify-start mt-8">
+        <div className="hidden md:flex justify-start mt-8">
           <button
             onClick={handleNext}
             className="bg-[#FFBF00] text-black font-bold py-2 px-6 rounded-full hover:bg-[#e0a800] transition-all duration-300"

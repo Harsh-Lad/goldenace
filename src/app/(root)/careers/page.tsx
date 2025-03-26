@@ -165,9 +165,10 @@ function CareersPage() {
                 variants={scaleIn}
                 whileHover={{ y: -10 }}
                 transition={{ duration: 0.3 }}
+                className="relative group"
               >
-                <Card className="overflow-hidden border border-[#FFBF00]/20 hover:border-[#FFBF00]/50 transition-all duration-300 hover:shadow-lg h-full">
-                  <CardContent className="p-6 text-center">
+                <Card className="overflow-hidden border border-[#FFBF00]/20 hover:border-[#FFBF00]/50 transition-all duration-300 hover:shadow-lg h-full group-hover:bg-black/5">
+                  <CardContent className="p-6 text-center relative z-10">
                     <motion.div
                       className="mx-auto mb-4 h-16 w-16 rounded-full bg-[#FFBF00]/10 flex items-center justify-center"
                       whileHover={{ scale: 1.1 }}
@@ -179,11 +180,12 @@ function CareersPage() {
                     >
                       {value.icon}
                     </motion.div>
-                    <h3 className="text-xl font-bold mb-2 text-[#FFBF00]">
+                    <h3 className="text-xl font-bold mb-2 text-[#FFBF00] group-hover:text-[#FFBF00]">
                       {value.title}
                     </h3>
-                    <p className="text-muted-foreground">{value.description}</p>
+                    <p className="text-muted-foreground group-hover:text-white/90">{value.description}</p>
                   </CardContent>
+                  <div className="absolute inset-0 bg-black/0 group-hover:bg-black/70 transition-all duration-300"></div>
                 </Card>
               </motion.div>
             ))}
@@ -211,6 +213,7 @@ function CareersPage() {
             </CardContent>
           </Card>
         </motion.section>
+        {/* Employee Testimonials Section - Commented Out
         <motion.section
           initial="hidden"
           whileInView="visible"
@@ -240,15 +243,6 @@ function CareersPage() {
                   making a real difference.&quot;
                 </p>
                 <div className="flex items-center">
-                  {/* <div className="h-12 w-12 rounded-full bg-muted mr-3 overflow-hidden border-2 border-[#FFBF00]/30">
-                    <Image
-                      src="/placeholder.svg?height=100&width=100"
-                      alt="Employee"
-                      width={48}
-                      height={48}
-                      className="object-cover"
-                    />
-                  </div> */}
                   <div>
                     <p className="font-medium">Priya Sharma</p>
                     <p className="text-sm text-muted-foreground">
@@ -274,15 +268,6 @@ function CareersPage() {
                   positive impact.&quot;
                 </p>
                 <div className="flex items-center">
-                  {/* <div className="h-12 w-12 rounded-full bg-muted mr-3 overflow-hidden border-2 border-[#FFBF00]/30">
-                    <Image
-                      src="/placeholder.svg?height=100&width=100"
-                      alt="Employee"
-                      width={48}
-                      height={48}
-                      className="object-cover"
-                    />
-                  </div> */}
                   <div>
                     <p className="font-medium">Rahul Patel</p>
                     <p className="text-sm text-muted-foreground">
@@ -318,6 +303,7 @@ function CareersPage() {
             </div>
           </div>
         </motion.section>
+        */}
         {/* Join Our Team Section - Commented Out
         <motion.section
           initial={{ opacity: 0, y: 30 }}

@@ -27,6 +27,15 @@ function NewsAndEvents() {
       image: "/assets/images/inter.png",
       pdfUrl: "/assets/pdfs/Interview - Skyytop.pdf",
     },
+    {
+      title: "Game Changers",
+      // date: "March 5, 2023",
+      category: "Speaking",
+      excerpt:
+        "Avi Mittal: Powering Innovation, Transforming Industries, and Leading India’s Green Revolution",
+      image: "/assets/images/son.jpg",
+      pdfUrl: "/assets/pdfs/gamechangers.pdf"
+    }
     // {
     //   category: "Investments",
     //   date: "Sep 21, 2025",
@@ -61,7 +70,7 @@ function NewsAndEvents() {
                     src={article.image}
                     alt={article.title}
                     fill
-                    className="rounded-xl object-cover"
+                    className="rounded-xl object-contain bg-white"
                   />
                 </div>
                 <div className="flex items-center gap-4 text-sm mb-3">

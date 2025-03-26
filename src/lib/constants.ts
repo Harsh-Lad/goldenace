@@ -37,25 +37,25 @@ export const TEAM_MEMBERS = [
     name: "Meenakshi Rao",
     position: "Executive Director",
     image: "/assets/images/meenakshi.jpg", // Local image path from the public directory
-    bio: "Visionary leader with extensive experience in energy and infrastructure sectors.",
+    bio: "Meenakshi is a seasoned expert in technology and digital transformation, spearheading smart technology innovations that accelerate operational excellence. Her adept change management skills ensure our digital strategies align with market strategy and growth consulting best practices. ",
   },
   {
     name: "Anil Kumar Mittal",
     position: "Chairman",
     image: "/assets/images/ak.jpg", // Local image path from the public directory
-    bio: "Strategic thinker driving innovation and growth across the organization.",
+    bio: "With over 40 years of expertise in engineering, manufacturing, and industrial operations, Anil provides robust strategic direction and financial intelligence that fuel our infrastructure development and industrial growth. His deep industry experience in operational excellence and cost optimization ensures our business is primed for global expansion in emerging markets. ",
   },
   {
     name: "Aparjeet Mittal",
     position: "Managing Partner & CEO",
     image: "/assets/images/son.jpg", // Local image path from the public directory
-    bio: "Operations expert ensuring excellence in project execution and delivery.",
+    bio: "A visionary leader in renewable energy, infrastructure, and venture capital, Avi drives transformative business consulting initiatives and delivers bespoke solutions for next-generation projects. His strategic focus on sports investments and industrial operations underpins our market-driven execution and sustainable business growth.",
   },
   {
     name: "Nisarg Doshi",
     position: "Cheif Business officer",
     image: "/assets/images/nisarg.jpeg", // Local image path from the public directory
-    bio: "Marketing expert with a proven track record in brand building and digital strategy.",
+    bio: "Nisarg is the cornerstone of our market strategy and growth consulting efforts, leveraging deep expertise in sales & marketing advisory to accelerate business growth and asset value maximization. His talent in forging strategic partnerships and innovative investment & financial structuring drives our sustainable transformation. ",
   },
 ];
 

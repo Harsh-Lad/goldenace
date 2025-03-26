@@ -6,7 +6,7 @@ import { Card, CardContent, CardFooter } from "@/components/ui/card"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import type { BlogPost } from "@/lib/constants"
 import { AnimatePresence, motion } from "framer-motion"
-import { ArrowUpRight, Calendar, Clock, User } from "lucide-react"
+import { ArrowUpRight, Calendar, Clock } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
 import type { Dispatch, SetStateAction } from "react"
@@ -192,10 +192,10 @@ function BlogCard({ post }: BlogCardProps) {
             <Link href={blogUrl}>{post.title}</Link>
           </h3>
           <p className="text-muted-foreground mb-4 line-clamp-3">{post.excerpt}</p>
-          <div className="flex items-center text-sm text-muted-foreground">
+          {/* <div className="flex items-center text-sm text-muted-foreground">
             <User className="h-3 w-3 mr-1" />
             <span>{post.author}</span>
-          </div>
+          </div> */}
         </CardContent>
         <CardFooter className="bg-[#FFBF00]/5 p-4 border-t border-[#FFBF00]/10">
           <Link href={blogUrl} className="ml-auto">

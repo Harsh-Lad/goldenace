@@ -1,25 +1,27 @@
 "use client";
 
-import { Badge } from "@/components/ui/badge";
-import { Card, CardContent } from "@/components/ui/card";
-import { Input } from "@/components/ui/input";
+// Import required components and types
+// import { Badge } from "@/components/ui/badge";
+// import { Card, CardContent } from "@/components/ui/card";
+// import { Input } from "@/components/ui/input";
 import { motion } from "framer-motion";
-import { Search, Tag } from "lucide-react";
+// import { Search, Tag } from "lucide-react";
 import type { Dispatch, SetStateAction } from "react";
 
+// Interface defining the props for the BlogQuerySidebar component
 interface BlogSidebarProps {
-  searchTerm: string;
-  setSearchTerm: Dispatch<SetStateAction<string>>;
-  category: string;
-  setCategory: Dispatch<SetStateAction<string>>;
-  categories: string[];
-  setCurrentPage: Dispatch<SetStateAction<number>>;
+  searchTerm: string;                                    
+  setSearchTerm: Dispatch<SetStateAction<string>>;      
+  category: string;                                      
+  setCategory: Dispatch<SetStateAction<string>>;        
+  categories: string[];                                 
+  setCurrentPage: Dispatch<SetStateAction<number>>;     
 }
 
 function BlogQuerySidebar({
-  searchTerm,
-  setSearchTerm,
-  setCurrentPage,
+  // searchTerm,
+  // setSearchTerm,
+  // setCurrentPage,
 }: BlogSidebarProps) {
   const fadeInUp = {
     hidden: { opacity: 0, y: 30 },
@@ -30,18 +32,18 @@ function BlogQuerySidebar({
     },
   };
 
-  const popularTags = [
-    "Renewable Energy",
-    "Solar",
-    "Smart Cities",
-    "IoT",
-    "AI",
-    "Infrastructure",
-    "Sustainability",
-    "Investment",
-    "Technology",
-    "Innovation",
-  ];
+  // const popularTags = [
+  //   "Renewable Energy",
+  //   "Solar",
+  //   "Smart Cities",
+  //   "IoT",
+  //   "AI",
+  //   "Infrastructure",
+  //   "Sustainability",
+  //   "Investment",
+  //   "Technology",
+  //   "Innovation",
+  // ];
 
   return (
     <motion.div
@@ -51,6 +53,7 @@ function BlogQuerySidebar({
       variants={fadeInUp}
       className="space-y-6"
     >
+      {/* Commented out Search Articles Card
       <Card className="overflow-hidden border border-[#FFBF00]/20 shadow-sm">
         <CardContent className="p-6">
           <h3 className="text-xl font-bold mb-4 text-[#FFBF00]">
@@ -64,13 +67,15 @@ function BlogQuerySidebar({
               value={searchTerm}
               onChange={(e) => {
                 setSearchTerm(e.target.value);
-                setCurrentPage(1); // Reset to first page on search
+                setCurrentPage(1);
               }}
             />
           </div>
         </CardContent>
       </Card>
+      */}
 
+      {/* Commented out Popular Tags Card
       <Card className="overflow-hidden border border-[#FFBF00]/20 shadow-sm">
         <CardContent className="p-6">
           <h3 className="text-xl font-bold mb-4 text-[#FFBF00]">
@@ -91,6 +96,7 @@ function BlogQuerySidebar({
           </div>
         </CardContent>
       </Card>
+      */}
     </motion.div>
   );
 }

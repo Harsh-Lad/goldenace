@@ -9,7 +9,7 @@ import {
 } from "@/components/ui/accordion";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardFooter } from "@/components/ui/card";
+import { Card, CardContent } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { motion } from "framer-motion";
 import {
@@ -17,14 +17,11 @@ import {
   Award,
   Building,
   Calendar,
-  ChevronDown,
-  ChevronUp,
   Globe,
   Lightbulb,
   Shield,
   TrendingUp,
-  Users,
-  Zap,
+  Users
 } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
@@ -34,7 +31,7 @@ import { useState } from "react";
 const COMPANIES = [
   {
     name: "Vivid",
-    logo: "/assets/images/vivid.png",
+    logo: "/assets/images/Vivid.png",
     category: "Technology",
     description:
       "Leaders in LT & HT electrical panel manufacturing, delivering innovative, reliable power solutions. Advanced automation and smart technology that optimizes energy management, driving robust operations and empowering global industries with sustainable infrastructure.",
@@ -51,7 +48,7 @@ const COMPANIES = [
   },
   {
     name: "GAME Solar",
-    logo: "/assets/images/game.png",
+    logo: "/assets/images/Game.png",
     category: "Renewable Energy",
     description:
       "Leading provider of solar energy solutions for residential and commercial applications.",
@@ -68,7 +65,7 @@ const COMPANIES = [
   },
   {
     name: "Secutech",
-    logo: "/assets/images/Secutech.jpg",
+    logo: "/assets/images/Secutech.png",
     category: "Infrastructure",
     description:
       "Security and surveillance technology for smart infrastructure and urban development.",
@@ -85,7 +82,7 @@ const COMPANIES = [
   },
   {
     name: "Gener8tor",
-    logo: "/assets/images/gener.jpg",
+    logo: "/assets/images/GENER8TOR.png",
     category: "Investment",
     description:
       "A top startup accelerator fueling early-stage companies with intensive mentorship and strategic capital. Their programs on entrepreneurship drive disruptive innovation. Backed by an ever-connected network, they propel scalable, sustainable venture success globally. ",
@@ -102,7 +99,7 @@ const COMPANIES = [
   },
   {
     name: "OCT Online Cleaning Tech",
-    logo: "",
+    logo: "/assets/images/oclogo.svg",
     category: "Energy",
     description:
       "Founded in 2020, they drive business transformation with cutting-edge tech, delivering innovative digital solutions and advanced IT services. Committed to quality and growth, they empower diverse industries with robust IT processes. ",
@@ -119,49 +116,13 @@ const COMPANIES = [
   },
 ];
 
-// Extended venture data for future use
-const VENTURE_CASE_STUDIES = [
-  {
-    company: "GAME Solar",
-    title: "Revolutionizing Solar Financing for Residential Customers",
-    description:
-      "How GAME Solar developed an innovative financing model that made solar energy accessible to middle-class homeowners across India.",
-    image: "/assets/images/banner-homes.jpg",
-    results: [
-      "50,000+ residential installations completed",
-      "Average customer payback period reduced to 3.5 years",
-      "Created 1,000+ jobs in installation and maintenance",
-    ],
-  },
-  {
-    company: "Secutech",
-    title: "Smart Security for Pune Smart City Project",
-    description:
-      "Secutech's implementation of integrated security and surveillance systems for the Pune Smart City initiative.",
-    image: "/assets/images/Secutech.jpg",
-    results: [
-      "5,000+ AI-powered cameras deployed across the city",
-      "Crime rates reduced by 30% in monitored areas",
-      "Emergency response times improved by 45%",
-    ],
-  },
-  {
-    company: "OCT Online Cleaning Tech",
-    title: "Efficiency Improvements at MahaGenco Thermal Plant",
-    description:
-      "Implementation of OCT's proprietary cleaning technology at MahaGenco's Bhusawal Thermal Power Plant.",
-    image: "/assets/images/therm.jpg",
-    results: [
-      "Plant efficiency improved by 12.5%",
-      "Annual water savings of 1.2 million liters",
-      "Maintenance downtime reduced by 40%",
-    ],
-  },
-];
+// Extended venture data - Commented Out
+/* const VENTURE_CASE_STUDIES = [
+  // ...case studies data
+]; */
 
 export default function VenturesPage() {
   const [activeTab, setActiveTab] = useState("all");
-  const [expandedVenture, setExpandedVenture] = useState<string | null>(null);
 
   // Animation variants
   const fadeInUp = {
@@ -186,15 +147,6 @@ export default function VenturesPage() {
     new Set(COMPANIES.map((company) => company.category))
   );
 
-  // Toggle expanded venture
-  const toggleVentureExpansion = (name: string) => {
-    if (expandedVenture === name) {
-      setExpandedVenture(null);
-    } else {
-      setExpandedVenture(name);
-    }
-  };
-
   // Get featured venture (for example, the first one)
   const featuredVenture = COMPANIES[1]; // GAME Solar
 
@@ -218,20 +170,20 @@ export default function VenturesPage() {
             <div className="relative h-[400px] rounded-xl overflow-hidden shadow-xl border border-[#FFBF00]/20">
               <Image
                 src="https://rilstaticasset.akamaized.net/sites/default/files/2023-09/green-energy.jpg"
-                alt={featuredVenture.name}
+                alt={featuredVenture?.name ?? "Featured Venture"}
                 fill
                 className="object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end">
                 <div className="p-8 text-white">
                   <Badge className="mb-2 bg-[#FFBF00] hover:bg-[#FFBF00]/80 text-black">
-                    {featuredVenture.category}
+                    {featuredVenture?.category ?? "Unknown Category"}
                   </Badge>
                   <h3 className="text-2xl font-bold mb-2">
-                    {featuredVenture.name}
+                    {featuredVenture?.name ?? "Unknown Venture"}
                   </h3>
                   <p className="text-white/80 mb-4">
-                    {featuredVenture.description}
+                    {featuredVenture?.description ?? "Description not available"}
                   </p>
                   <Button className="bg-[#FFBF00] hover:bg-[#FFBF00]/80 text-black">
                     Learn More <ArrowRight className="ml-2 h-4 w-4" />
@@ -244,9 +196,15 @@ export default function VenturesPage() {
                 Featured Venture
               </h2>
               <p className="text-lg text-muted-foreground mb-6">
-                {featuredVenture.name} is at the forefront of{" "}
-                {featuredVenture.category.toLowerCase()} innovation, providing
-                cutting-edge solutions that drive sustainability and efficiency.
+                {featuredVenture ? (
+                  <>
+                    {featuredVenture.name} is at the forefront of{" "}
+                    {featuredVenture.category.toLowerCase()} innovation, providing
+                    cutting-edge solutions that drive sustainability and efficiency.
+                  </>
+                ) : (
+                  "Featured venture details are not available."
+                )}
               </p>
               <div className="space-y-4 mb-6">
                 <div className="flex items-start gap-2">
@@ -254,7 +212,7 @@ export default function VenturesPage() {
                   <div>
                     <p className="font-medium">Founded</p>
                     <p className="text-muted-foreground">
-                      {featuredVenture.founded}
+                      {featuredVenture?.founded ?? (featuredVenture ? "N/A" : "Unknown")}
                     </p>
                   </div>
                 </div>
@@ -263,7 +221,7 @@ export default function VenturesPage() {
                   <div>
                     <p className="font-medium">Headquarters</p>
                     <p className="text-muted-foreground">
-                      {featuredVenture.location}
+                      {featuredVenture?.location ?? "Location not available"}
                     </p>
                   </div>
                 </div>
@@ -272,7 +230,7 @@ export default function VenturesPage() {
                   <div>
                     <p className="font-medium">Team Size</p>
                     <p className="text-muted-foreground">
-                      {featuredVenture.employees} employees
+                      {featuredVenture?.employees ?? "N/A"} employees
                     </p>
                   </div>
                 </div>
@@ -281,7 +239,7 @@ export default function VenturesPage() {
                   <div>
                     <p className="font-medium">Investment Stage</p>
                     <p className="text-muted-foreground">
-                      {featuredVenture.investment}
+                      {featuredVenture?.investment ?? (featuredVenture ? "N/A" : "Investment stage not available")}
                     </p>
                   </div>
                 </div>
@@ -292,9 +250,11 @@ export default function VenturesPage() {
                   className="border-[#FFBF00]/30 text-[#FFBF00] hover:bg-[#FFBF00]/10 hover:text-[#FFBF00]"
                   asChild
                 >
-                  <Link href={featuredVenture.website} target="_blank">
-                    <Globe className="mr-2 h-4 w-4" /> Visit Website
-                  </Link>
+                  {featuredVenture && (
+                    <Link href={featuredVenture.website} target="_blank">
+                      <Globe className="mr-2 h-4 w-4" /> Visit Website
+                    </Link>
+                  )}
                 </Button>
               </div>
             </div>
@@ -352,13 +312,14 @@ export default function VenturesPage() {
                     className="h-full"
                   >
                     <Card className="overflow-hidden border border-[#FFBF00]/20 hover:border-[#FFBF00]/50 transition-all duration-300 hover:shadow-lg h-full flex flex-col">
-                      <div className="p-6 flex items-center justify-center bg-[#FFBF00]/5 border-b border-[#FFBF00]/20 h-[180px]">
-                        <div className="relative w-32 h-32">
+                      <div className="p-6 flex items-center justify-center bg-[#FFBF00]/5 border-b border-[#FFBF00]/20 h-[250px]">
+                        <div className="relative w-100 h-48 bg-white">
                           <Image
                             src={company.logo || "/placeholder.svg"}
                             alt={company.name}
                             fill
                             className="object-contain"
+                            sizes="(max-width: 768px) 192px, 192px"
                           />
                         </div>
                       </div>
@@ -372,7 +333,7 @@ export default function VenturesPage() {
                         <p className="text-muted-foreground mb-4">
                           {company.description}
                         </p>
-                        <div className="grid grid-cols-2 gap-4 text-sm mb-4">
+                        <div className="grid grid-cols-2 gap-4 text-sm">
                           <div className="flex items-center">
                             <Calendar className="h-4 w-4 mr-2 text-[#FFBF00]" />
                             <span>Founded: {company.founded}</span>
@@ -383,25 +344,6 @@ export default function VenturesPage() {
                           </div>
                         </div>
                       </CardContent>
-                      <CardFooter className="p-6 pt-0">
-                        <Button
-                          variant="outline"
-                          className="w-full border-[#FFBF00]/30 text-[#FFBF00] hover:bg-[#FFBF00]/10"
-                          onClick={() => toggleVentureExpansion(company.name)}
-                        >
-                          {expandedVenture === company.name ? (
-                            <>
-                              Less Details{" "}
-                              <ChevronUp className="ml-2 h-4 w-4" />
-                            </>
-                          ) : (
-                            <>
-                              More Details{" "}
-                              <ChevronDown className="ml-2 h-4 w-4" />
-                            </>
-                          )}
-                        </Button>
-                      </CardFooter>
                     </Card>
                   </motion.div>
                 ))}
@@ -410,154 +352,7 @@ export default function VenturesPage() {
           </Tabs>
         </motion.section>
         {/* Expanded Venture Details */}
-        {expandedVenture && (
-          <motion.section
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: "auto" }}
-            exit={{ opacity: 0, height: 0 }}
-            transition={{ duration: 0.5 }}
-            className="my-8"
-          >
-            {COMPANIES.filter(
-              (company) => company.name === expandedVenture
-            ).map((company) => (
-              <Card
-                key={company.name}
-                className="border border-[#FFBF00]/30 overflow-hidden"
-              >
-                <CardContent className="p-8">
-                  <div className="flex flex-col md:flex-row gap-8 items-start">
-                    <div className="md:w-1/3">
-                      <div className="bg-[#FFBF00]/5 p-6 rounded-xl border border-[#FFBF00]/20 flex items-center justify-center h-[200px]">
-                        <div className="relative w-40 h-40">
-                          <Image
-                            src={company.logo || "/placeholder.svg"}
-                            alt={company.name}
-                            fill
-                            className="object-contain"
-                          />
-                        </div>
-                      </div>
-                      <div className="mt-6 space-y-4">
-                        <h3 className="text-xl font-bold text-[#FFBF00]">
-                          {company.name}
-                        </h3>
-                        <p className="text-muted-foreground">
-                          {company.description}
-                        </p>
-                        <div className="pt-4 space-y-3">
-                          <div className="flex items-center">
-                            <Globe className="h-4 w-4 mr-2 text-[#FFBF00]" />
-                            <Link
-                              href={company.website}
-                              target="_blank"
-                              className="text-[#FFBF00] hover:underline"
-                            >
-                              {company.website.replace("https://", "")}
-                            </Link>
-                          </div>
-                          <div className="flex items-center">
-                            <Building className="h-4 w-4 mr-2 text-[#FFBF00]" />
-                            <span>{company.location}</span>
-                          </div>
-                          <div className="flex items-center">
-                            <Calendar className="h-4 w-4 mr-2 text-[#FFBF00]" />
-                            <span>Founded in {company.founded}</span>
-                          </div>
-                          <div className="flex items-center">
-                            <Users className="h-4 w-4 mr-2 text-[#FFBF00]" />
-                            <span>{company.employees} employees</span>
-                          </div>
-                          <div className="flex items-center">
-                            <TrendingUp className="h-4 w-4 mr-2 text-[#FFBF00]" />
-                            <span>{company.investment}</span>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="md:w-2/3">
-                      <h3 className="text-2xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-[#FFBF00] to-[#FFBF00]/70">
-                        About {company.name}
-                      </h3>
-                      <div className="mb-8">
-                        <h4 className="text-lg font-semibold mb-3">
-                          Key Highlights
-                        </h4>
-                        <ul className="space-y-2">
-                          {company.highlights.map((highlight, idx) => (
-                            <motion.li
-                              key={idx}
-                              initial={{ opacity: 0, x: -20 }}
-                              animate={{ opacity: 1, x: 0 }}
-                              transition={{ duration: 0.3, delay: idx * 0.1 }}
-                              className="flex items-start"
-                            >
-                              <div className="h-6 w-6 rounded-full bg-[#FFBF00]/20 flex items-center justify-center mr-3 mt-0.5 flex-shrink-0">
-                                <Award className="h-3 w-3 text-[#FFBF00]" />
-                              </div>
-                              <span>{highlight}</span>
-                            </motion.li>
-                          ))}
-                        </ul>
-                      </div>
-                      <div className="mb-8">
-                        <h4 className="text-lg font-semibold mb-3">
-                          Our Investment
-                        </h4>
-                        <p className="text-muted-foreground mb-4">
-                          Golden Ace Ventures has been a strategic partner for{" "}
-                          {company.name} since{" "}
-                          {Number.parseInt(company.founded) + 1}, providing not
-                          just capital but also industry expertise, networking
-                          opportunities, and operational support.
-                        </p>
-                        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-6">
-                          <div className="bg-[#FFBF00]/5 p-4 rounded-lg border border-[#FFBF00]/20 text-center">
-                            <div className="text-2xl font-bold text-[#FFBF00] mb-1">
-                              {company.category === "Investment"
-                                ? "₹200 Cr"
-                                : "₹25 Cr"}
-                            </div>
-                            <div className="text-sm text-muted-foreground">
-                              Investment
-                            </div>
-                          </div>
-                          <div className="bg-[#FFBF00]/5 p-4 rounded-lg border border-[#FFBF00]/20 text-center">
-                            <div className="text-2xl font-bold text-[#FFBF00] mb-1">
-                              {company.investment === "Series A"
-                                ? "15%"
-                                : company.investment === "Series B"
-                                ? "12%"
-                                : "20%"}
-                            </div>
-                            <div className="text-sm text-muted-foreground">
-                              Equity Stake
-                            </div>
-                          </div>
-                          <div className="bg-[#FFBF00]/5 p-4 rounded-lg border border-[#FFBF00]/20 text-center">
-                            <div className="text-2xl font-bold text-[#FFBF00] mb-1">
-                              {Number.parseInt(company.founded) + 1}
-                            </div>
-                            <div className="text-sm text-muted-foreground">
-                              Partnership Since
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div>
-                        <Button className="bg-[#FFBF00] hover:bg-[#FFBF00]/80 text-black">
-                          View Case Study{" "}
-                          <ArrowRight className="ml-2 h-4 w-4" />
-                        </Button>
-                      </div>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
-          </motion.section>
-        )}
-        {/* Case Studies Section */}
+        {/* Case Studies Section - Commented Out
         <motion.section
           initial="hidden"
           whileInView="visible"
@@ -566,7 +361,7 @@ export default function VenturesPage() {
           className="my-16"
         >
           <h2 className="text-3xl font-bold mb-10 text-center bg-clip-text text-transparent bg-gradient-to-r from-[#FFBF00] to-[#FFBF00]/70">
-            Success Stories
+            Case Studies
           </h2>
           <div className="space-y-12">
             {VENTURE_CASE_STUDIES.map((study, index) => (
@@ -630,6 +425,8 @@ export default function VenturesPage() {
             ))}
           </div>
         </motion.section>
+        */}
+
         {/* Investment Approach Section */}
         <motion.section
           initial="hidden"
@@ -858,7 +655,7 @@ export default function VenturesPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
             <div className="relative h-[400px] rounded-xl overflow-hidden shadow-xl border border-[#FFBF00]/20">
               <Image
-                src="/placeholder.svg?height=800&width=600&text=Partner+With+Us"
+                src="/assets/images/lokforin.jpg"
                 alt="Partner With Golden Ace Ventures"
                 fill
                 className="object-cover"
@@ -888,7 +685,7 @@ export default function VenturesPage() {
                 challenges, open doors to new opportunities, and accelerate your
                 growth journey.
               </p>
-              <div className="flex flex-col sm:flex-row gap-4">
+              {/* <div className="flex flex-col sm:flex-row gap-4">
                 <Button
                   size="lg"
                   className="group bg-[#FFBF00] hover:bg-[#FFBF00]/80 text-black"
@@ -910,7 +707,7 @@ export default function VenturesPage() {
                 >
                   View Investment Criteria
                 </Button>
-              </div>
+              </div> */}
             </div>
           </div>
         </motion.section>

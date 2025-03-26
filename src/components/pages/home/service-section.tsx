@@ -132,7 +132,9 @@ export default function ServicesSection() {
               }}
             >
               {COMPANY_SERVICES.map((service, index) => {
-                const { x, y, angle } = cardTransforms[index];
+                const transform = cardTransforms[index];
+                if (!transform) return null;
+                const { x, y, angle } = transform;
 
                 return (
                   <motion.div

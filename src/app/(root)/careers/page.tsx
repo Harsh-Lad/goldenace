@@ -1,29 +1,21 @@
 "use client";
 
 import PageTitleSection from "@/components/common/page-title-section";
-import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardFooter } from "@/components/ui/card";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { Card, CardContent } from "@/components/ui/card";
 import { motion } from "framer-motion";
 import {
-  ArrowRight,
   Award,
   Brain,
-  Briefcase,
-  Clock,
   Heart,
-  MapPin,
-  Share2,
   Target,
   Users,
   Zap,
 } from "lucide-react";
 import Image from "next/image";
-import { useState } from "react";
+// import { useState } from "react";
 
 function CareersPage() {
-  const [activeTab, setActiveTab] = useState("all");
+  // const [activeTab, setActiveTab] = useState("all");
 
   // Animation variants
   const fadeInUp = {
@@ -59,72 +51,6 @@ function CareersPage() {
     },
   };
 
-  const jobOpenings = [
-    {
-      title: "Solar Project Engineer",
-      department: "Renewable Energy",
-      location: "Mumbai, India",
-      type: "Full-time",
-      description:
-        "Design and implement solar energy projects, from initial concept to final installation and commissioning.",
-      requirements: [
-        "Bachelor's degree in Electrical/Mechanical Engineering",
-        "3+ years of experience in solar project design",
-        "Knowledge of solar PV systems and related technologies",
-        "Strong project management skills",
-      ],
-    },
-    {
-      title: "Infrastructure Development Manager",
-      department: "Infrastructure",
-      location: "Delhi, India",
-      type: "Full-time",
-      description:
-        "Oversee infrastructure development projects, ensuring timely completion, quality standards, and budget adherence.",
-      requirements: [
-        "Bachelor's degree in Civil Engineering",
-        "5+ years of experience in infrastructure project management",
-        "Strong leadership and team management skills",
-        "Experience with government contracts and regulations",
-      ],
-    },
-    {
-      title: "IoT Solutions Architect",
-      department: "Smart Technology",
-      location: "Bangalore, India",
-      type: "Full-time",
-      description:
-        "Design and implement IoT solutions for energy and infrastructure applications, focusing on efficiency and sustainability.",
-      requirements: [
-        "Bachelor's degree in Computer Science or related field",
-        "3+ years of experience in IoT solution design",
-        "Strong programming skills and knowledge of IoT platforms",
-        "Experience with data analytics and visualization",
-      ],
-    },
-    {
-      title: "Business Development Executive",
-      department: "Business Advisory",
-      location: "Mumbai, India",
-      type: "Full-time",
-      description:
-        "Identify and pursue new business opportunities, develop client relationships, and contribute to company growth strategies.",
-      requirements: [
-        "Bachelor's degree in Business Administration or related field",
-        "2+ years of experience in business development",
-        "Strong communication and negotiation skills",
-        "Knowledge of energy and infrastructure sectors",
-      ],
-    },
-  ];
-
-  const filteredJobs =
-    activeTab === "all"
-      ? jobOpenings
-      : jobOpenings.filter((job) =>
-          job.department.toLowerCase().includes(activeTab.toLowerCase())
-        );
-
   return (
     <main className="container mx-auto px-4 py-12">
       <PageTitleSection
@@ -143,7 +69,7 @@ function CareersPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
             <div className="relative h-[400px] rounded-xl overflow-hidden shadow-xl border border-[#FFBF00]/20">
               <Image
-                src="/assets/images/join.jpg"
+                src="/assets/images/join us.jpg"
                 alt="Careers at Golden Ace Ventures"
                 fill
                 className="object-cover"
@@ -273,130 +199,17 @@ function CareersPage() {
           <h2 className="text-3xl font-bold mb-10 text-center bg-clip-text text-transparent bg-gradient-to-r from-[#FFBF00] to-[#FFBF00]/70">
             Current Openings
           </h2>
-          <Tabs
-            defaultValue="all"
-            className="w-full mb-8"
-            onValueChange={setActiveTab}
-          >
-            <TabsList className="grid w-full grid-cols-2 md:grid-cols-5 mb-8 bg-[#FFBF00]/10">
-              <TabsTrigger
-                value="all"
-                className="data-[state=active]:bg-[#FFBF00] data-[state=active]:text-black"
-              >
-                All Positions
-              </TabsTrigger>
-              <TabsTrigger
-                value="energy"
-                className="data-[state=active]:bg-[#FFBF00] data-[state=active]:text-black"
-              >
-                Renewable Energy
-              </TabsTrigger>
-              <TabsTrigger
-                value="infrastructure"
-                className="data-[state=active]:bg-[#FFBF00] data-[state=active]:text-black"
-              >
-                Infrastructure
-              </TabsTrigger>
-              <TabsTrigger
-                value="tech"
-                className="data-[state=active]:bg-[#FFBF00] data-[state=active]:text-black"
-              >
-                Smart Technology
-              </TabsTrigger>
-              <TabsTrigger
-                value="business"
-                className="data-[state=active]:bg-[#FFBF00] data-[state=active]:text-black"
-              >
-                Business Advisory
-              </TabsTrigger>
-            </TabsList>
-            <TabsContent value={activeTab}>
-              <motion.div
-                key={activeTab}
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                exit={{ opacity: 0 }}
-                transition={{ duration: 0.5 }}
-                className="space-y-6"
-              >
-                {filteredJobs.map((job, index) => (
-                  <motion.div
-                    key={index}
-                    initial={{ opacity: 0, y: 30 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.5, delay: index * 0.1 }}
-                  >
-                    <Card className="overflow-hidden border border-[#FFBF00]/20 hover:border-[#FFBF00]/50 transition-all duration-300 hover:shadow-lg">
-                      <CardContent className="p-6">
-                        <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
-                          <div>
-                            <Badge className="mb-2 bg-[#FFBF00]/20 text-[#FFBF00] hover:bg-[#FFBF00]/30 border-[#FFBF00]/30">
-                              {job.department}
-                            </Badge>
-                            <h3 className="text-xl font-bold hover:text-[#FFBF00] transition-colors">
-                              {job.title}
-                            </h3>
-                          </div>
-                          <div className="mt-2 md:mt-0">
-                            <Button className="bg-[#FFBF00] hover:bg-[#FFBF00]/80 text-black">
-                              Apply Now
-                            </Button>
-                          </div>
-                        </div>
-                        <p className="text-muted-foreground mb-4">
-                          {job.description}
-                        </p>
-                        <div className="flex flex-wrap gap-4 mb-4">
-                          <div className="flex items-center text-sm">
-                            <MapPin className="h-4 w-4 mr-1 text-[#FFBF00]" />
-                            <span>{job.location}</span>
-                          </div>
-                          <div className="flex items-center text-sm">
-                            <Clock className="h-4 w-4 mr-1 text-[#FFBF00]" />
-                            <span>{job.type}</span>
-                          </div>
-                          <div className="flex items-center text-sm">
-                            <Briefcase className="h-4 w-4 mr-1 text-[#FFBF00]" />
-                            <span>{job.department}</span>
-                          </div>
-                        </div>
-                        <div>
-                          <h4 className="font-medium mb-2">Requirements:</h4>
-                          <ul className="list-disc pl-5 space-y-1 text-sm text-muted-foreground">
-                            {job.requirements.map((req, reqIndex) => (
-                              <li key={reqIndex}>{req}</li>
-                            ))}
-                          </ul>
-                        </div>
-                      </CardContent>
-                      <CardFooter className="bg-[#FFBF00]/5 p-4 flex justify-between border-t border-[#FFBF00]/20">
-                        <Button
-                          variant="link"
-                          className="p-0 text-[#FFBF00] hover:text-[#FFBF00]/80"
-                        >
-                          View Full Job Description
-                          <motion.span
-                            initial={{ x: 0 }}
-                            whileHover={{ x: 5 }}
-                            transition={{ duration: 0.3 }}
-                          >
-                            <ArrowRight className="ml-1 h-4 w-4" />
-                          </motion.span>
-                        </Button>
-                        <Button
-                          variant="outline"
-                          size="sm"
-                          className="border-[#FFBF00]/30 text-[#FFBF00] hover:bg-[#FFBF00]/10"
-                        >
-                          <Share2 className="h-4 w-4 mr-1" /> Share
-                        </Button>
-                      </CardFooter>
-                    </Card>
-                  </motion.div>
-                ))}
-              </motion.div>
-            </TabsContent>
-          </Tabs>
+          
+          <Card className="overflow-hidden border border-[#FFBF00]/20 hover:border-[#FFBF00]/50 transition-all duration-300 hover:shadow-lg">
+            <CardContent className="p-12 text-center">
+              <p className="text-lg text-muted-foreground mb-4">
+                There are no current openings available at this time.
+              </p>
+              <p className="text-muted-foreground">
+                Please email us at careers@goldenace.com to submit your resume for future opportunities.
+              </p>
+            </CardContent>
+          </Card>
         </motion.section>
         <motion.section
           initial="hidden"
@@ -427,7 +240,7 @@ function CareersPage() {
                   making a real difference.&quot;
                 </p>
                 <div className="flex items-center">
-                  <div className="h-12 w-12 rounded-full bg-muted mr-3 overflow-hidden border-2 border-[#FFBF00]/30">
+                  {/* <div className="h-12 w-12 rounded-full bg-muted mr-3 overflow-hidden border-2 border-[#FFBF00]/30">
                     <Image
                       src="/placeholder.svg?height=100&width=100"
                       alt="Employee"
@@ -435,7 +248,7 @@ function CareersPage() {
                       height={48}
                       className="object-cover"
                     />
-                  </div>
+                  </div> */}
                   <div>
                     <p className="font-medium">Priya Sharma</p>
                     <p className="text-sm text-muted-foreground">
@@ -461,7 +274,7 @@ function CareersPage() {
                   positive impact.&quot;
                 </p>
                 <div className="flex items-center">
-                  <div className="h-12 w-12 rounded-full bg-muted mr-3 overflow-hidden border-2 border-[#FFBF00]/30">
+                  {/* <div className="h-12 w-12 rounded-full bg-muted mr-3 overflow-hidden border-2 border-[#FFBF00]/30">
                     <Image
                       src="/placeholder.svg?height=100&width=100"
                       alt="Employee"
@@ -469,7 +282,7 @@ function CareersPage() {
                       height={48}
                       className="object-cover"
                     />
-                  </div>
+                  </div> */}
                   <div>
                     <p className="font-medium">Rahul Patel</p>
                     <p className="text-sm text-muted-foreground">
@@ -481,7 +294,7 @@ function CareersPage() {
             </div>
             <div className="relative h-[500px] rounded-xl overflow-hidden shadow-xl border border-[#FFBF00]/20">
               <Image
-                src="/placeholder.svg?height=1000&width=800"
+                src="/assets/images/team.jpeg"
                 alt="Team at Golden Ace Ventures"
                 fill
                 className="object-cover"
@@ -505,6 +318,7 @@ function CareersPage() {
             </div>
           </div>
         </motion.section>
+        {/* Join Our Team Section - Commented Out
         <motion.section
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -546,6 +360,7 @@ function CareersPage() {
             </div>
           </div>
         </motion.section>
+        */}
       </section>
     </main>
   );

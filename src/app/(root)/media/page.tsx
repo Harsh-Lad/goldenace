@@ -10,7 +10,6 @@ import {
   ArrowRight,
   Calendar,
   Download,
-  ExternalLink,
   MapPin,
 } from "lucide-react";
 import Image from "next/image";
@@ -29,44 +28,53 @@ function MediaPage() {
     },
   };
 
-  const staggerContainer = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.15,
-        delayChildren: 0.3,
-      },
-    },
-  };
+  // const staggerContainer = {
+  //   hidden: { opacity: 0 },
+  //   visible: {
+  //     opacity: 1,
+  //     transition: {
+  //       staggerChildren: 0.15,
+  //       delayChildren: 0.3,
+  //     },
+  //   },
+  // };
 
   const newsItems = [
     {
       title:
-        "Golden Ace Ventures Announces Partnership with Secutech for Smart City Projects",
-      date: "June 15, 2023",
+        "The Consumption Bet",
+      // date: "June 15, 2023",
       category: "Partnership",
       excerpt:
-        "Golden Ace Ventures LLP has announced a strategic partnership with Secutech to develop and implement smart city solutions across India.",
-      image: "/assets/images/Secutech.jpg",
+        "Avi Mittal: Powering Innovation, Transformating Industries, and Leading India's Green Revolution.",
+      image: "/assets/images/tsb.png",
+      pdfUrl: "/assets/pdfs/DOC-20250211-WA0008..pdf"
     },
     {
-      title: "Golden Ace Ventures to Participate in RE Invest 2024",
-      date: "April 10, 2023",
+      title: "Interview between Rahul Tarani and Avi Mittal",
+      // date: "April 10, 2023",
       category: "Event",
       excerpt:
         "Golden Ace Ventures LLP will be participating in RE Invest 2024, showcasing its renewable energy solutions and investment opportunities.",
-      image: "/assets/images/RE.jpg",
+      image: "/assets/images/inter.png",
+      pdfUrl: "/assets/pdfs/Interview - Skyytop.pdf"
     },
-    {
-      title: "Aparajeet Mittal Speaks at Infrastructure Development Summit",
-      date: "March 5, 2023",
-      category: "Speaking",
-      excerpt:
-        "Managing Partner Aparajeet Mittal delivered a keynote address on the future of infrastructure development at the annual Infrastructure Development Summit.",
-      image: "/assets/images/ak.jpg",
-    },
+    // {
+    //   title: "Aparajeet Mittal Speaks at Infrastructure Development Summit",
+    //   date: "March 5, 2023",
+    //   category: "Speaking",
+    //   excerpt:
+    //     "Managing Partner Aparajeet Mittal delivered a keynote address on the future of infrastructure development at the annual Infrastructure Development Summit.",
+    //   image: "/assets/images/ak.jpg",
+    //   pdfUrl: "/assets/pdfs/infrastructure-summit.pdf"
+    // },
   ];
+
+  // Suppress TypeScript errors for specific lines
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const handlePdfOpen = (item: any) => {
+    window.open(item.pdfUrl, '_blank');
+  };
 
   const upcomingEvents = [
     {
@@ -165,7 +173,7 @@ function MediaPage() {
           className="my-16"
         >
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-            <div className="relative h-[400px] rounded-xl overflow-hidden shadow-xl border border-[#FFBF00]/20">
+            {/* <div className="relative h-[400px] rounded-xl overflow-hidden shadow-xl border border-[#FFBF00]/20">
               <Image
                 src="/assets/images/Secutech.jpg"
                 alt="Latest News"
@@ -236,15 +244,15 @@ function MediaPage() {
                   </motion.div>
                 ))}
               </div>
-              <div className="mt-6">
-                <Button
+              <div className="mt-6"> */}
+                {/* <Button
                   variant="outline"
                   className="border-[#FFBF00]/30 text-[#FFBF00] hover:bg-[#FFBF00]/10 hover:text-[#FFBF00]"
                 >
                   View All News
-                </Button>
-              </div>
-            </div>
+                </Button> */}
+              {/* </div>
+            </div> */}
           </div>
         </motion.section>
         <motion.section
@@ -324,7 +332,7 @@ function MediaPage() {
                       <CardContent className="p-6">
                         <div className="flex items-center text-sm text-muted-foreground mb-3">
                           <Calendar className="h-3 w-3 mr-1" />
-                          <span>{item.date}</span>
+                          {/* <span>{item.date}</span> */}
                         </div>
                         <h3 className="text-xl font-bold mb-2 hover:text-[#FFBF00] transition-colors">
                           {item.title}
@@ -332,13 +340,15 @@ function MediaPage() {
                         <p className="text-muted-foreground mb-4">
                           {item.excerpt}
                         </p>
-                        <Button
-                          variant="link"
-                          className="p-0 text-[#FFBF00] hover:text-[#FFBF00]/80"
-                        >
-                          Read Full Story{" "}
-                          <ArrowRight className="ml-1 h-4 w-4" />
-                        </Button>
+                        <div className="flex gap-2">
+                          <Button
+                            variant="outline"
+                            className="border-[#FFBF00]/30 text-[#FFBF00] hover:bg-[#FFBF00]/10"
+                            onClick={() => handlePdfOpen(item)}
+                          >
+                            Read Full News
+                          </Button>
+                        </div>
                       </CardContent>
                     </Card>
                   </motion.div>
@@ -593,8 +603,9 @@ function MediaPage() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true, margin: "-100px" }}
-          className="my-16 py-12 bg-gradient-to-r from-[#FFBF00]/10 to-[#FFBF00]/5 rounded-xl border border-[#FFBF00]/20"
+          className="my-16"
         >
+          {/* Media Kit Section - Commented Out
           <div className="max-w-4xl mx-auto px-4 text-center">
             <h2 className="text-3xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-[#FFBF00] to-[#FFBF00]/70">
               Media Kit
@@ -627,7 +638,10 @@ function MediaPage() {
               </Button>
             </div>
           </div>
+          */}
         </motion.section>
+
+        {/* In The News Section - Commented Out
         <motion.section
           initial="hidden"
           whileInView="visible"
@@ -699,6 +713,7 @@ function MediaPage() {
             ))}
           </motion.div>
         </motion.section>
+        */}
       </section>
     </main>
   );

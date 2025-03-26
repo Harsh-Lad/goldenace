@@ -4,7 +4,7 @@ import { useState } from "react"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import Image from "next/image"
-import Logo from "../../../public/assets/images/logo.png"
+import Logo from "../../../public/assets/images/GAV.png"
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -16,7 +16,7 @@ const Navbar = () => {
           <div className="flex-shrink-0 flex items-center">
             <Link href="/" className="flex items-center space-x-1">
               <div className="">
-                <Image src={Logo} alt="" className="h-10 w-auto"/>
+                <Image src={Logo} alt="" className="h-20 w-auto"/>
               </div>
             </Link>
           </div>

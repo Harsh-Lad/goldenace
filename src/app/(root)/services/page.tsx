@@ -157,7 +157,7 @@ export default function ServicesPage() {
                 value={service.id}
                 className="text-sm md:text-base data-[state=active]:bg-[#FFBF00] data-[state=active]:text-black"
               >
-                {service.title.split("&")[0].trim()}
+                {(service.title?.split("&")[0]?.trim() ?? "Untitled")}
               </TabsTrigger>
             ))}
           </TabsList>
@@ -209,7 +209,7 @@ export default function ServicesPage() {
                       <div className="w-8 h-8 bg-[#FFBF00] rounded-full"></div>
                     </div>
                     <h3 className="text-xl font-bold text-white mb-2">
-                      {service.title.split("&")[0].trim()}
+                      {(service.title?.split("&")[0]?.trim() ?? "Untitled")}
                     </h3>
                     <p className="text-white/80 text-sm">
                       {service.description.split(".")[0]}

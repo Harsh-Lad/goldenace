@@ -81,7 +81,7 @@ function CareersPage() {
                 Why Join Our Team?
               </h2>
               <p className="text-lg text-muted-foreground mb-6">
-                At Golden Ace Ventures, we&quos;re building a team of passionate
+                At Golden Ace Ventures, we&apos;re building a team of passionate
                 professionals dedicated to driving innovation and sustainability
                 across energy, infrastructure, and technology sectors.
               </p>

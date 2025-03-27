@@ -31,7 +31,7 @@ import { useState } from "react";
 const COMPANIES = [
   {
     name: "Vivid",
-    logo: "/assets/images/Vivid.png",
+    logo: "/assets/images/vivid.png",
     category: "Technology",
     description:
       "Leaders in LT & HT electrical panel manufacturing, delivering innovative, reliable power solutions. Advanced automation and smart technology that optimizes energy management, driving robust operations and empowering global industries with sustainable infrastructure.",
@@ -48,7 +48,7 @@ const COMPANIES = [
   },
   {
     name: "GAME Solar",
-    logo: "/assets/images/Game.png",
+    logo: "/assets/images/game.png",
     category: "Renewable Energy",
     description:
       "Leading provider of solar energy solutions for residential and commercial applications.",

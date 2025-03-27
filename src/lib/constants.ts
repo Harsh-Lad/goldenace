@@ -24,11 +24,11 @@ export const MENU_ITEMS = [
 ];
 
 export const SOCIAL_LINKS = [
-  { icon: Facebook, href: "https://facebook.com/bartergram" },
-  { icon: Instagram, href: "https://instagram.com/bartergram.ai" },
+  { icon: Facebook, href: "https://www.facebook.com/people/Golden-Ace-Ventures-LLP/100069245169903/" },
+  { icon: Instagram, href: "https://instagram.com/goldenaceventures" },
   {
     icon: Linkedin,
-    href: "https://linkedin.com/company/bartergram",
+    href: "https://www.linkedin.com/company/goldenace-ventures-llp/",
   },
 ];
 
@@ -60,8 +60,8 @@ export const TEAM_MEMBERS = [
 ];
 
 export const COMPANIES = [
-  { name: "Vivid", logo: "/assets/images/Vivid.png" },
-  { name: "GAME Solar", logo: "/assets/images/Game.png" },
+  { name: "Vivid", logo: "/assets/images/vivid.png" },
+  { name: "GAME Solar", logo: "/assets/images/game.png" },
   { name: "Secutech", logo: "/assets/images/Secutech.png" },
   { name: "Gener8tor", logo: "/assets/images/GENER8TOR.png" },
   {
@@ -217,7 +217,7 @@ With competitive interest rates and a commitment to sustainability, IREDA ensure
     title: "Understanding Solar Photovoltaic Manufacturing",
     excerpt:
       "The solar photovoltaic manufacturing basics encompass multiple stages, from raw material processing to final PV module production.",
-    image: "/assets/images/solenerg.jfif",
+    image: "/assets/images/images.png",
     category: "Energy",
     date: "2024-02-15",
     author: "Jane Smith",

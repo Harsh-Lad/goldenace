@@ -142,19 +142,21 @@ function Footer() {
               Visit Us
             </h3>
             <address className="not-italic text-sm text-gray-300 leading-relaxed">
-              B - 42, Idea Square, 5th Floor,
+            Office Address: 609, The Epicentre,  
               <br />
-              Veera Ind Estate, Off New Link Rd,
+              Off Eastern Freeway,
               <br />
-              Andheri West, W, Maharashtra 400053
+              BEST Colony, Near Shivaji
+              <br />
+            Chowk, Chembur East, Mumbai – 400088
             </address>
           </div>
 
           <div className="flex flex-col items-center md:items-start">
             <h3 className="text-lg font-medium mb-4 text-[#FFBF00]">Call Us</h3>
             <div className="text-sm text-gray-300 space-y-1">
-              <p>Games (+91) 9619287810</p>
-              <p>Ivas (+91) 8655321536</p>
+              <p>(+91) 9920038256</p>
+              {/* <p>Ivas (+91) 8655321536</p> */}
             </div>
           </div>
 
@@ -163,8 +165,8 @@ function Footer() {
               Email Us
             </h3>
             <div className="text-sm text-gray-300 space-y-1">
-              <p>info@games.in</p>
-              <p>xperia@games.in</p>
+              <p>info@goldenaceventures.com</p>
+              {/* <p>xperia@games.in</p> */}
             </div>
           </div>
         </div>

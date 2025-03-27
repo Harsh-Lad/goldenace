@@ -149,21 +149,25 @@ function BlogCard({ post }: BlogCardProps) {
       y: 0,
       transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] },
     },
-  }
+  };
 
   // Create a URL-friendly slug from the blog title
   const createSlug = (title: string): string => {
     return title
       .toLowerCase()
       .replace(/[^\w\s-]/g, "")
-      .replace(/\s+/g, "-")
-  }
+      .replace(/\s+/g, "-");
+  };
 
-  const blogUrl = `/blogs/${createSlug(post.title)}`
+  const blogUrl = `/blogs/${createSlug(post.title)}`;
 
   return (
-    <motion.div variants={fadeInUp} whileHover={{ y: -10 }} transition={{ duration: 0.3 }}>
-      <Card className="h-full overflow-hidden border border-[#FFBF00]/20 hover:border-[#FFBF00]/50 transition-colors shadow-sm hover:shadow-md">
+    <motion.div
+      variants={fadeInUp}
+      whileHover={{ y: -10 }}
+      transition={{ duration: 0.3 }}
+    >
+      <Card className="h-full flex flex-col overflow-hidden border pb-0 border-[#FFBF00]/20 hover:border-[#FFBF00]/50 transition-colors shadow-sm hover:shadow-md">
         <Link href={blogUrl}>
           <div className="relative h-[220px] overflow-hidden">
             <Image
@@ -173,11 +177,13 @@ function BlogCard({ post }: BlogCardProps) {
               className="object-cover transition-transform duration-500 hover:scale-105"
             />
             <div className="absolute top-3 right-3">
-              <Badge className="bg-[#FFBF00] hover:bg-[#FFBF00]/80 text-black">{post.category}</Badge>
+              <Badge className="bg-[#FFBF00] hover:bg-[#FFBF00]/80 text-black">
+                {post.category}
+              </Badge>
             </div>
           </div>
         </Link>
-        <CardContent className="p-6">
+        <CardContent className="p-6 pb-0 flex-grow">
           <div className="flex gap-4 text-sm text-muted-foreground mb-3">
             <div className="flex items-center">
               <Calendar className="h-3 w-3 mr-1" />
@@ -191,22 +197,23 @@ function BlogCard({ post }: BlogCardProps) {
           <h3 className="text-xl font-bold mb-3 line-clamp-2 hover:text-[#FFBF00] transition-colors">
             <Link href={blogUrl}>{post.title}</Link>
           </h3>
-          <p className="text-muted-foreground mb-4 line-clamp-3">{post.excerpt}</p>
-          {/* <div className="flex items-center text-sm text-muted-foreground">
-            <User className="h-3 w-3 mr-1" />
-            <span>{post.author}</span>
-          </div> */}
+          <p className="text-muted-foreground mb-4 line-clamp-3">
+            {post.excerpt}
+          </p>
         </CardContent>
-        <CardFooter className="bg-[#FFBF00]/5 p-4 border-t border-[#FFBF00]/10">
+        <CardFooter className="bg-[#FFBF00]/5 p-4 border-t border-[#FFBF00]/10 mt-auto">
           <Link href={blogUrl} className="ml-auto">
-            <Button variant="link" className="p-0 text-[#FFBF00] hover:text-[#FFBF00]/80">
+            <Button
+              variant="link"
+              className="p-0 text-[#FFBF00] hover:text-[#FFBF00]/80"
+            >
               Read More <ArrowUpRight className="ml-1 h-4 w-4" />
             </Button>
           </Link>
         </CardFooter>
       </Card>
     </motion.div>
-  )
+  );
 }
 
 interface PaginationProps {

@@ -75,7 +75,7 @@ function AboutPage() {
                     Our Vision
                   </h2>
                   <p className="text-lg text-muted-foreground mb-4 leading-relaxed">
-                    To be THE strategic consulting firm fueling transformation in renewable energy, infrastructure,
+                    To be the strategic consulting firm fueling transformation in renewable energy, infrastructure,
                     smart technology, and high-growth sectors worldwide.
                   </p>
                 </div>

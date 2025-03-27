@@ -126,7 +126,7 @@ function Footer() {
         {/* Social Media Icons */}
         <div className="flex justify-start max-w-6xl mx-auto w-full px-4 md:px-8 gap-6 mb-12">
           {SOCIAL_LINKS.map(({ icon: Icon, href }) => (
-            <Link key={href} href={href}>
+            <Link key={href} href={href} target="_blank">
               <Icon className="hover:scale-125 hover:text-[#FFC000] transition-all" />
             </Link>
           ))}

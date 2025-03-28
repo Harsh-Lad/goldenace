@@ -30,13 +30,13 @@ import { useState } from "react";
 // Company data
 const COMPANIES = [
   {
-    name: "Vivid",
+    name: "Vivid Electromech Pvt. Ltd.",
     logo: "/assets/images/vivid.png",
-    category: "Technology",
+    category: "Infrastucture",
     description:
       "Leaders in LT & HT electrical panel manufacturing, delivering innovative, reliable power solutions. Advanced automation and smart technology that optimizes energy management, driving robust operations and empowering global industries with sustainable infrastructure.",
     founded: "2018",
-    location: "Mumbai, India",
+    location: "Navi Mumbai, India",
     website: "https://vivid.example.com",
     employees: "50-100",
     investment: "Series A",
@@ -47,7 +47,7 @@ const COMPANIES = [
     ],
   },
   {
-    name: "GAME Solar",
+    name: "G.A.M.E Solar",
     logo: "/assets/images/game.png",
     category: "Renewable Energy",
     description:
@@ -64,13 +64,13 @@ const COMPANIES = [
     ],
   },
   {
-    name: "Re Plus",
+    name: "RE PLUS",
     logo: "/assets/images/RE.png",
-    category: "Infrastructure",
+    category: "Technology",
     description:
       "REPLUS specializes in advanced Battery Energy Storage Systems (BESS), delivering tailored solutions for diverse power and energy applications. With expertise in lithium-ion technology, advanced cell chemistry, in-house BMS & EMS design, and battery pack manufacturing, REPLUS ensures reliable and secure energy storage.",
     founded: "2017",
-    location: "Wanwadi, Pune - Maharashtra",
+    location: "Pune - Maharashtra",
     website: "https://secutech.example.com",
     employees: "50-100",
     investment: "Series A",
@@ -98,9 +98,9 @@ const COMPANIES = [
     ],
   },
   {
-    name: "OCT Online Cleaning Tech",
+    name: "Online Cleaning Technologies ",
     logo: "/assets/images/oclogo.svg",
-    category: "Energy",
+    category: "Technology",
     description:
       "Online Cleaning Technologies Pvt. Ltd. (OCT) delivers advanced, non-invasive cleaning for power plants, refineries, and petrochemical facilities. Using cutting-edge techniques, OCT optimizes performance, minimizes downtime, and extends equipment life—without shutdowns.",
     founded: "2015",
@@ -115,7 +115,7 @@ const COMPANIES = [
     ],
   },
   {
-    name: "Magic Paws Co",
+    name: "Magic Paws Co.",
     logo: "/assets/images/magicpaws.png",
     category: "Investment",
     description:
@@ -132,9 +132,9 @@ const COMPANIES = [
     ],
   },
   {
-    name: "Secutech",
+    name: "Secutech Automation (India) Pvt. Ltd.",
     logo: "/assets/images/Secutech.png",
-    category: "Investment",
+    category: "Technology",
     description:
       "Secutech Automation (India) Pvt. Ltd. provides advanced automation and security solutions for seamless operations and enhanced safety. Specializing in industrial automation, surveillance, and access control, Secutech delivers customized, high-performance systems for diverse industries.",
     founded: "2015",
@@ -307,13 +307,13 @@ export default function VenturesPage() {
           </h2>
           <Tabs
             defaultValue="all"
-            className="w-full mb-8"
+            className="w-fit mb-8"
             onValueChange={setActiveTab}
           >
-            <TabsList className="grid w-full max-w-4xl mx-auto grid-cols-3 md:grid-cols-6 mb-8 bg-[#FFBF00]/10">
+            <TabsList className="flex flex-wrap h-full justify-center w-full max-w-4xl mx-auto mb-8 bg-[#FFBF00]/10 gap-2">
               <TabsTrigger
                 value="all"
-                className="data-[state=active]:bg-[#FFBF00] data-[state=active]:text-black"
+                className="data-[state=active]:bg-[#FFBF00] data-[state=active]:text-black px-4 py-2 text-sm flex-1 md:flex-none"
               >
                 All
               </TabsTrigger>
@@ -321,7 +321,7 @@ export default function VenturesPage() {
                 <TabsTrigger
                   key={category}
                   value={category.toLowerCase()}
-                  className="data-[state=active]:bg-[#FFBF00] data-[state=active]:text-black"
+                  className="data-[state=active]:bg-[#FFBF00] data-[state=active]:text-black px-4 py-2 text-sm flex-1 md:flex-none"
                 >
                   {category}
                 </TabsTrigger>

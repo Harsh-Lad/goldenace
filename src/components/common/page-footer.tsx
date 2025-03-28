@@ -101,7 +101,7 @@ function Footer() {
               />
               <Button 
                 type="submit"
-                className="bg-[#FFBF00] text-black hover:bg-white/90 transition-colors"
+                className="bg-[#FFBF00] text-white"
                 disabled={isSubmitting}
               >
                 {isSubmitting ? "Submitting..." : "Submit"}
@@ -142,20 +142,18 @@ function Footer() {
               Visit Us
             </h3>
             <address className="not-italic text-sm text-gray-300 leading-relaxed">
-            Office Address: 609, The Epicentre,  
+            Office Address: 609, The Epicenter by Wadhwa,  
               <br />
-              Off Eastern Freeway,
+              Waman Tukaram Marg,
               <br />
-              BEST Colony, Near Shivaji
-              <br />
-            Chowk, Chembur East, Mumbai – 400088
+              Chembur - 400071
             </address>
           </div>
 
           <div className="flex flex-col items-center md:items-start">
             <h3 className="text-lg font-medium mb-4 text-[#FFBF00]">Call Us</h3>
             <div className="text-sm text-gray-300 space-y-1">
-              <p>(+91) 9920038256</p>
+              <p>(+91) 8001818001</p>
               {/* <p>Ivas (+91) 8655321536</p> */}
             </div>
           </div>

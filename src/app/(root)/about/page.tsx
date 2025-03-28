@@ -35,6 +35,10 @@ function AboutPage() {
     },
   }
 
+  // Split companies into two rows for better layout control
+  const firstRowCompanies = COMPANIES.slice(0, 4)
+  const secondRowCompanies = COMPANIES.slice(4)
+
   return (
     <main ref={containerRef} className="container mx-auto px-4 py-12 max-w-7xl">
       <PageTitleSection
@@ -247,37 +251,80 @@ function AboutPage() {
             Our strategic partnerships and portfolio companies
           </motion.p>
 
-          <motion.div
-            variants={staggerContainer}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: "-100px" }}
-            className="grid grid-cols-2 md:grid-cols-5 gap-6"
-          >
-            {COMPANIES.map((company, index) => (
+          <div className="max-w-6xl mx-auto">
+            {/* First row - 4 companies */}
+            <motion.div
+              variants={staggerContainer}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, margin: "-100px" }}
+              className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-6"
+            >
+              {firstRowCompanies.map((company, index) => (
+                <motion.div
+                  key={index}
+                  variants={fadeInUp}
+                  whileHover={{ y: -10, transition: { duration: 0.3 } }}
+                  className="bg-card rounded-xl p-6 flex flex-col items-center justify-center h-[200px] shadow-sm hover:shadow-md transition-all border border-[#FFBF00]/20 hover:border-[#FFBF00]/50"
+                >
+                  <div className={`relative ${company.name === "Gener8tor" ? "w-44 h-44" : "w-36 h-36"} mb-4`}>
+                    <div className="absolute inset-0 bg-white rounded-lg p-4">
+                      <Image
+                        src={company.logo || "/placeholder.svg?height=200&width=200"}
+                        alt={company.name}
+                        fill
+                        className="object-contain"
+                        onError={(e) => {
+                          const target = e.target as HTMLImageElement
+                          target.src = "/placeholder.svg?height=200&width=200"
+                          target.onerror = null
+                        }}
+                      />
+                    </div>
+                  </div>
+                  <p className="font-medium text-center">{company.name}</p>
+                </motion.div>
+              ))}
+            </motion.div>
+
+            {/* Second row - 3 companies centered */}
+            <div className="flex justify-center">
               <motion.div
-                key={index}
-                variants={fadeInUp}
-                whileHover={{ y: -10, transition: { duration: 0.3 } }}
-                className="bg-card rounded-xl p-6 flex flex-col items-center justify-center h-[180px] shadow-sm hover:shadow-md transition-all border border-[#FFBF00]/20 hover:border-[#FFBF00]/50"
+                variants={staggerContainer}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, margin: "-100px" }}
+                className="grid grid-cols-2 md:grid-cols-3 gap-6"
+                style={{ width: "calc(75% - 12px)" }} // 3/4 of the container width minus half a gap
               >
-                <div className="relative w-16 h-16 mb-4">
-                  <Image
-                    src={company.logo || "/placeholder.svg?height=200&width=200"}
-                    alt={company.name}
-                    fill
-                    className="object-contain bg-white"
-                    onError={(e) => {
-                      const target = e.target as HTMLImageElement
-                      target.src = "/placeholder.svg?height=200&width=200"
-                      target.onerror = null
-                    }}
-                  />
-                </div>
-                <p className="font-medium text-center">{company.name}</p>
+                {secondRowCompanies.map((company, index) => (
+                  <motion.div
+                    key={index}
+                    variants={fadeInUp}
+                    whileHover={{ y: -10, transition: { duration: 0.3 } }}
+                    className="bg-card rounded-xl p-6 flex flex-col items-center justify-center h-[200px] shadow-sm hover:shadow-md transition-all border border-[#FFBF00]/20 hover:border-[#FFBF00]/50"
+                  >
+                    <div className="relative w-36 h-36 mb-4">
+                      <div className="absolute inset-0 bg-white rounded-lg p-4">
+                        <Image
+                          src={company.logo || "/placeholder.svg?height=200&width=200"}
+                          alt={company.name}
+                          fill
+                          className="object-contain"
+                          onError={(e) => {
+                            const target = e.target as HTMLImageElement
+                            target.src = "/placeholder.svg?height=200&width=200"
+                            target.onerror = null
+                          }}
+                        />
+                      </div>
+                    </div>
+                    <p className="font-medium text-center">{company.name}</p>
+                  </motion.div>
+                ))}
               </motion.div>
-            ))}
-          </motion.div>
+            </div>
+          </div>
         </motion.section>
 
         <Separator className="my-16 bg-[#FFBF00]/20" />

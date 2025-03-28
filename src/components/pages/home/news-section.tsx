@@ -16,7 +16,7 @@ function NewsAndEvents() {
     {
       category: "Articles",
       date: "Sep 27, 2025",
-      title: "The Consumption Bet",
+      title: "Game Changers",
       image: "/assets/images/tsb.png",
       pdfUrl: "/assets/pdfs/DOC-20250211-WA0008..pdf",
     },
@@ -28,13 +28,13 @@ function NewsAndEvents() {
       pdfUrl: "/assets/pdfs/Interview - Skyytop.pdf",
     },
     {
-      title: "Game Changers",
+      title: "Outlook Business",
       // date: "March 5, 2023",
       category: "Speaking",
       excerpt:
         "Avi Mittal: Powering Innovation, Transforming Industries, and Leading India’s Green Revolution",
       image: "/assets/images/son.jpg",
-      pdfUrl: "/assets/pdfs/gamechangers.pdf"
+      pdfUrl: "/assets/pdfs/Trusted_Brands___Leaders_compressed-1-2.pdf"
     }
     // {
     //   category: "Investments",
@@ -90,7 +90,7 @@ function NewsAndEvents() {
         <div className="flex flex-col sm:flex-row items-center gap-4 justify-center">
           <Link 
             href="/media" 
-            className="group relative h-12 overflow-hidden rounded-full bg-yellow-400 px-8 py-2 transition-all hover:bg-yellow-500 inline-flex items-center"
+            className="group relative h-12 overflow-hidden rounded-full bg-yellow-400 font-bold px-8 py-2 transition-all hover:bg-yellow-500 inline-flex items-center"
           >
             <span className="relative flex items-center">
               View All
@@ -100,7 +100,7 @@ function NewsAndEvents() {
             </span>
           </Link>
 
-          <Link href="/contact" className="group relative h-12 flex items-center justify-center overflow-hidden rounded-full border-2 border-yellow-400 px-8 py-2 transition-all hover:bg-yellow-400 hover:text-black">
+          <Link href="/contact" className="group relative h-12 flex items-center justify-center overflow-hidden rounded-full border-2 border-yellow-400 px-8 py-2 transition-all hover:bg-yellow-400 hover:text-white font-bold">
             <span className="relative flex items-center">
               Contact us
               <span className="ml-2 flex h-8 w-8 items-center justify-center rounded-full bg-yellow-400 group-hover:bg-white transition-colors duration-500">

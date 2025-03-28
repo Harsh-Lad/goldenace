@@ -20,7 +20,7 @@ interface Project {
   description: string;
   image: string;
   location: string;
-  status: "Completed" | "Ongoing" | "Planning" | "Development";
+  status: "Completed" | "Completed" | "Completed" | "Development";
   year: string;
   features?: string[];
   timeline?: string;
@@ -63,7 +63,7 @@ const PROJECTS_DATA: CategoryData[] = [
         description: "Vivid delivered top-tier LT panels to Phoenix Mall, ensuring seamless power distribution across its massive retail, entertainment, and hospitality spaces. Designed to handle heavy electrical demand, our panels keep escalators running, lights shining, and HVAC systems operating efficiently. Equipped with advanced safety features and energy-optimized busbar systems, they support uninterrupted operations even during peak hours. These panels provide the backbone for a hassle-free shopping experience. With Vivid’s engineering expertise, Phoenix Mall stays powered up, creating a vibrant and enjoyable atmosphere for shoppers, diners, and visitors every day.",
         image: "/assets/images/phoenix.jpg",
         location: "Maharashtra, India",
-        status: "Ongoing",
+        status: "Completed",
         year: "2024"
       },
       {
@@ -71,7 +71,7 @@ const PROJECTS_DATA: CategoryData[] = [
         description: "Vivid powered up Clean Max Technology with high-performance HT and LT panels, ensuring smooth and efficient energy distribution for their renewable power projects. Our HT panels handle high-voltage transmission with precision, while LT panels keep essential systems running flawlessly. Designed for maximum efficiency and safety, they optimize power flow, reduce energy losses, and enhance system reliability. From solar farms to industrial setups, these panels support Clean Max’s mission of sustainable energy. With Vivid’s expertise, their operations stay energized, pushing the boundaries of green power and driving a cleaner, brighter future.",
         image: "/assets/images/hero1.jpg",
         location: "Maharashtra, India",
-        status: "Ongoing",
+        status: "Completed",
         year: "2024"
       },
     ]
@@ -86,7 +86,7 @@ const PROJECTS_DATA: CategoryData[] = [
         description: "The Park Hyatt Hotel in Goa, a 45-acre property with 250 villas and suites, has upgraded its fire safety and evacuation systems to meet Hyatt’s global standards. The retrofit includes 3,000+ fire detection points, 2,500+ evacuation alarms, and a centralized Command & Control Centre for real-time monitoring. The fully redundant, fiber-optic-enabled system ensures seamless emergency response with minimal guest disruption.",
         image: "/assets/images/g.png",
         location: "Madhya Pradesh, India",
-        status: "Ongoing",
+        status: "Completed",
         year: "2024"
       },
       {
@@ -94,7 +94,7 @@ const PROJECTS_DATA: CategoryData[] = [
         description: "Kokilaben Ambani Hospital in Mumbai is a cutting-edge 800-bed smart hospital integrating advanced technology for superior healthcare. It features 300+ HD CCTV cameras, 3,000+ fire safety devices, biometric access control, and a fully redundant fiber-optic network. The facility boasts complete building automation, smart patient systems, and unified platforms for energy management and emergency response, ensuring efficient, safe, and patient-centric care.",
         image: "/assets/images/kokila.jpg",
         location: "Madhya Pradesh, India",
-        status: "Ongoing",
+        status: "Completed",
         year: "2024"
       },
       {
@@ -102,7 +102,7 @@ const PROJECTS_DATA: CategoryData[] = [
         description: "The ONGC Headquarters in Mumbai is a Platinum LEED-certified smart building, integrating 25,000+ IBMS points for automated HVAC, lighting, and utilities. Its True ISMS combines 200+ RFID access points, 150+ HD cameras, 3,000+ fire detectors, and smart parking for robust security. With solar power, energy analytics, and predictive maintenance, it delivers sustainable, efficient, and future-ready operations.",
         image: "/assets/images/ongc.jpg",
         location: "Multiple States",
-        status: "Planning",
+        status: "Completed",
         year: "2024"
       },
       {
@@ -110,7 +110,7 @@ const PROJECTS_DATA: CategoryData[] = [
         description:"Reliance ADAG Group's Global HQ is a cutting-edge smart facility, integrating IBMS, ISMS, and ICT for seamless security, efficiency, and automation. It features 200+ HD cameras, 220+ access points, and AI-driven security scenarios, backed by a centralized Command Centre. Fire safety is ensured via 2,200+ detection sensors and 1,800+ PA systems, with advanced server room protection. The 20,000+ IBMS points optimize building performance, while energy analytics and predictive maintenance boost sustainability. Smart solutions like automated visitor management, virtual receptionists, and conference booking enhance user experience, making it a benchmark for intelligent corporate infrastructure.",
         image: "/assets/images/Reliance.png",
         location: "Multiple States",
-        status: "Planning",
+        status: "Completed",
         year: "2024"
       },
     ]
@@ -125,7 +125,7 @@ const PROJECTS_DATA: CategoryData[] = [
         description: "Client: Mahagenco – Koradi Power Station Project Scope: Demonstration of Online Cleaning Technologies’ patented Shockwave cleaning system Challenge:Boilers in power plants accumulate significant fouling over time, reducing efficiency and increasing downtime during maintenance. Traditional cleaning methods can be time-consuming and require shutdowns, impacting productivity. Mahagenco sought a more efficient cleaning solution that could be performed online without disrupting operations. Solution: Online Cleaning Technologies (OCT) demonstrated its patented Shockwave cleaning technology on a 600 MW boiler at Koradi Power Station. The process involved: ● Online inspection using cameras before and after cleaning ● Shockwave-based cleaning to remove fouling from boiler surfaces, burners, and waterwalls ● Demonstrating the effectiveness of the method by performing 10 controlled shots Results: ● Effective Cleaning: The Shockwave technology successfully removed fouling in key areas, including waterwalls and burner regions. ● Reduced Manual Effort: Previously, bottom ash hoppers were cleaned using jackhammers; OCT’s technology demonstrated an easier and more effective approach. ● Future Optimization: Recommendations were made for an offline cleaning before the next shutdown to enhance boiler efficiency further. Impact: OCT’s innovative cleaning solution showcased a faster, safer, and more efficient alternative to traditional boiler maintenance. By implementing Shockwave technology, Mahagenco can minimize downtime, improve operational efficiency, and enhance the longevity of its equipment.",
         image: "/assets/images/u.jpeg",
         location: "Pan India",
-        status: "Ongoing",
+        status: "Completed",
         year: "2024"
       },
       // {

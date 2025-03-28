@@ -30,9 +30,9 @@ function MediaPage() {
 
   const newsItems = [
     {
-      title: "The Consumption Bet",
+      title: "Game Changers",
       // date: "June 15, 2023",
-      category: "Partnership",
+      // category: "Partnership",
       excerpt:
         "Avi Mittal: Powering Innovation, Transformating Industries, and Leading India's Green Revolution.",
       image: "/assets/images/tsb.png",
@@ -41,20 +41,20 @@ function MediaPage() {
     {
       title: "Interview between Rahul Tarani and Avi Mittal",
       // date: "April 10, 2023",
-      category: "Event",
+      // category: "Event",
       excerpt:
         "Golden Ace Ventures LLP will be participating in RE Invest 2024, showcasing its renewable energy solutions and investment opportunities.",
       image: "/assets/images/inter.png",
       pdfUrl: "/assets/pdfs/Interview - Skyytop.pdf"
     },
     {
-      title: "Game Changers",
+      title: "Outlook Business",
       // date: "March 5, 2023",
-      category: "Speaking",
+      category: "",
       excerpt:
         "Avi Mittal: Powering Innovation, Transforming Industries, and Leading India's Green Revolution",
       image: "/assets/images/son.jpg",
-      pdfUrl: "/assets/pdfs/gamechangers.pdf"
+      pdfUrl: "/assets/pdfs/Trusted_Brands___Leaders_compressed-1-2.pdf"
     },
   ];
 
@@ -222,7 +222,7 @@ function MediaPage() {
                           src={item.image || "/placeholder.svg"}
                           alt={item.title}
                           fill
-                          className="object-contain bg-white object-center transition-transform duration-500 hover:scale-105"
+                          className="object-contain bg-blue object-center transition-transform duration-500 hover:scale-105"
                         />
                         <div className="absolute top-2 right-2">
                           <Badge className="bg-[#FFBF00] hover:bg-[#FFBF00]/80 text-black">

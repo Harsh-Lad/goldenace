@@ -1,14 +1,14 @@
-import { Facebook, Instagram, Linkedin } from "lucide-react";
+import { Instagram, Linkedin } from "lucide-react"
 
 export const HERO_TEXT_TOP_LEFT = {
   title: "Innovative Solutions",
   subtitle: "Transforming ideas into digital reality",
-};
+}
 
 export const HERO_TEXT_BOTTOM_RIGHT = {
   title: "Creative Excellence",
   subtitle: "Pushing boundaries with cutting-edge technology",
-};
+}
 
 export const MENU_ITEMS = [
   { title: "Home", href: "/" },
@@ -21,24 +21,18 @@ export const MENU_ITEMS = [
   { title: "Resources", href: "/resources" },
   { title: "Careers", href: "/careers" },
   { title: "Contact", href: "/contact" },
-];
+]
 
 export const SOCIAL_LINKS = [
-  { icon: Facebook, href: "https://www.facebook.com/people/Golden-Ace-Ventures-LLP/100069245169903/" },
-  { icon: Instagram, href: "https://instagram.com/goldenaceventures" },
+  // { icon: Facebook, href: "https://www.facebook.com/people/Golden-Ace-Ventures-LLP/100069245169903/" },
+  { icon: Instagram, href: "https://www.instagram.com/goldenaceventuresllp/?utm_source=qr&igsh=d3NzazE0bHY1NjVm#" },
   {
     icon: Linkedin,
     href: "https://www.linkedin.com/company/goldenace-ventures-llp/",
   },
-];
+]
 
 export const TEAM_MEMBERS = [
-  {
-    name: "Meenakshi Rao",
-    position: "Executive Director",
-    image: "/assets/images/meenakshi.jpg", // Local image path from the public directory
-    bio: "Meenakshi is a seasoned expert in technology and digital transformation, spearheading smart technology innovations that accelerate operational excellence. Her adept change management skills ensure our digital strategies align with market strategy and growth consulting best practices. ",
-  },
   {
     name: "Anil Kumar Mittal",
     position: "Chairman",
@@ -46,50 +40,52 @@ export const TEAM_MEMBERS = [
     bio: "With over 40 years of expertise in engineering, manufacturing, and industrial operations, Anil provides robust strategic direction and financial intelligence that fuel our infrastructure development and industrial growth. His deep industry experience in operational excellence and cost optimization ensures our business is primed for global expansion in emerging markets. ",
   },
   {
-    name: "Aparjeet Mittal",
+    name: "Avi Mittal",
     position: "Managing Partner & CEO",
     image: "/assets/images/son.jpg", // Local image path from the public directory
     bio: "A visionary leader in renewable energy, infrastructure, and venture capital, Avi drives transformative business consulting initiatives and delivers bespoke solutions for next-generation projects. His strategic focus on sports investments and industrial operations underpins our market-driven execution and sustainable business growth.",
   },
   {
     name: "Nisarg Doshi",
-    position: "Cheif Business officer",
+    position: "Cheif Business Officer",
     image: "/assets/images/nisarg.jpeg", // Local image path from the public directory
     bio: "Nisarg is the cornerstone of our market strategy and growth consulting efforts, leveraging deep expertise in sales & marketing advisory to accelerate business growth and asset value maximization. His talent in forging strategic partnerships and innovative investment & financial structuring drives our sustainable transformation. ",
   },
-];
+  {
+    name: "Meenakshi Rao",
+    position: "Executive Director",
+    image: "/assets/images/meenakshi.jpg", // Local image path from the public directory
+    bio: "Meenakshi is a seasoned expert in technology and digital transformation, spearheading smart technology innovations that accelerate operational excellence. Her adept change management skills ensure our digital strategies align with market strategy and growth consulting best practices. ",
+  },
+]
 
 export const COMPANIES = [
   { name: "Vivid", logo: "/assets/images/vivid.png" },
   { name: "GAME Solar", logo: "/assets/images/game.png" },
   { name: "Secutech", logo: "/assets/images/Secutech.png" },
   { name: "Gener8tor", logo: "/assets/images/GENER8TOR.png" },
-  {
-    name: "RE Plus",
-    logo: "/assets/images/RE.png",
-  },
-];
+  { name: "RE Plus", logo: "/assets/images/RE.png" },
+  { name: "OCT", logo: "/assets/images/oclogo.svg" },
+  { name: "Magic Paws", logo: "/assets/images/magicpaws.png" },
+]
 
 export const COMPANY_TIMELINE = [
   {
     year: "2015",
     title: "Foundation",
-    description:
-      "Golden Ace Ventures LLP was established with a vision to pioneer sustainable solutions.",
+    description: "Golden Ace Ventures LLP was established with a vision to pioneer sustainable solutions.",
     category: "Milestone",
   },
   {
     year: "2017",
     title: "First Major Project",
-    description:
-      "Successfully completed our first large-scale infrastructure development project.",
+    description: "Successfully completed our first large-scale infrastructure development project.",
     category: "Project",
   },
   {
     year: "2019",
     title: "Expansion into Renewable Energy",
-    description:
-      "Launched our renewable energy division, focusing on solar and thermal energy solutions.",
+    description: "Launched our renewable energy division, focusing on solar and thermal energy solutions.",
     category: "Expansion",
   },
   {
@@ -102,11 +98,10 @@ export const COMPANY_TIMELINE = [
   {
     year: "2023",
     title: "Investment Fund Launch",
-    description:
-      "Established Gener8tor India Category 2 AIF Fund to support promising startups in our focus sectors.",
+    description: "Established Gener8tor India Category 2 AIF Fund to support promising startups in our focus sectors.",
     category: "Investment",
   },
-];
+]
 
 export const COMPANY_SERVICES = [
   {
@@ -146,10 +141,10 @@ export const COMPANY_SERVICES = [
     title: "Start-up Incubation, Acceleration & Investments",
     description:
       "Nurturing high-potential start-ups with tailored incubation, acceleration, and investment partnerships.Strategic investment and capital support for promising ventures in renewable energy, infrastructure, and technology.",
-      image: "/assets/images/Start-up Incubation.jpg",
-      color: "oklch(0.769 0.188 70.08)", // purple
+    image: "/assets/images/Start-up Incubation.jpg",
+    color: "oklch(0.769 0.188 70.08)", // purple
   },
-];
+]
 
 export const COMPANY_PROJECTS = [
   {
@@ -160,23 +155,26 @@ export const COMPANY_PROJECTS = [
       Currently operational units contribute to a significant portion of the plant's overall power generation.
       Information indicates that the plants current operating capacity is over 1210 MW.
       There is also information showing that MahaGenco has plans to, and or is building a new 660MW unit.`,
-    image: "https://media.biltrax.com/wp-content/uploads/2022/07/Cofrentes_nuclear_power_plant_cooling_towers_retouched.jpg",
+    image:
+      "https://media.biltrax.com/wp-content/uploads/2022/07/Cofrentes_nuclear_power_plant_cooling_towers_retouched.jpg",
   },
   {
     id: 2,
     title: "Solar Power Integration Project",
     description:
       "Implementation of large-scale solar power integration with existing thermal infrastructure. This project aims to reduce carbon emissions while maintaining reliable power output. The hybrid approach combines the benefits of renewable energy with the stability of traditional power generation methods.",
-    image: "https://upload.wikimedia.org/wikipedia/commons/2/26/Electrical_and_Mechanical_Services_Department_Headquarters_Photovoltaics.jpg",
+    image:
+      "https://upload.wikimedia.org/wikipedia/commons/2/26/Electrical_and_Mechanical_Services_Department_Headquarters_Photovoltaics.jpg",
   },
   {
     id: 3,
     title: "Smart Grid Implementation",
     description:
       "Modernizing the power distribution network with smart grid technologies to improve efficiency and reliability. This project includes advanced metering infrastructure, automated distribution systems, and real-time monitoring capabilities to optimize power delivery and reduce outages.",
-    image: "https://assets.bizclikmedia.net/1800/df939f5d2a2a1c5ebe57d77599d1298f:58ce784c0141c9e48c376e59e38ae392/gettyimages-1029186020-jpg.webp",
+    image:
+      "https://assets.bizclikmedia.net/1800/df939f5d2a2a1c5ebe57d77599d1298f:58ce784c0141c9e48c376e59e38ae392/gettyimages-1029186020-jpg.webp",
   },
-];
+]
 
 // Removed duplicate BlogPost interface declaration to resolve the error.
 
@@ -395,21 +393,21 @@ With BESS leading the energy revolution, we are one step closer to a world power
 ]
 
 export interface BlogPost {
-  title: string;
-  excerpt: string;
-  image: string;
-  category: string;
-  date: string;
-  author: string;
-  readTime: string;
-  content: string;
+  title: string
+  excerpt: string
+  image: string
+  category: string
+  date: string
+  author: string
+  readTime: string
+  content: string
 }
 
 export const COMPANY_PROJECTS_EXTENDED = [
   {
     title: "Vivid Projects",
     category: "Energy",
-    status: "Ongoing",
+    status: "Completed",
     image: "/assets/images/images.jfif",
     description:
       "From design to delivery, our team ensured that the LT & HT panels meet strict quality, safety, and performance standards, supporting seamless operations for the data centre. With precision engineering and robust build quality, our panels play a crucial role in ensuring uninterrupted power flow, enhanced efficiency, and long-term reliability. ",
@@ -436,7 +434,7 @@ export const COMPANY_PROJECTS_EXTENDED = [
   {
     title: "Clean Max",
     category: "Infrastructure",
-    status: "Planning",
+    status: "Completed",
     image: "/assets/images/hero1.jpg",
     description:
       "Vivid powered up Clean Max Technology with high-performance HT and LT panels, ensuring smooth and efficient energy distribution for their renewable power projects. Our HT panels handle high-voltage transmission with precision, while LT panels keep essential systems running flawlessly.",
@@ -454,7 +452,7 @@ export const COMPANY_PROJECTS_EXTENDED = [
   {
     title: "Smart Healthcare Infrastructure at Kokilaben Ambani Hospital, Mumbai",
     category: "Advisory",
-    status: "Ongoing",
+    status: "Completed",
     image: "/assets/images/d.png",
     description:
       "The Kokilaben Ambani Hospital in Mumbai is a leading-edge smart hospital with 800+ beds, designed to deliver high-quality healthcare through integrated technology and automation. ",
@@ -463,7 +461,7 @@ export const COMPANY_PROJECTS_EXTENDED = [
   {
     title: "Smart and Sustainable Infrastructure at ONGC HQ, Mumbai",
     category: "Energy",
-    status: "Ongoing",
+    status: "Completed",
     image: "/assets/images/ongc.jpg",
     description:
       "The ONGC Headquarters in Mumbai stands as a benchmark in smart and sustainable infrastructure, combining advanced building management, security, and smart applications to create a highly efficient and secure environment. ",
@@ -487,14 +485,14 @@ export const COMPANY_PROJECTS_EXTENDED = [
       "Boilers in power plants accumulate significant fouling over time, reducing efficiency and increasing downtime during maintenance. Traditional cleaning methods can be time-consuming and require shutdowns, impacting productivity. Mahagenco sought a more efficient cleaning solution that could be performed online without disrupting operations. ",
     tags: ["Hydroelectric", "Renewable Energy", "Sustainability"],
   },
-];
+]
 
 export interface Section {
-  number: string;
-  category: string;
-  title: string;
-  mockupImage: string;
-  isVideo: boolean;
+  number: string
+  category: string
+  title: string
+  mockupImage: string
+  isVideo: boolean
 }
 
 export const homePageScrollSections: Section[] = [
@@ -509,7 +507,8 @@ export const homePageScrollSections: Section[] = [
     number: "02",
     category: "Infrastructure Development",
     title: "Roads & Highways, LT & HT Panels, Urban & Industrial Development",
-    mockupImage: "https://business.cornell.edu/wp-content/uploads/sites/2/2022/06/India-infrastructure.featured.600x400-600x400.jpg",
+    mockupImage:
+      "https://business.cornell.edu/wp-content/uploads/sites/2/2022/06/India-infrastructure.featured.600x400-600x400.jpg",
     isVideo: false,
   },
   {
@@ -519,7 +518,7 @@ export const homePageScrollSections: Section[] = [
     mockupImage: "https://www.techwalls.com/wp-content/uploads/2018/10/smart-city-1.jpg",
     isVideo: false,
   },
-];
+]
 
 export const creatorPageScrollSections: Section[] = [
   {
@@ -543,7 +542,7 @@ export const creatorPageScrollSections: Section[] = [
     mockupImage: "/images/mockups/creators/3.svg",
     isVideo: false,
   },
-];
+]
 
 export const brandPageScrollSections: Section[] = [
   {
@@ -567,4 +566,5 @@ export const brandPageScrollSections: Section[] = [
     mockupImage: "/images/mockups/brands/3.svg",
     isVideo: false,
   },
-];
+]
+

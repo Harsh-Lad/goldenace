@@ -63,7 +63,7 @@ function Services() {
   return (
     <section className="py-16 px-4 md:px-8 min-h-screen">
       <div className="max-w-7xl mx-auto">
-        <SectionHeader title="Services" description="Goldenace Ventures LLP" />
+        <SectionHeader title="Services" description="Golden Ace Ventures LLP" />
 
         {/* Service Content */}
         <div className="grid md:grid-cols-2 gap-8 items-center">
@@ -172,7 +172,7 @@ function Services() {
             <button
               onClick={cycleCards}
               disabled={isAnimating}
-              className="absolute bottom-[-60px] left-1/2 transform -translate-x-1/2 bg-yellow-400 text-black rounded-full w-24 h-12 flex items-center justify-center hover:bg-yellow-300 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+              className="text-xl absolute bottom-[-60px] left-1/2 transform -translate-x-1/2 bg-yellow-400 text-white font-bold rounded-full w-28 h-12 flex items-center justify-center hover:bg-yellow-300 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
               aria-label={
                 isLastCard ? "Reset to first service" : "Next service"
               }

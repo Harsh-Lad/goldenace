@@ -48,7 +48,7 @@ function Blogs() {
         {/* Header */}
         <div className="mb-12">
           <h2 className="text-4xl md:text-5xl font-bold mb-4">Blogs</h2>
-          <p className="text-gray-400 text-lg">Goldenace Ventures LLP</p>
+          <p className="text-gray-400 text-lg">Golden Ace Ventures LLP</p>
         </div>
 
         {/* Render slides as a list on small screens */}
@@ -127,7 +127,7 @@ function Blogs() {
         <div className="hidden md:flex justify-start mt-8">
           <button
             onClick={handleNext}
-            className="bg-[#FFBF00] text-black font-bold py-2 px-6 rounded-full hover:bg-[#e0a800] transition-all duration-300"
+            className="bg-[#FFBF00] text-xl text-white font-bold py-2 px-6 rounded-full hover:bg-[#e0a800] transition-all duration-300"
             aria-label="Next Slide"
           >
             Next

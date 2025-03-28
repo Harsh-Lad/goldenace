@@ -92,11 +92,11 @@ export default function AboutSection() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
           viewport={{ once: true }}
-          className="text-5xl md:text-7xl font-bold text-center leading-tight py-6"
+          className="text-5xl md:text-7xl font-provicali font-bold text-center leading-tight py-6"
         >
-          Driving Innovation,
+          DRIVING INNOVATION,
           <br />
-          Delivering Sustainability
+          DELIVERING SUSTAINABILITY
         </motion.h2>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mx-auto max-w-6xl mt-32">

@@ -103,7 +103,7 @@ export default function ServicesSection() {
       }}
     >
       <div className="max-w-7xl mx-auto">
-        <SectionHeader title="Services" description="Goldenace Ventures LLP" />
+        <SectionHeader title="Services" description="Golden Ace Ventures LLP" />
 
         <div
           ref={containerRef}

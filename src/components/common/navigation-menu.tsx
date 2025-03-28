@@ -17,14 +17,14 @@ const Navbar = () => {
   }, [pathname])
 
   const navLinks = [
-    { href: "/", label: "Home" },
-    { href: "/about", label: "About" },
-    { href: "/services", label: "Services" },
-    { href: "/ventures", label: "Partners" },
-    { href: "/projects", label: "Projects" },
-    { href: "/blogs", label: "Blog" },
-    { href: "/media", label: "Media" },
-    { href: "/careers", label: "Careers" },
+    { href: "/", label: "HOME" },
+    { href: "/about", label: "ABOUT" },
+    { href: "/services", label: "SERVICES" },
+    { href: "/ventures", label: "PARTNERS" },
+    { href: "/projects", label: "PROJECTS" },
+    { href: "/blogs", label: "BLOG" },
+    { href: "/media", label: "MEDIA" },
+    { href: "/careers", label: "CAREERS" },
   ]
 
   const isActive = (path: string) => pathname === path

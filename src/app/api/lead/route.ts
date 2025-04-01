@@ -34,7 +34,7 @@ export async function POST(request: Request) {
     // Append data to the Google Sheet
     const response = await sheets.spreadsheets.values.append({
       spreadsheetId: process.env.NEXT_PUBLIC_GOOGLE_SHEETS_SPREADSHEET_ID,
-      range: 'Sheet1', // Update this to your sheet name if different
+      range: 'get_in_touch', // Update this to your sheet name if different
       valueInputOption: 'USER_ENTERED',
       requestBody: {
         values: [[

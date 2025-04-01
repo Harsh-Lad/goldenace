@@ -36,7 +36,7 @@ const COMPANIES = [
     description:
       "Leaders in LT & HT electrical panel manufacturing, delivering innovative, reliable power solutions. Advanced automation and smart technology that optimizes energy management, driving robust operations and empowering global industries with sustainable infrastructure.",
     founded: "2018",
-    location: "Mumbai, Maharashtra",
+    location: "Navi Mumbai, Maharashtra, India",
     website: "https://vivid.example.com",
     employees: "50-100",
     investment: "Series A",
@@ -53,7 +53,7 @@ const COMPANIES = [
     description:
       "Leading provider of solar energy solutions for residential and commercial applications.",
     founded: "2016",
-    location: "Mumbai, India",
+    location: "Mumbai, Maharashtra India",
     website: "https://gamesolar.example.com",
     employees: "100-250",
     investment: "Series B",
@@ -70,7 +70,7 @@ const COMPANIES = [
     description:
       "REPLUS specializes in advanced Battery Energy Storage Systems (BESS), delivering tailored solutions for diverse power and energy applications. With expertise in lithium-ion technology, advanced cell chemistry, in-house BMS & EMS design, and battery pack manufacturing, REPLUS ensures reliable and secure energy storage.",
     founded: "2017",
-    location: "Pune - Maharashtra",
+    location: "Pune, Maharashtra, India",
     website: "https://secutech.example.com",
     employees: "50-100",
     investment: "Series A",
@@ -87,7 +87,7 @@ const COMPANIES = [
     description:
       "A top startup accelerator fueling early-stage companies with intensive mentorship and strategic capital. Their programs on entrepreneurship drive disruptive innovation. Backed by an ever-connected network, they propel scalable, sustainable venture success globally. ",
     founded: "2019",
-    location: "Washington, US",
+    location: "Washington, USA",
     website: "https://gener8tor.example.com",
     employees: "25-50",
     investment: "Fund",
@@ -104,7 +104,7 @@ const COMPANIES = [
     description:
       "Online Cleaning Technologies Pvt. Ltd. (OCT) delivers advanced, non-invasive cleaning for power plants, refineries, and petrochemical facilities. Using cutting-edge techniques, OCT optimizes performance, minimizes downtime, and extends equipment life—without shutdowns.",
     founded: "2015",
-    location: "Navi Mumbai, Maharashtra",
+    location: "Navi Mumbai, Maharashtra, India",
     website: "https://oct.example.com",
     employees: "100-250",
     investment: "Series B",
@@ -121,7 +121,7 @@ const COMPANIES = [
     description:
       "A pet care brand offering premium products to boost the health and happiness of your furry friends. Their curated collection spans accessories, grooming, and nutritional solutions for modern pet care. With quality and sustainability at heart, they deliver transformative pet care solutions. ",
     founded: "2015",
-    location: "Mumbai, India",
+    location: "Mumbai, Maharashtra, India",
     website: "https://oct.example.com",
     employees: "100-250",
     investment: "Series B",
@@ -138,7 +138,7 @@ const COMPANIES = [
     description:
       "Secutech Automation (India) Pvt. Ltd. provides advanced automation and security solutions for seamless operations and enhanced safety. Specializing in industrial automation, surveillance, and access control, Secutech delivers customized, high-performance systems for diverse industries.",
     founded: "2015",
-    location: "Mumbai, India",
+    location: "Mumbai, Maharashtra, India",
     website: "https://oct.example.com",
     employees: "100-250",
     investment: "Series B",
@@ -367,7 +367,7 @@ export default function VenturesPage() {
                         <p className="text-muted-foreground mb-4">
                           {company.description}
                         </p>
-                        <div className="grid grid-cols-2 gap-4 text-sm">
+                        <div className="grid grid-cols-1 gap-4 text-sm">
                           {/* <div className="flex items-center">
                             <Calendar className="h-4 w-4 mr-2 text-[#FFBF00]" />
                             <span>Founded: {company.founded}</span>

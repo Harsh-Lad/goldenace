@@ -37,7 +37,7 @@ export async function POST(request: Request) {
     // First, check if email already exists in Sheet3
     const checkResponse = await sheets.spreadsheets.values.get({
       spreadsheetId,
-      range: 'Sheet3!A:A', // Column containing emails
+      range: 'newsletter!A:A', // Column containing emails
     });
 
     const existingEmails = checkResponse.data.values || [];
@@ -55,7 +55,7 @@ export async function POST(request: Request) {
     
     const appendResponse = await sheets.spreadsheets.values.append({
       spreadsheetId,
-      range: 'Sheet3',
+      range: 'newsletter',
       valueInputOption: 'USER_ENTERED',
       requestBody: {
         values: [[email, timestamp]],

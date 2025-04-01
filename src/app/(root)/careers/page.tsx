@@ -54,7 +54,7 @@ function CareersPage() {
   return (
     <main className="container mx-auto px-4 py-12">
       <PageTitleSection
-        title="Careers at Golden Ace Ventures"
+        title="CAREERS AT GOLDEN ACE VENTURES LLP"
         description="Join our team and be part of shaping a sustainable future"
       />
 
@@ -208,7 +208,7 @@ function CareersPage() {
                 There are no current openings available at this time.
               </p>
               <p className="text-muted-foreground">
-                Please email us at careers@goldenace.com to submit your resume for future opportunities.
+                Please email us at info@goldenaceventures.com to submit your resume for future opportunities.
               </p>
             </CardContent>
           </Card>

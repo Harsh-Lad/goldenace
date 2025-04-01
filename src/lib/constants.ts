@@ -47,7 +47,7 @@ export const TEAM_MEMBERS = [
   },
   {
     name: "Nisarg Doshi",
-    position: "Cheif Business Officer",
+    position: "Chief Business Officer",
     image: "/assets/images/nisarg.jpeg", // Local image path from the public directory
     bio: "Nisarg is the cornerstone of our market strategy and growth consulting efforts, leveraging deep expertise in sales & marketing advisory to accelerate business growth and asset value maximization. His talent in forging strategic partnerships and innovative investment & financial structuring drives our sustainable transformation. ",
   },
@@ -63,7 +63,7 @@ export const COMPANIES = [
   { name: "Vivid", logo: "/assets/images/vivid.png" },
   { name: "GAME Solar", logo: "/assets/images/game.png" },
   { name: "Secutech", logo: "/assets/images/Secutech.png" },
-  { name: "Gener8tor", logo: "/assets/images/GENER8TOR.png" },
+  { name: "Gener8tor", logo: "/assets/images/GENER8TOR.jpeg" },
   { name: "RE Plus", logo: "/assets/images/RE.png" },
   { name: "OCT", logo: "/assets/images/oclogo.svg" },
   { name: "Magic Paws", logo: "/assets/images/magicpaws.png" },

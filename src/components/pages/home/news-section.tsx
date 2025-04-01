@@ -15,25 +15,25 @@ function NewsAndEvents() {
   const articles = [
     {
       category: "Articles",
-      date: "Sep 27, 2025",
-      title: "Game Changers",
+      date: "Feb 16, 2025",
+      title: "Business Today",
       image: "/assets/images/tsb.png",
       pdfUrl: "/assets/pdfs/DOC-20250211-WA0008..pdf",
     },
     {
       category: "Press releases",
-      date: "Sep 24, 2025",
+      date: "Feb, 2025",
       title: "Interview between Rahul Tarani and Avi Mittal",
-      image: "/assets/images/inter.png",
+      image: "/assets/images/mid.png",
       pdfUrl: "/assets/pdfs/Interview - Skyytop.pdf",
     },
     {
       title: "Outlook Business",
-      // date: "March 5, 2023",
+      date: "Jan, 2025",
       category: "Speaking",
       excerpt:
         "Avi Mittal: Powering Innovation, Transforming Industries, and Leading India’s Green Revolution",
-      image: "/assets/images/son.jpg",
+      image: "/assets/images/ass.png",
       pdfUrl: "/assets/pdfs/Trusted_Brands___Leaders_compressed-1-2.pdf"
     }
     // {
@@ -50,7 +50,7 @@ function NewsAndEvents() {
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="mb-12">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">News & Events</h2>
+          <h2 className="text-4xl md:text-5xl font-bold mb-4">NEWS & EVENTS</h2>
           <p className="text-gray-400 text-lg">
             Discover the latest new and events.
           </p>
@@ -70,7 +70,7 @@ function NewsAndEvents() {
                     src={article.image}
                     alt={article.title}
                     fill
-                    className="rounded-xl object-contain bg-white"
+                    className="rounded-xl object-contain bg-transparent"
                   />
                 </div>
                 <div className="flex items-center gap-4 text-sm mb-3">

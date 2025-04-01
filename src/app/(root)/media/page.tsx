@@ -30,7 +30,7 @@ function MediaPage() {
 
   const newsItems = [
     {
-      title: "Game Changers",
+      title: "Business Today",
       // date: "June 15, 2023",
       // category: "Partnership",
       excerpt:
@@ -44,7 +44,7 @@ function MediaPage() {
       // category: "Event",
       excerpt:
         "Golden Ace Ventures LLP will be participating in RE Invest 2024, showcasing its renewable energy solutions and investment opportunities.",
-      image: "/assets/images/inter.png",
+      image: "/assets/images/mid.png",
       pdfUrl: "/assets/pdfs/Interview - Skyytop.pdf"
     },
     {
@@ -53,7 +53,7 @@ function MediaPage() {
       category: "",
       excerpt:
         "Avi Mittal: Powering Innovation, Transforming Industries, and Leading India's Green Revolution",
-      image: "/assets/images/son.jpg",
+      image: "/assets/images/ass.png",
       pdfUrl: "/assets/pdfs/Trusted_Brands___Leaders_compressed-1-2.pdf"
     },
   ];
@@ -150,7 +150,7 @@ function MediaPage() {
   return (
     <main className="container mx-auto px-4 py-12">
       <PageTitleSection
-        title="Media & Press"
+        title="MEDIA & PRESS"
         description="Latest news, events, and resources from Golden Ace Ventures"
       />
 

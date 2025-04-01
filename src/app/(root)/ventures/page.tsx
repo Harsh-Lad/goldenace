@@ -30,13 +30,13 @@ import { useState } from "react";
 // Company data
 const COMPANIES = [
   {
-    name: "Vivid Electromech Pvt. Ltd.",
+    name: "Vivid Electromech Ltd.",
     logo: "/assets/images/vivid.png",
     category: "Infrastucture",
     description:
       "Leaders in LT & HT electrical panel manufacturing, delivering innovative, reliable power solutions. Advanced automation and smart technology that optimizes energy management, driving robust operations and empowering global industries with sustainable infrastructure.",
     founded: "2018",
-    location: "Navi Mumbai, India",
+    location: "Mumbai, Maharashtra",
     website: "https://vivid.example.com",
     employees: "50-100",
     investment: "Series A",
@@ -82,7 +82,7 @@ const COMPANIES = [
   },
   {
     name: "Gener8tor",
-    logo: "/assets/images/GENER8TOR.png",
+    logo: "/assets/images/GENER8TOR.jpeg",
     category: "Investment",
     description:
       "A top startup accelerator fueling early-stage companies with intensive mentorship and strategic capital. Their programs on entrepreneurship drive disruptive innovation. Backed by an ever-connected network, they propel scalable, sustainable venture success globally. ",
@@ -187,7 +187,7 @@ export default function VenturesPage() {
   return (
     <div className="container mx-auto px-4 py-12">
       <PageTitleSection
-        title="Associated Partners"
+        title="ASSOCIATED PARTNERS"
         description="Pioneering innovations across energy, infrastructure, and technology sectors"
       />
 

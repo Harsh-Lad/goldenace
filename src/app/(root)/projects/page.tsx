@@ -154,9 +154,9 @@ export default function ProjectsPage() {
   };
 
   return (
-    <main className="container mx-auto px-4 py-12">
+    <main className="container mx-auto px-4 py-12 ">
       <PageTitleSection
-        title="Our Projects"
+        title="OUR PROJECTS"
         description="Showcasing our key initiatives across energy, infrastructure, and technology"
       />
 

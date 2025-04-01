@@ -15,7 +15,7 @@ import { useState } from "react";
 const SERVICES_DATA = [
   {
     id: "energy",
-    title: "Renewable, Green & Thermal Energy",
+    title: "Renewable",
     description:
       "Comprehensive solutions across the renewable and thermal energy spectrum.",
     image: "/assets/images/future.png", // Local image
@@ -141,7 +141,7 @@ export default function ServicesPage() {
   return (
     <main className="container mx-auto px-4 py-12">
       <PageTitleSection
-        title="Our Services"
+        title="OUR SERVICES"
         description="Comprehensive solutions across energy, infrastructure, technology, and business advisory"
       />
       <section className="max-w-7xl mx-auto">

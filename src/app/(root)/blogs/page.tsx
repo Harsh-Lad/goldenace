@@ -40,7 +40,7 @@ export default function BlogsPage() {
     <main className="container mx-auto px-4">
       <div className="py-12 md:py-16">
         <h1 className="text-4xl mt-24 md:text-5xl font-bold text-center mb-8 pb-2 bg-clip-text text-transparent bg-gradient-to-r from-[#FFBF00] to-[#FFBF00]/70">
-          Our Blog
+          OUR BLOGS
         </h1>
         <p className="text-center text-muted-foreground max-w-2xl mx-auto mb-12">
           Stay updated with the latest insights, trends, and news from our team of experts in renewable energy,

@@ -7,7 +7,7 @@ import { ChevronRight } from "lucide-react";
 import Image from "next/image";
 import { useState } from "react";
 
-function Services() {
+function  Services() {
   const [cards, setCards] = useState([0, 1, 2, 3, 4]); // Indices of cards in stack order (top to bottom)
   const [isAnimating, setIsAnimating] = useState(false);
 
@@ -63,7 +63,7 @@ function Services() {
   return (
     <section className="py-16 px-4 md:px-8 min-h-screen">
       <div className="max-w-7xl mx-auto">
-        <SectionHeader title="Services" description="Golden Ace Ventures LLP" />
+        <SectionHeader title="SERVICES" description="GOLDEN ACE VENTURES LLP" />
 
         {/* Service Content */}
         <div className="grid md:grid-cols-2 gap-8 items-center">

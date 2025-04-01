@@ -42,7 +42,7 @@ function AboutPage() {
   return (
     <main ref={containerRef} className="container mx-auto px-4 py-12 max-w-7xl">
       <PageTitleSection
-        title="About Us"
+        title="ABOUT US"
         description="Pioneering solutions in renewable energy, infrastructure development, and smart technology"
       />
       <section className="max-w-7xl mx-auto">
@@ -186,10 +186,10 @@ function AboutPage() {
             variants={fadeInUp}
             className="text-4xl font-bold mb-4 text-center bg-clip-text text-transparent bg-gradient-to-r from-[#FFBF00] to-[#FFBF00]/70"
           >
-            Leadership Team
+            LEADERSHIP TEAM
           </motion.h2>
           <motion.p variants={fadeInUp} className="text-lg text-muted-foreground text-center max-w-2xl mx-auto mb-16">
-            Meet the visionaries driving innovation and excellence at Golden Ace Ventures
+            Meet the visionaries driving innovation and excellence at Golden Ace Ventures LLP
           </motion.p>
 
           <motion.div

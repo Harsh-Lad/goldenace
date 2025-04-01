@@ -92,7 +92,7 @@ export default function AboutSection() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
           viewport={{ once: true }}
-          className="text-5xl md:text-7xl font-provicali font-bold text-center leading-tight py-6"
+          className="text-5xl md:text-6xl font-provicali font-bold text-center leading-tight py-6"
         >
           DRIVING INNOVATION,
           <br />

@@ -47,8 +47,8 @@ function Blogs() {
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="mb-12">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">Blogs</h2>
-          <p className="text-gray-400 text-lg">Golden Ace Ventures LLP</p>
+          <h2 className="text-4xl md:text-5xl font-bold mb-4">BLOGS</h2>
+          <p className="text-gray-400 text-lg">GOLDEN ACE VENTURES LLP</p>
         </div>
 
         {/* Render slides as a list on small screens */}

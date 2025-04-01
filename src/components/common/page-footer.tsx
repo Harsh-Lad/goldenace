@@ -101,7 +101,7 @@ function Footer() {
               />
               <Button 
                 type="submit"
-                className="bg-[#FFBF00] text-black hover:bg-white/90 transition-colors"
+                className="bg-[#FFBF00] text-white"
                 disabled={isSubmitting}
               >
                 {isSubmitting ? "Submitting..." : "Submit"}
@@ -126,7 +126,7 @@ function Footer() {
         {/* Social Media Icons */}
         <div className="flex justify-start max-w-6xl mx-auto w-full px-4 md:px-8 gap-6 mb-12">
           {SOCIAL_LINKS.map(({ icon: Icon, href }) => (
-            <Link key={href} href={href}>
+            <Link key={href} href={href} target="_blank">
               <Icon className="hover:scale-125 hover:text-[#FFC000] transition-all" />
             </Link>
           ))}
@@ -142,19 +142,19 @@ function Footer() {
               Visit Us
             </h3>
             <address className="not-italic text-sm text-gray-300 leading-relaxed">
-              B - 42, Idea Square, 5th Floor,
+            Office Address: 609, The Epicenter by Wadhwa,  
               <br />
-              Veera Ind Estate, Off New Link Rd,
+              Waman Tukaram Marg,
               <br />
-              Andheri West, W, Maharashtra 400053
+              Chembur - 400071
             </address>
           </div>
 
           <div className="flex flex-col items-center md:items-start">
             <h3 className="text-lg font-medium mb-4 text-[#FFBF00]">Call Us</h3>
             <div className="text-sm text-gray-300 space-y-1">
-              <p>Games (+91) 9619287810</p>
-              <p>Ivas (+91) 8655321536</p>
+              <p>(+91) 8001818001</p>
+              {/* <p>Ivas (+91) 8655321536</p> */}
             </div>
           </div>
 
@@ -163,8 +163,8 @@ function Footer() {
               Email Us
             </h3>
             <div className="text-sm text-gray-300 space-y-1">
-              <p>info@games.in</p>
-              <p>xperia@games.in</p>
+              <p>info@goldenaceventures.com</p>
+              {/* <p>xperia@games.in</p> */}
             </div>
           </div>
         </div>

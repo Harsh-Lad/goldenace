@@ -45,13 +45,13 @@ export default function ContactPage() {
   }
 
   return (
-    <section className="relative min-h-screen bg-gradient-to-b from-neutral-900 to-black flex items-center justify-center px-6 py-12">
+    <section className="relative min-h-screen bg-gradient-to-b from-neutral-900 to-black flex items-center justify-center px-6 py-24">
       <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/50 to-black/70 backdrop-blur-md"></div>
       <motion.div
         initial={{ opacity: 0, scale: 0.95 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.5, ease: "easeOut" }}
-        className="relative z-10 max-w-4xl w-full bg-[rgba(255,255,255,0.05)] border border-[rgba(255,255,255,0.3)] rounded-lg p-8 md:p-12 shadow-lg backdrop-blur-lg"
+        className="relative z-10 max-w-4xl w-full bg-[rgba(255,255,255,0.05)] border border-[rgba(255,255,255,0.3)] rounded-lg p-8 md:p-12 shadow-lg backdrop-blur-lg mt-16"
       >
         <h1 className="text-3xl md:text-4xl font-bold text-white text-center mb-6">
           Contact Us

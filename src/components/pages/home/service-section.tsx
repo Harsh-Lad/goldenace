@@ -103,7 +103,7 @@ export default function ServicesSection() {
       }}
     >
       <div className="max-w-7xl mx-auto">
-        <SectionHeader title="Services" description="Goldenace Ventures LLP" />
+        <SectionHeader title="Services" description="Golden Ace Ventures LLP" />
 
         <div
           ref={containerRef}
@@ -132,7 +132,9 @@ export default function ServicesSection() {
               }}
             >
               {COMPANY_SERVICES.map((service, index) => {
-                const { x, y, angle } = cardTransforms[index];
+                const transform = cardTransforms[index];
+                if (!transform) return null;
+                const { x, y, angle } = transform;
 
                 return (
                   <motion.div

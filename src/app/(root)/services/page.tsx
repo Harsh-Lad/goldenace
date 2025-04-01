@@ -8,10 +8,122 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { SERVICES_DATA } from "@/lib/constants";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { useState } from "react";
+
+const SERVICES_DATA = [
+  {
+    id: "energy",
+    title: "Renewable",
+    description:
+      "Comprehensive solutions across the renewable and thermal energy spectrum.",
+    image: "/assets/images/future.png", // Local image
+    items: [
+      {
+        title: "Solar Energy Solutions",
+        description:
+          " Solar EPC Project Support Financing with REC & IREDA-approved funding. • End-to-end EPC projects from feasibility through to implementation. • Solar PV module manufacturing & supplies with an emphasis on high-efficiency and sustainable growth. ",
+      },
+      {
+        title: "Thermal Energy Solutions",
+        description:
+          " Innovative thermal energy solutions and online cleaning technology to boost operational efficiency and reduce emissions.",
+      },
+      {
+        title: "Battery Energy Storage Systems (BESS)",
+        description:
+          "Advanced BESS solutions for energy storage, grid stability, and integration of renewable sources.",
+      },
+    ],
+  },
+  {
+    id: "infrastructure",
+    title: "Infrastructure Development",
+    description:
+      "Building the foundations for sustainable growth and development.",
+    image: "/assets/images/infrastr.jpg", // Local image
+    items: [
+      {
+        title: "Roads & Highways",
+        description:
+          "Comprehensive consultancy and project management for roads & highways development. ",
+      },
+      {
+        title: "Urban & Industrial Development",
+        description:
+          "Execution of smart city projects and large-scale urban development initiatives that catalyze industrial development and manufacturing growth. ",
+      },
+      {
+        title: "Electrical & Industrial Solutions",
+        description:
+          "Design and manufacture of LT & HT electrical panels tailored for industrial and commercial applications. ",
+      },
+    ],
+  },
+  {
+    id: "tech",
+    title: "Smart Tech & Innovation",
+    description:
+      "Leveraging cutting-edge technology to drive efficiency and innovation.",
+    image: "/assets/images/iot-and-ai.jpg", // Local image
+    items: [
+      {
+        title: "IoT & AI Integration",
+        description:
+          "Implement industrial automation and advanced monitoring systems to enhance productivity and operational intelligence. ",
+      },
+      {
+        title: "Smart Technology Solutions",
+        description:
+          "Drive digital transformation with integrated smart technology for optimized performance. ",
+      },
+    ],
+  },
+  {
+    id: "advisory",
+    title: "Business Consultancy & Advisory",
+    description:
+      "Strategic guidance to help businesses thrive in a competitive landscape.",
+    image: "/assets/images/pp.jpeg", // Local image
+    items: [
+      {
+        title: "Market Strategy & Growth Consulting",
+        description:
+          "Customized solutions to accelerate business growth and expand market presence. ",
+      },
+      {
+        title: "Investment & Financial Structuring",
+        description:
+          "Expert guidance in strategic capital formation, M&A, and funding strategies. ",
+      },
+      {
+        title: "Sales & Marketing Advisory",
+        description:
+          "High-impact strategies to maximize market outreach and brand positioning.",
+      },
+    ],
+  },
+  {
+    id: "investments",
+    title: "Start-up Incubation & Investments",
+    description:
+      "Nurturing innovation and supporting the next generation of industry leaders.",
+    image: "/assets/images/startups.jpg", // Local image
+    items: [
+      {
+        title: "Incubation & Mentorship",
+        description:
+          "Nurturing high-potential start-ups with tailored incubation, acceleration, and investment partnerships. ",
+      },
+      {
+        title: "Gener8tor India Category 2 AIF Fund",
+        description:
+          "Strategic investment and capital support for promising ventures in renewable energy, infrastructure, and technology. ",
+      },
+    ],
+  },
+];
 
 export default function ServicesPage() {
   const [activeTab, setActiveTab] = useState("energy");
@@ -29,7 +141,7 @@ export default function ServicesPage() {
   return (
     <main className="container mx-auto px-4 py-12">
       <PageTitleSection
-        title="Our Services"
+        title="OUR SERVICES"
         description="Comprehensive solutions across energy, infrastructure, technology, and business advisory"
       />
       <section className="max-w-7xl mx-auto">
@@ -45,7 +157,7 @@ export default function ServicesPage() {
                 value={service.id}
                 className="text-sm md:text-base data-[state=active]:bg-[#FFBF00] data-[state=active]:text-black"
               >
-                {service.title.split("&")[0].trim()}
+                {(service.title?.split("&")[0]?.trim() ?? "Untitled")}
               </TabsTrigger>
             ))}
           </TabsList>
@@ -87,7 +199,7 @@ export default function ServicesPage() {
 
                 <div className="relative h-[400px] rounded-xl overflow-hidden shadow-xl border border-[#FFBF00]/20">
                   <Image
-                    src={`/placeholder.svg?height=800&width=600&text=${service.title}`}
+                    src={service.image} // Dynamically use the image from SERVICES_DATA
                     alt={service.title}
                     fill
                     className="object-cover"
@@ -97,7 +209,7 @@ export default function ServicesPage() {
                       <div className="w-8 h-8 bg-[#FFBF00] rounded-full"></div>
                     </div>
                     <h3 className="text-xl font-bold text-white mb-2">
-                      {service.title.split("&")[0].trim()}
+                      {(service.title?.split("&")[0]?.trim() ?? "Untitled")}
                     </h3>
                     <p className="text-white/80 text-sm">
                       {service.description.split(".")[0]}

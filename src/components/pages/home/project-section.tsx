@@ -7,7 +7,7 @@ import { ChevronRight } from "lucide-react";
 import Image from "next/image";
 import { useState } from "react";
 
-function Services() {
+function  Services() {
   const [cards, setCards] = useState([0, 1, 2, 3, 4]); // Indices of cards in stack order (top to bottom)
   const [isAnimating, setIsAnimating] = useState(false);
 
@@ -63,7 +63,7 @@ function Services() {
   return (
     <section className="py-16 px-4 md:px-8 min-h-screen">
       <div className="max-w-7xl mx-auto">
-        <SectionHeader title="Services" description="Goldenace Ventures LLP" />
+        <SectionHeader title="SERVICES" description="GOLDEN ACE VENTURES LLP" />
 
         {/* Service Content */}
         <div className="grid md:grid-cols-2 gap-8 items-center">
@@ -78,10 +78,12 @@ function Services() {
                 transition={{ duration: 0.3 }}
               >
                 <h3 className="text-3xl font-bold mb-6">
-                  {COMPANY_SERVICES[activeService].title}
+                  {activeService !== undefined &&
+                    COMPANY_SERVICES[activeService]?.title}
                 </h3>
                 <p className="text-gray-300 whitespace-pre-line leading-relaxed">
-                  {COMPANY_SERVICES[activeService].description}
+                  {activeService !== undefined &&
+                    COMPANY_SERVICES[activeService]?.description}
                 </p>
               </motion.div>
             </AnimatePresence>
@@ -105,7 +107,7 @@ function Services() {
                     initial={cardStyles}
                     animate={{
                       ...cardStyles,
-                      ...(isAnimating && isTopCard
+                      ...(isAnimating && isTopCard && cardStyles
                         ? {
                             y: [0, -50, 200],
                             x: [0, -100, 0],
@@ -115,7 +117,7 @@ function Services() {
                             zIndex: 0,
                           }
                         : {}),
-                      ...(isAnimating && !isTopCard
+                      ...(isAnimating && cardStyles && !isTopCard
                         ? {
                             y:
                               stackIndex === 1
@@ -146,18 +148,19 @@ function Services() {
                     <div className="relative w-full h-full rounded-3xl overflow-hidden shadow-lg">
                       <Image
                         src={
-                          COMPANY_SERVICES[serviceIndex].image ||
+                          COMPANY_SERVICES[serviceIndex]?.image ||
                           "/placeholder.svg"
                         }
-                        alt={COMPANY_SERVICES[serviceIndex].title}
+                        alt={
+                          COMPANY_SERVICES[serviceIndex]?.title || "Placeholder"
+                        }
                         fill
                         className="object-cover"
                       />
                       <div className="absolute top-4 right-4 bg-white/10 backdrop-blur-sm rounded-full w-12 h-12 flex items-center justify-center text-2xl font-bold">
-                        {String(COMPANY_SERVICES[serviceIndex].id).padStart(
-                          2,
-                          "0"
-                        )}
+                        {String(
+                          COMPANY_SERVICES[serviceIndex]?.id || 0
+                        ).padStart(2, "0")}
                       </div>
                     </div>
                   </motion.div>
@@ -169,7 +172,7 @@ function Services() {
             <button
               onClick={cycleCards}
               disabled={isAnimating}
-              className="absolute bottom-[-60px] left-1/2 transform -translate-x-1/2 bg-yellow-400 text-black rounded-full w-24 h-12 flex items-center justify-center hover:bg-yellow-300 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+              className="text-xl absolute bottom-[-60px] left-1/2 transform -translate-x-1/2 bg-yellow-400 text-white font-bold rounded-full w-28 h-12 flex items-center justify-center hover:bg-yellow-300 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
               aria-label={
                 isLastCard ? "Reset to first service" : "Next service"
               }

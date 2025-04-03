@@ -21,12 +21,17 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Goldenace-Ventures",
   description: "Golden Ace Ventures LLP",
+  icons: {
+    icon: "./favicon.ico", // Path to your favicon
+  },
 };
+
 const provicali = localFont({
   src: "../../public/assets/fonts/provicali/Provicali.otf",
   variable: "--font-provicali",
   display: "swap",
 });
+
 
 export default function RootLayout({
   children,

@@ -163,20 +163,20 @@ export default function ProjectsPage() {
       <section className="max-w-7xl mx-auto">
         <Tabs
           defaultValue="energy"
-          className="my-12"
+          className="my-12 h-auto"
           onValueChange={setActiveTab}
         >
-          <TabsList className="grid w-full grid-cols-3 mb-8 bg-[#FFBF00]/10">
+            <TabsList className="grid w-full h-full grid-cols-1 md:grid-cols-3 mb-8 bg-[#FFBF00]/10">
             {PROJECTS_DATA.map((category) => (
               <TabsTrigger
-                key={category.category}
-                value={category.category}
-                className="text-sm md:text-base data-[state=active]:bg-[#FFBF00] data-[state=active]:text-black"
+              key={category.category}
+              value={category.category}
+              className="text-sm md:text-base data-[state=active]:bg-[#FFBF00] data-[state=active]:text-black"
               >
-                {category.title}
+              {category.title}
               </TabsTrigger>
             ))}
-          </TabsList>
+            </TabsList>
 
           {PROJECTS_DATA.map((category) => (
             <TabsContent key={category.category} value={category.category}>

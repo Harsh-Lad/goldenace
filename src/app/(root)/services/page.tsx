@@ -150,12 +150,12 @@ export default function ServicesPage() {
           className="my-12"
           onValueChange={setActiveTab}
         >
-          <TabsList className="grid w-full grid-cols-2 md:grid-cols-5 mb-8 bg-[#FFBF00]/10">
+          <TabsList className="grid w-full grid-cols-2 h-auto md:grid-cols-5 mb-8 bg-[#FFBF00]/10">
             {SERVICES_DATA.map((service) => (
               <TabsTrigger
                 key={service.id}
                 value={service.id}
-                className="text-sm md:text-base data-[state=active]:bg-[#FFBF00] data-[state=active]:text-black"
+                className="text-[9px] md:text-base data-[state=active]:bg-[#FFBF00] data-[state=active]:text-black"
               >
                 {(service.title?.split("&")[0]?.trim() ?? "Untitled")}
               </TabsTrigger>

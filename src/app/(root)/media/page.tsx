@@ -53,7 +53,7 @@ function MediaPage() {
       category: "",
       excerpt:
         "Avi Mittal: Powering Innovation, Transforming Industries, and Leading India's Green Revolution",
-      image: "/assets/images/ass.png",
+      image: "/assets/images/news3.JPEG",
       pdfUrl: "/assets/pdfs/Trusted_Brands___Leaders_compressed-1-2.pdf"
     },
   ];

@@ -56,6 +56,13 @@ function MediaPage() {
       image: "/assets/images/news3.JPEG",
       pdfUrl: "/assets/pdfs/Trusted_Brands___Leaders_compressed-1-2.pdf"
     },
+    {
+      category: "",
+      date: "Mar 10, 2025",
+      title: "Fortune India Exchange",
+      image: "/assets/images/fortune.png",
+      pdfUrl: "/assets/pdfs/fortune.pdf",
+    },
   ];
 
   // Suppress TypeScript errors for specific lines

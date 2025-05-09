@@ -35,14 +35,14 @@ function NewsAndEvents() {
         "Avi Mittal: Powering Innovation, Transforming Industries, and Leading India’s Green Revolution",
       image: "/assets/images/news3.JPEG",
       pdfUrl: "/assets/pdfs/Trusted_Brands___Leaders_compressed-1-2.pdf"
-    }
-    // {
-    //   category: "Investments",
-    //   date: "Sep 21, 2025",
-    //   title: "Congratulations on new Webflow's Series D investment round",
-    //   image: "/assets/images/webflow.jpg",
-    //   pdfUrl: "/assets/pdfs/webflow-investment.pdf",
-    // },
+    },
+    {
+      category: "",
+      date: "May, 2025",
+      title: "Fortune India Exchange",
+      image: "/assets/images/fortune.png",
+      pdfUrl: "/assets/pdfs/fortune.pdf",
+    },
   ];
 
   return (
@@ -52,7 +52,7 @@ function NewsAndEvents() {
         <div className="mb-12">
           <h2 className="text-4xl md:text-5xl font-bold mb-4">NEWS & EVENTS</h2>
           <p className="text-gray-400 text-lg">
-            Discover the latest new and events.
+            Discover the latest news and events.
           </p>
         </div>
 
